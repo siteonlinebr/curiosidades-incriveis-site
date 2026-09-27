@@ -4,6 +4,29 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
+## [v3.1.0] - 2026-09-27 (Versão Atual)
+### 🔍 Buscador com Recomendações & Resultados ao Vivo:
+- **Chips de Sugestão:** Inclusão de tópicos em alta e tags temáticas diretas dentro do modal de pesquisa (Polvo, Universo, IA, Krakatoa, Ponto Nemo, Alexandria).
+- **Resultados Instantâneos na Busca:** Digitar exibe imediatamente os cards de artigos compatíveis com capa, categoria e link direto sem necessidade de fechar a busca.
+
+### 📚 Seção "Em Alta" Dinâmica:
+- **Expansão para 8 Artigos em "Todas":** A grade inicial agora exibe 8 grandes artigos em destaque.
+- **5 Artigos por Categoria:** Ao filtrar por Animais, Ciência, Tecnologia, História ou Mundo, o catálogo exibe os 5 artigos da respectiva categoria, mantendo a home ágil e equilibrada.
+
+### 📬 Rodapé Profissional (Contato & Privacidade):
+- **Modal de Contato Interativo:** Substituição do protocolo `mailto:` por um modal visual com e-mail oficial, botão "📋 Copiar e-mail" com feedback instantâneo e botão direto para o Instagram Direct.
+- **Modal de Política de Privacidade (LGPD):** Termos completos sobre cookies anônimos do Google Analytics, armazenamento seguro de preferências e garantia de não comercialização de dados.
+
+---
+
+## [v3.0.3] - 2026-09-27
+### 🖥️ Lapidação do Layout Responsivo:
+- **Respiro no Modo Tablet:** Correção do container do Hero abaixo de 900px, eliminando colagem na borda esquerda.
+- **Posicionamento do Contador no PC:** Âncora restaurada no canto inferior direito (`right: 0; bottom: 0`).
+- **Harmonia do Destaque:** Aumento do respiro superior e redução sutil dos espaçamentos entre título e subtítulo.
+
+---
+
 ## [v3.0.2] - 2026-09-25 (Versão Atual)
 ### 📱 Correção de Layout Mobile & Lapidação do Hero:
 - **Alinhamento Vertical Natural do Hero:**

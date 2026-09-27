@@ -501,8 +501,22 @@ const createPopularCard = (article, index) => `
 
 // Inicialização de Grids na Home
 const featuredGrid = document.querySelector('#featured-grid');
+
+function renderHomeFeatured(category = 'all') {
+  if (!featuredGrid) return;
+  let items;
+  if (category === 'all') {
+    // 8 artigos selecionados na visualização Todas
+    items = articles.slice(0, 8);
+  } else {
+    // Limita aos 5 artigos da categoria no index mantendo a home leve e objetiva
+    items = articles.filter((a) => a.categorySlug === category).slice(0, 5);
+  }
+  featuredGrid.innerHTML = items.map(createFeatureCard).join('');
+}
+
 if (featuredGrid) {
-  featuredGrid.innerHTML = articles.filter((a) => a.featured).map(createFeatureCard).join('');
+  renderHomeFeatured('all');
 }
 
 const recentList = document.querySelector('#recent-list');
@@ -640,21 +654,13 @@ document.querySelectorAll('.nav-surprise-btn, .drawer-surprise-btn').forEach((bt
 // FILTRO RÁPIDO DE CATEGORIAS NA HOME
 // =========================================================
 const homeFilterPills = document.querySelectorAll('.home-filters .filter-pill');
-if (homeFilterPills.length > 0) {
+if (homeFilterPills.length > 0 && featuredGrid) {
   homeFilterPills.forEach((pill) => {
     pill.addEventListener('click', () => {
       homeFilterPills.forEach((p) => p.classList.remove('active'));
       pill.classList.add('active');
-      const selected = pill.dataset.category;
-
-      document.querySelectorAll('#featured-grid .feature-card, #recent-list .recent-card').forEach((card) => {
-        const cat = card.dataset.category;
-        if (selected === 'all' || cat === selected) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      const selected = pill.dataset.category || 'all';
+      renderHomeFeatured(selected);
     });
   });
 }
@@ -722,13 +728,16 @@ if (navDropdown) {
 }
 
 // =========================================================
-// PAINEL DE PESQUISA RÁPIDA
+// =========================================================
+// PAINEL DE PESQUISA RÁPIDA COM RESULTADOS AO VIVO
 // =========================================================
 const searchTrigger = document.querySelector('.search-trigger') || document.querySelector('.icon-button[aria-label="Pesquisar"]');
 const searchPanel = document.querySelector('.search-panel');
 const searchInput = document.querySelector('#search-input');
 const searchClose = document.querySelector('.search-close');
 const searchMessage = document.querySelector('.search-message');
+const searchLiveResults = document.querySelector('#search-live-results');
+const searchSuggestions = document.querySelector('#search-suggestions');
 
 function closeSearch() {
   if (!searchPanel) return;
@@ -737,7 +746,49 @@ function closeSearch() {
   if (searchTrigger) searchTrigger.setAttribute('aria-expanded', 'false');
   document.body.classList.remove('search-open');
   if (searchInput) searchInput.value = '';
+  if (searchLiveResults) searchLiveResults.innerHTML = '';
+  if (searchSuggestions) searchSuggestions.style.display = '';
+  if (searchMessage) searchMessage.textContent = 'Pesquise entre os artigos ou escolha um tema sugerido acima.';
   document.querySelectorAll('.searchable').forEach((item) => (item.hidden = false));
+}
+
+function executeLiveSearch(query) {
+  const term = query.trim().toLowerCase();
+  if (!term) {
+    if (searchLiveResults) searchLiveResults.innerHTML = '';
+    if (searchSuggestions) searchSuggestions.style.display = '';
+    if (searchMessage) searchMessage.textContent = 'Pesquise entre os artigos ou escolha um tema sugerido acima.';
+    return;
+  }
+
+  if (searchSuggestions) searchSuggestions.style.display = 'none';
+
+  const matches = articles.filter((a) =>
+    `${a.title} ${a.category} ${a.description}`.toLowerCase().includes(term)
+  );
+
+  if (searchMessage) {
+    searchMessage.textContent = matches.length > 0
+      ? `${matches.length} artigo(s) encontrado(s):`
+      : `Nenhum artigo encontrado para "${query}". Tente termos como 'polvo', 'universo' ou 'ciência'.`;
+  }
+
+  if (searchLiveResults) {
+    if (matches.length > 0) {
+      searchLiveResults.innerHTML = matches.slice(0, 6).map((a) => `
+        <a class="search-result-card" href="${a.link}">
+          <img src="${a.image}" alt="${a.title}" loading="lazy" />
+          <div class="search-result-info">
+            <span class="search-result-category">${a.category} • ${a.readingTime}</span>
+            <div class="search-result-title">${a.title}</div>
+          </div>
+          <span class="search-result-arrow">→</span>
+        </a>
+      `).join('');
+    } else {
+      searchLiveResults.innerHTML = '';
+    }
+  }
 }
 
 if (searchTrigger && searchPanel) {
@@ -746,7 +797,10 @@ if (searchTrigger && searchPanel) {
     searchPanel.setAttribute('aria-hidden', 'false');
     searchTrigger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('search-open');
-    if (searchInput) searchInput.focus();
+    if (searchInput) {
+      searchInput.focus();
+      if (!searchInput.value.trim() && searchLiveResults) searchLiveResults.innerHTML = '';
+    }
   });
 }
 
@@ -754,33 +808,91 @@ if (searchClose) {
   searchClose.addEventListener('click', closeSearch);
 }
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    closeSearch();
-    closeMobileDrawer();
-  }
+// Chips de recomendação e busca rápida
+document.querySelectorAll('.search-chip').forEach((chip) => {
+  chip.addEventListener('click', () => {
+    const q = chip.dataset.query || chip.textContent.replace(/^[^\w]+/, '').trim();
+    if (searchInput) {
+      searchInput.value = q;
+      searchInput.focus();
+      executeLiveSearch(q);
+    }
+  });
 });
 
 if (searchInput) {
   searchInput.addEventListener('input', () => {
-    const term = searchInput.value.trim().toLowerCase();
-    const searchableItems = [...document.querySelectorAll('.searchable')];
-    if (searchableItems.length > 0) {
-      searchableItems.forEach((item) => {
-        const text = (item.dataset.search || item.textContent || '').toLowerCase();
-        item.hidden = term && !text.includes(term);
-      });
-    }
-    if (searchMessage) {
-      const matchCount = articles.filter((a) =>
-        `${a.title} ${a.category} ${a.description}`.toLowerCase().includes(term)
-      ).length;
-      searchMessage.textContent = term
-        ? `${matchCount} resultado(s) encontrado(s). Feche a busca para ver os cards.`
-        : 'Pesquise entre os artigos e curiosidades.';
-    }
+    executeLiveSearch(searchInput.value);
   });
 }
+
+// Modais de Rodapé (Contato e Privacidade)
+const contactBtn = document.querySelector('#footer-contact-btn');
+const privacyBtn = document.querySelector('#footer-privacy-btn');
+const contactModal = document.querySelector('#contact-modal');
+const privacyModal = document.querySelector('#privacy-modal');
+
+function openModal(modal) {
+  if (!modal) return;
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeModal(modal) {
+  if (!modal) return;
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+if (contactBtn && contactModal) {
+  contactBtn.addEventListener('click', () => openModal(contactModal));
+}
+if (privacyBtn && privacyModal) {
+  privacyBtn.addEventListener('click', () => openModal(privacyModal));
+}
+
+document.querySelectorAll('[data-close-modal]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.closeModal;
+    const modal = document.getElementById(targetId);
+    closeModal(modal);
+  });
+});
+
+document.querySelectorAll('.modal-overlay').forEach((overlay) => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      closeModal(overlay);
+    }
+  });
+});
+
+// Copiar e-mail no modal de contato com 1 clique
+const copyEmailBtn = document.querySelector('#copy-email-action');
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText('contato@curiosidadesincriveis.com').then(() => {
+      const originalText = copyEmailBtn.textContent;
+      copyEmailBtn.textContent = 'Copiado! ✓';
+      copyEmailBtn.style.background = '#4ade80';
+      copyEmailBtn.style.color = '#0b1020';
+      setTimeout(() => {
+        copyEmailBtn.textContent = originalText;
+        copyEmailBtn.style.background = '';
+        copyEmailBtn.style.color = '';
+      }, 2500);
+    });
+  });
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeSearch();
+    closeMobileDrawer();
+    closeModal(contactModal);
+    closeModal(privacyModal);
+  }
+});
 
 // Filtro de categoria por URL em artigos.html (?categoria=xxx)
 const urlParams = new URLSearchParams(window.location.search);
