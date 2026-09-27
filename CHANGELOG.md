@@ -4,7 +4,22 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.1.0] - 2026-09-27 (Versão Atual)
+## [v3.1.1] - 2026-09-27 (Versão Atual)
+### ⚡ Filtro Instantâneo em Artigos (Sem Recarregamento de Página):
+- **Navegação Dinâmica no Catálogo:** Clicar nas categorias em `artigos.html` agora filtra instantaneamente os cards no próprio lugar em tempo real, sem recarregar a tela, sem salto para o topo e mantendo a URL atualizada via History API.
+
+### 📐 Hero & Decoração de Interrogação [?] no Catálogo:
+- **Alinhamento Lateral no PC:** Restaurado o alinhamento lado a lado (`flex-direction: row; justify-content: space-between;`) no desktop, mantendo o bloco com o ponto de interrogação `[?]` à direita do título principal.
+- **Mobile Preservado:** Mantido oculto no mobile (`display: none;`) para não ocupar espaço vertical excessivo no celular, conforme solicitado.
+
+### 🚀 Novos Recursos Não Invasivos Aprovados:
+- **Barra de Progresso de Leitura:** Indicador sutil de rolagem no topo da tela com gradiente cósmico (azul/ouro) para enriquecer a experiência de leitura.
+- **Selo de Autoridade Editorial:** Inclusão discreta de *"✦ Fatos Verificados"* no rodapé.
+- **Página 404 Personalizada Cósmica (`404.html`):** Tratamento de links inexistentes com tema espacial imersivo e botão para retorno ao início.
+
+---
+
+## [v3.1.0] - 2026-09-27
 ### 🔍 Buscador com Recomendações & Resultados ao Vivo:
 - **Chips de Sugestão:** Inclusão de tópicos em alta e tags temáticas diretas dentro do modal de pesquisa (Polvo, Universo, IA, Krakatoa, Ponto Nemo, Alexandria).
 - **Resultados Instantâneos na Busca:** Digitar exibe imediatamente os cards de artigos compatíveis com capa, categoria e link direto sem necessidade de fechar a busca.

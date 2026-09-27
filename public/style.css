@@ -1321,9 +1321,23 @@ h1 {
 
 .articles-hero .hero-content {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
+}
+
+/* Reading Progress Bar */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue), var(--yellow));
+  z-index: 99999;
+  transition: width 0.1s ease-out;
+  pointer-events: none;
 }
 
 .articles-hero .hero-content h1 {

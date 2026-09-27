@@ -894,26 +894,76 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-// Filtro de categoria por URL em artigos.html (?categoria=xxx)
-const urlParams = new URLSearchParams(window.location.search);
-const catParam = urlParams.get('categoria');
-if (catParam) {
-  const cards = document.querySelectorAll('.articles-grid .article-card, .searchable');
+// =========================================================
+// BARRA DE PROGRESSO DE LEITURA (READING PROGRESS BAR)
+// =========================================================
+(function initReadingProgressBar() {
+  const progressBar = document.createElement('div');
+  progressBar.className = 'reading-progress-bar';
+  progressBar.id = 'reading-progress-bar';
+  document.body.prepend(progressBar);
+
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight > 0) {
+      const progress = (window.scrollY / totalHeight) * 100;
+      progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    }
+  }, { passive: true });
+})();
+
+// =========================================================
+// FILTRO DINÂMICO DE CATEGORIAS EM ARTIGOS.HTML
+// =========================================================
+function filterArticlesPage(catSlug) {
+  const cards = document.querySelectorAll('.articles-grid .article-card, .featured-article');
   const pills = document.querySelectorAll('.category-bar .category-pill');
+
   pills.forEach((p) => {
-    if (p.getAttribute('href') && p.getAttribute('href').includes(catParam)) {
-      pills.forEach((pill) => pill.classList.remove('active'));
+    const href = p.getAttribute('href') || '';
+    if ((!catSlug && (href.endsWith('artigos.html') || href === '#')) || (catSlug && href.includes(`categoria=${catSlug}`))) {
       p.classList.add('active');
+    } else {
+      p.classList.remove('active');
     }
   });
+
   cards.forEach((card) => {
-    const cat = (card.dataset.category || card.querySelector('.card-category')?.textContent || '').toLowerCase();
-    if (cat.includes(catParam.toLowerCase())) {
+    const cat = (card.dataset.category || card.querySelector('.card-category')?.textContent || card.querySelector('.article-category')?.textContent || '').toLowerCase();
+    if (!catSlug || cat.includes(catSlug.toLowerCase())) {
       card.style.display = '';
     } else {
       card.style.display = 'none';
     }
   });
+}
+
+const categoryPills = document.querySelectorAll('.category-bar .category-pill');
+if (categoryPills.length > 0) {
+  categoryPills.forEach((pill) => {
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = pill.getAttribute('href') || '';
+      const match = href.match(/categoria=([^&]+)/);
+      const catSlug = match ? match[1] : '';
+
+      const newUrl = catSlug ? `artigos.html?categoria=${catSlug}` : 'artigos.html';
+      window.history.pushState({ category: catSlug }, '', newUrl);
+
+      filterArticlesPage(catSlug);
+    });
+  });
+
+  window.addEventListener('popstate', () => {
+    const urlP = new URLSearchParams(window.location.search);
+    filterArticlesPage(urlP.get('categoria') || '');
+  });
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+const catParam = urlParams.get('categoria');
+if (catParam) {
+  filterArticlesPage(catParam);
 }
 
 // =========================================================
