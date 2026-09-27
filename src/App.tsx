@@ -78,6 +78,13 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Open random article (Curiosidade Aleatória)
+  const handleSurprise = () => {
+    if (ARTICLES_DATA.length === 0) return;
+    const randomIndex = Math.floor(Math.random() * ARTICLES_DATA.length);
+    handleOpenArticle(ARTICLES_DATA[randomIndex]);
+  };
+
   // Share article link
   const handleCopyShareLink = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -361,7 +368,7 @@ export default function App() {
 
           <div className="drawer-section-title">Categorias</div>
           <div className="drawer-categories">
-            {categories.slice(1).map((cat) => (
+            {CATEGORIES.slice(1).map((cat) => (
               <button
                 key={cat}
                 type="button"
@@ -373,13 +380,10 @@ export default function App() {
                 }}
               >
                 <span>
-                  {cat === 'Espaço' ? '🪐' :
+                  {cat === 'Animais' ? '🐾' :
                    cat === 'Ciência' ? '🔬' :
-                   cat === 'Natureza' ? '🌿' :
-                   cat === 'História' ? '📜' :
                    cat === 'Tecnologia' ? '💻' :
-                   cat === 'Mente Humana' ? '🧠' :
-                   cat === 'Animais' ? '🐾' :
+                   cat === 'História' ? '📜' :
                    cat === 'Mundo' ? '🌍' : '✨'}
                 </span>{' '}
                 {cat}
@@ -1132,7 +1136,16 @@ export default function App() {
             </a>
             <button
               type="button"
-              onClick={() => alert('Curiosidades Incríveis respeita sua privacidade.')}
+              onClick={() => {
+                const toast = document.createElement('div');
+                toast.textContent = 'Curiosidades Incríveis respeita a sua privacidade. Nenhum dado pessoal é comercializado.';
+                toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#111927;color:#fff;padding:12px 20px;border-radius:10px;border:1px solid #169eff;font-size:0.875rem;z-index:9999;box-shadow:0 10px 30px rgba(0,0,0,0.5);transition:opacity 0.3s;';
+                document.body.appendChild(toast);
+                setTimeout(() => {
+                  toast.style.opacity = '0';
+                  setTimeout(() => toast.remove(), 300);
+                }, 3500);
+              }}
             >
               Política de privacidade
             </button>

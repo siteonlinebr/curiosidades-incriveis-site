@@ -357,7 +357,7 @@ button {
   align-items: center;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  padding: 20px 0 24px;
+  padding: 38px 0 32px;
 }
 
 .hero-background {
@@ -388,13 +388,15 @@ button {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  max-width: 650px;
+  max-width: 1180px;
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
   position: relative;
   z-index: 2;
-  width: 100%;
+  box-sizing: border-box;
 }
 
 .eyebrow,
@@ -402,7 +404,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   padding: 0;
   color: var(--blue) !important;
   font-size: 0.68rem;
@@ -439,7 +441,7 @@ h1, h2, h3 {
 
 h1 {
   max-width: 640px;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   padding: 0;
   font-size: clamp(1.6rem, 3.1vw, 2.5rem);
   line-height: 1.08;
@@ -451,7 +453,7 @@ h1 {
 
 .hero-copy {
   max-width: 480px;
-  margin: 0 0 16px 0;
+  margin: 0 0 14px 0;
   padding: 0;
   color: #d6deed;
   font-size: 0.88rem;
@@ -505,8 +507,8 @@ h1 {
 
 .hero-stat {
   position: absolute;
-  right: max(24px, calc((100% - 1180px) / 2));
-  bottom: 24px;
+  right: 0;
+  bottom: 0;
   display: inline-flex;
   gap: 13px;
   align-items: center;
@@ -526,7 +528,7 @@ h1 {
 @media (max-width: 900px) {
   .hero-stat {
     position: static;
-    margin-top: 24px;
+    margin-top: 18px;
     align-self: flex-start;
   }
 }
@@ -1627,9 +1629,44 @@ h1 {
   }
 }
 
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding: 34px 0 24px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    line-height: 1.1;
+  }
+
+  .hero-stat {
+    position: static;
+    margin-top: 18px;
+    align-self: flex-start;
+    display: inline-flex;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+}
+
 @media (max-width: 700px) {
   .container {
-    width: min(100% - 32px, 1180px);
+    width: min(100% - 34px, 1180px);
+  }
+
+  .hero-content {
+    width: min(100% - 34px, 1180px);
+    margin-inline: auto;
   }
 
   .header-inner {
@@ -1638,7 +1675,7 @@ h1 {
 
   .hero {
     min-height: auto;
-    padding: 24px 0 20px;
+    padding: 30px 0 20px;
     align-items: flex-start;
   }
 
