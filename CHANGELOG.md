@@ -4,7 +4,23 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.2.0] - 2026-09-27 (Versão Atual)
+## [v3.3.0] - 2026-09-28 (Versão Atual)
+### 🐾 Segundo Artigo Editorial Integrado ao Instagram (Interação Animal & Etologia):
+- **Novo Artigo Publicado:** *"Eles Sentem o Que Sentimos? A ciência real por trás dos animais que se aproximam de nós"* (`artigos/animais-humanos-aproximacao.html`).
+- **Categoria:** Animais (`animais`).
+- **Tempo de Leitura:** 5 min de leitura (Nível 2 — Médio).
+- **Arte Original:** Ilustração de alta fidelidade cinematográfica retratando o encontro pacífico entre mergulhador e leão-marinho em águas cristalinas (`images/artigo-animais-humanos.jpg`).
+- **Precisão Etológica & Estrutura de Retenção:**
+  - Desmistificação do antropomorfismo com respeito à riqueza emocional e cognitiva animal.
+  - Explicação do fenômeno de *mud-puddling* (busca de sais minerais no suor por certos insetos) sem generalizações indevidas.
+  - Abordagem cuidadosa sobre a neofilia e o comportamento lúdico em mamíferos inteligentes (pinípedes, golfinhos).
+  - Distinção didática crucial entre habituação pacífica e condicionamento alimentar de risco.
+  - Inclusão dos blocos interativos (💡 Puddling e Sais Minerais e ✨ Regra do Polegar na Conservação).
+- **Indexação & Catálogo:** Artigo adicionado ao sitemap (`sitemap.xml`), buscador ao vivo, filtro dinâmico de Animais e catálogo de `artigos.html`.
+
+---
+
+## [v3.2.0] - 2026-09-27
 ### 🦖 Primeiro Artigo do Canal Editorial Integrado ao Instagram:
 - **Novo Artigo Publicado:** *"Os Dinossauros Não Foram Extintos: Como as aves modernas guardam o legado dos gigantes pré-históricos"* (`artigos/dinossauros-aves-evolucao.html`).
 - **Categoria:** Ciência (`ciencia`).

@@ -33,6 +33,20 @@ const articles = [
     "quickFact": false
   },
   {
+    "id": "animais-humanos-aproximacao",
+    "title": "Eles Sentem o Que Sentimos? A ciência real por trás dos animais que se aproximam de nós",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "5 min de leitura",
+    "description": "Descubra o que a etologia e a biologia comportamental revelam sobre encontros com animais: entre a curiosidade natural, a busca por recursos e os limites da convivência.",
+    "image": "images/artigo-animais-humanos.jpg",
+    "link": "artigos/animais-humanos-aproximacao.html",
+    "featured": true,
+    "recent": true,
+    "popular": false,
+    "quickFact": false
+  },
+  {
     "id": "corvos-inteligencia",
     "title": "A Inteligência dos Corvos: Eles Guardam Rancor e Planejam o Futuro",
     "category": "Animais",
