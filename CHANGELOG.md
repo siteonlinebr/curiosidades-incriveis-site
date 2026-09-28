@@ -4,7 +4,24 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.1.1] - 2026-09-27 (Versão Atual)
+## [v3.2.0] - 2026-09-27 (Versão Atual)
+### 🦖 Primeiro Artigo do Canal Editorial Integrado ao Instagram:
+- **Novo Artigo Publicado:** *"Os Dinossauros Não Foram Extintos: Como as aves modernas guardam o legado dos gigantes pré-históricos"* (`artigos/dinossauros-aves-evolucao.html`).
+- **Categoria:** Ciência (`ciencia`).
+- **Arte Original:** Ilustração de alta fidelidade cinematográfica retratando o paralelo evolutivo entre dinossauros terópodes e aves modernas (`images/artigo-dinossauros-aves.jpg`).
+- **Rigor Científico Calibrado & Revisão Fina:**
+  - Inclusão prudente sobre o impacto K-Pg (poeira, fuligem, aerossóis de enxofre e debate sobre extensão dos incêndios).
+  - Sobrevivência das aves tratada com multiplicidade de fatores (tamanho, dieta generalista e hipótese das sementes).
+  - Evolução convergente focada na busca por folhagens altas, contextualizando hipóteses secundárias.
+  - Contextualização do estudo do moa (2012) para a meia-vida do DNA, evitando afirmações absolutas.
+  - Distinção precisa entre as penas aerodinâmicas do *Microraptor* e as penas simétricas não voadoras do *Caudipteryx*.
+  - Uso de termos anatômicos corretos (homologia de membros posteriores em vez de "idênticos").
+  - Calibração temporal dos estudos de colágeno fóssil de *T. rex* (2007-2008) como evidência complementar à osteologia.
+- **Indexação & Catálogo:** Artigo integrado ao buscador em tempo real, grid da categoria Ciência, listagem de artigos e mapeado no `sitemap.xml`.
+
+---
+
+## [v3.1.1] - 2026-09-27
 ### ⚡ Filtro Instantâneo em Artigos (Sem Recarregamento de Página):
 - **Navegação Dinâmica no Catálogo:** Clicar nas categorias em `artigos.html` agora filtra instantaneamente os cards no próprio lugar em tempo real, sem recarregar a tela, sem salto para o topo e mantendo a URL atualizada via History API.
 

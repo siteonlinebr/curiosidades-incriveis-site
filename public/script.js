@@ -75,6 +75,20 @@ const articles = [
     "quickFact": true
   },
   {
+    "id": "dinossauros-aves-evolucao",
+    "title": "Os Dinossauros Não Foram Extintos: Como as aves modernas guardam o legado dos gigantes pré-históricos",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "6 min de leitura",
+    "description": "A fascinante biologia evolutiva: como uma linhagem de terópodes sobreviveu ao cataclismo de 66 milhões de anos atrás e deu origem a todas as aves modernas.",
+    "image": "images/artigo-dinossauros-aves.jpg",
+    "link": "artigos/dinossauros-aves-evolucao.html",
+    "featured": true,
+    "recent": true,
+    "popular": false,
+    "quickFact": false
+  },
+  {
     "id": "exemplo-artigo",
     "title": "O Mistério das Profundezas: Criaturas que Desafiam a Biologia",
     "category": "Ciência",
