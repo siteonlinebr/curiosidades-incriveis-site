@@ -594,11 +594,71 @@ themeToggles.forEach((btn) => {
 });
 
 // =========================================================
-// TICKER DINÂMICO "VOCÊ SABIA?"
+// TICKER DINÂMICO "VOCÊ SABIA?" (COM TOOLTIP DESKTOP E BOTTOM SHEET MOBILE)
 // =========================================================
+const tickerBar = document.querySelector('.ticker-bar');
 const tickerContent = document.querySelector('#ticker-content');
 const tickerNext = document.querySelector('#ticker-next');
 let currentTickerIndex = 0;
+
+// Elementos interativos dinâmicos (Tooltip no desktop e Bottom Sheet no mobile)
+let tickerTooltipEl = null;
+let tickerSheetOverlay = null;
+
+if (tickerBar) {
+  // Cria Tooltip Desktop
+  tickerTooltipEl = document.createElement('div');
+  tickerTooltipEl.className = 'ticker-tooltip';
+  tickerTooltipEl.setAttribute('role', 'tooltip');
+  tickerBar.appendChild(tickerTooltipEl);
+
+  // Cria Bottom Sheet Mobile
+  tickerSheetOverlay = document.createElement('div');
+  tickerSheetOverlay.className = 'ticker-sheet-overlay';
+  tickerSheetOverlay.innerHTML = `
+    <div class="ticker-bottom-sheet" role="dialog" aria-modal="true">
+      <div class="ticker-sheet-handle"></div>
+      <div class="ticker-sheet-header">
+        <span class="ticker-sheet-badge" id="sheet-category">💡 VOCÊ SABIA?</span>
+        <button type="button" class="ticker-sheet-close" id="sheet-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="ticker-sheet-text" id="sheet-text"></div>
+      <div class="ticker-sheet-action">
+        <a class="button button-primary" id="sheet-link" href="#">Ler matéria completa →</a>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(tickerSheetOverlay);
+
+  // Fecha Bottom Sheet ao clicar no fundo ou no botão fechar
+  tickerSheetOverlay.addEventListener('click', (e) => {
+    if (e.target === tickerSheetOverlay || e.target.closest('#sheet-close')) {
+      tickerSheetOverlay.classList.remove('is-open');
+    }
+  });
+}
+
+function updateTickerFullView(item) {
+  if (tickerTooltipEl) {
+    tickerTooltipEl.innerHTML = `
+      <div class="ticker-tooltip-header">
+        <span>${item.icon} ${item.category} • Fato Completo</span>
+        <span>💡 Toque ou clique</span>
+      </div>
+      <div class="ticker-tooltip-body">${item.fact}</div>
+      <a class="ticker-tooltip-link" href="${item.articleLink}">Ler artigo sobre ${item.category} →</a>
+    `;
+  }
+
+  if (tickerSheetOverlay) {
+    const sheetCat = tickerSheetOverlay.querySelector('#sheet-category');
+    const sheetText = tickerSheetOverlay.querySelector('#sheet-text');
+    const sheetLink = tickerSheetOverlay.querySelector('#sheet-link');
+    if (sheetCat) sheetCat.innerHTML = `${item.icon} ${item.category} • Você Sabia?`;
+    if (sheetText) sheetText.textContent = item.fact;
+    if (sheetLink) sheetLink.href = item.articleLink;
+  }
+}
 
 function showTickerFact(index) {
   if (!tickerContent) return;
@@ -606,7 +666,9 @@ function showTickerFact(index) {
   tickerContent.style.opacity = '0';
   setTimeout(() => {
     tickerContent.innerHTML = `<span>${item.icon} <strong>${item.category}:</strong> ${item.fact}</span>`;
+    tickerContent.setAttribute('title', 'Clique para ver o fato completo');
     tickerContent.style.opacity = '1';
+    updateTickerFullView(item);
   }, 200);
 }
 
@@ -616,10 +678,34 @@ if (tickerContent) {
     currentTickerIndex = (currentTickerIndex + 1) % curiosities.length;
     showTickerFact(currentTickerIndex);
   }, 9000);
+
+  // Desktop Hover: abre e fecha tooltip
+  tickerContent.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768 && tickerTooltipEl) {
+      tickerTooltipEl.classList.add('is-active');
+    }
+  });
+
+  tickerBar?.addEventListener('mouseleave', () => {
+    if (tickerTooltipEl) {
+      tickerTooltipEl.classList.remove('is-active');
+    }
+  });
+
+  // Mobile / Click: abre folha rápida no rodapé
+  tickerContent.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      tickerSheetOverlay?.classList.add('is-open');
+    } else {
+      // No desktop, clique também alterna o tooltip
+      tickerTooltipEl?.classList.toggle('is-active');
+    }
+  });
 }
 
 if (tickerNext) {
-  tickerNext.addEventListener('click', () => {
+  tickerNext.addEventListener('click', (e) => {
+    e.stopPropagation();
     currentTickerIndex = (currentTickerIndex + 1) % curiosities.length;
     showTickerFact(currentTickerIndex);
   });

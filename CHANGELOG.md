@@ -4,7 +4,15 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.3] - 2026-09-28 (Versão Atual)
+## [v3.3.4] - 2026-09-29 (Versão Atual)
+### 💡 Ticker "Você Sabia?" Aprimorado (Tooltip Desktop & Bottom Sheet Mobile):
+- **Desktop (Mouse Hover):** Ao passar o mouse sobre qualquer fato na fita "Você Sabia?", surge um balão flutuante suave (*tooltip card*) centralizado com borda cósmica azul, exibindo o fato integral sem nenhum corte e com o link de acesso direto à matéria correspondente.
+- **Mobile (Toque Interativo):** No celular, tocar no fato abre uma folha de rodapé instantânea (*bottom sheet*) moderna e deslizante, com alça de arraste, categoria, texto completo e botão de leitura direta. Permite ler o fato na íntegra sem deformar ou empurrar o layout do Hero.
+- **Transparência de Layout:** A fita permanece enxuta em 1 única linha no Hero, preservando a harmonia visual da página inicial.
+
+---
+
+## [v3.3.3] - 2026-09-28
 ### 🐛 Correção Responsiva no Destaque de `artigos.html`:
 - **Eliminação de Limite Rígido de Altura:** Removido o `max-height: 420px;` e `overflow: hidden;` que causava o corte abrupto do título e da descrição do artigo principal.
 - **Tipografia Fluida e Padding Proporcional:** Ajustado o título para `clamp(1.65rem, 2.5vw, 2.45rem)` com padding dinâmico e flexibilidade natural. Agora o texto, subtítulo, meta e botão de leitura são exibidos 100% íntegros e legíveis no Desktop, Tablet e Mobile.
