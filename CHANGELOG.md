@@ -4,7 +4,30 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.0] - 2026-09-28 (Versão Atual)
+## [v3.3.3] - 2026-09-28 (Versão Atual)
+### 🐛 Correção Responsiva no Destaque de `artigos.html`:
+- **Eliminação de Limite Rígido de Altura:** Removido o `max-height: 420px;` e `overflow: hidden;` que causava o corte abrupto do título e da descrição do artigo principal.
+- **Tipografia Fluida e Padding Proporcional:** Ajustado o título para `clamp(1.65rem, 2.5vw, 2.45rem)` com padding dinâmico e flexibilidade natural. Agora o texto, subtítulo, meta e botão de leitura são exibidos 100% íntegros e legíveis no Desktop, Tablet e Mobile.
+
+---
+
+## [v3.3.2] - 2026-09-28
+### 🚀 Melhorias de Usabilidade, Contador & Catálogo:
+- **Botão Inteligente "Voltar ao Topo" (Scroll to Top):** Botão flutuante suave circular adicionado nas páginas de leitura e catálogo de artigos (`artigos.html` e matérias internas). O botão permanece invisível na Home e só surge após rolagem substancial (>420px), com retorno suave animado.
+- **Card de Destaque Calibrado no Desktop (`artigos.html`):** Altura do artigo principal *"O universo está cheio de coisas que parecem impossíveis"* reduzida em ~18% (de 460px para 380px), permitindo visualizar a grade de matérias logo abaixo com muito menos rolagem de mouse.
+- **Contador do Instagram Atualizado (+59.000):** Base ajustada para 59.000 seguidores com frequência de pulso mais ágil (intervalos de 4 a 9 segundos), acompanhando o ritmo do perfil.
+- **Emojis Universais no "Você Sabia?":** Substituição de glifos Unicode recentes que causavam quadrados em alguns celulares antigos (água-viva por onda marinha `🌊` e capacete por escudo `🛡️`), garantindo 100% de compatibilidade em qualquer dispositivo.
+
+---
+
+## [v3.3.1] - 2026-09-28
+### 🐛 Correção de Layout Mobile no Modal de Contato:
+- **Card de E-mail Responsivo:** Ajustada a regra `.contact-card-box` com `flex-wrap: wrap;` e quebra de palavras segura (`word-break: break-all;`) no endereço de e-mail. Agora o botão *"📋 Copiar e-mail"* nunca mais transborda para fora da tela no celular, acomodando-se perfeitamente dentro do cartão.
+- **E-mail Oficial Atualizado:** Substituído o endereço temporário pelo e-mail definitivo oficial: `contatocuriosidadesincriveis6@gmail.com` em todos os modais, rodapés e rotinas de cópia de 1 clique.
+
+---
+
+## [v3.3.0] - 2026-09-28
 ### 🐾 Segundo Artigo Editorial Integrado ao Instagram (Interação Animal & Etologia):
 - **Novo Artigo Publicado:** *"Eles Sentem o Que Sentimos? A ciência real por trás dos animais que se aproximam de nós"* (`artigos/animais-humanos-aproximacao.html`).
 - **Categoria:** Animais (`animais`).

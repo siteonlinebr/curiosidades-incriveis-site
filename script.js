@@ -406,7 +406,7 @@ const curiosities = [
   },
   {
     "category": "Animais",
-    "icon": "🪼",
+    "icon": "🌊",
     "fact": "A água-viva Turritopsis dohrnii é biologicamente imortal: quando fica doente ou idosa, reverte suas células e volta a ser um filhote para recomeçar o ciclo da vida.",
     "articleLink": "artigos/animal-imortal-agua-viva.html"
   },
@@ -454,7 +454,7 @@ const curiosities = [
   },
   {
     "category": "História",
-    "icon": "🪖",
+    "icon": "🛡️",
     "fact": "Em 1932, a Austrália mobilizou soldados com metralhadoras contra 20 mil emus e perdeu a batalha após as aves adotarem táticas de fuga em velocidade.",
     "articleLink": "artigos/guerra-dos-emus.html"
   },
@@ -899,7 +899,7 @@ document.querySelectorAll('.modal-overlay').forEach((overlay) => {
 const copyEmailBtn = document.querySelector('#copy-email-action');
 if (copyEmailBtn) {
   copyEmailBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText('contato@curiosidadesincriveis.com').then(() => {
+    navigator.clipboard.writeText('contatocuriosidadesincriveis6@gmail.com').then(() => {
       const originalText = copyEmailBtn.textContent;
       copyEmailBtn.textContent = 'Copiado! ✓';
       copyEmailBtn.style.background = '#4ade80';
@@ -938,6 +938,52 @@ document.addEventListener('keydown', (event) => {
       progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
     }
   }, { passive: true });
+})();
+
+// =========================================================
+// BOTÃO VOLTAR AO TOPO (SCROLL TO TOP SUAVE)
+// =========================================================
+(function initScrollToTop() {
+  // Condição solicitada: NÃO ativar na index.html / Home
+  const path = window.location.pathname;
+  const isHome = path === '/' || path.endsWith('/index.html') || (!path.includes('artigos') && !path.includes('.html'));
+  if (isHome) return;
+
+  // Condição solicitada: apenas para páginas com conteúdo substancial (artigos longos ou listagem extensa)
+  const isArticleOrCatalog = document.querySelector('.article-body-container') || document.querySelector('.articles-grid');
+  if (!isArticleOrCatalog) return;
+
+  const btn = document.createElement('button');
+  btn.className = 'scroll-top-btn';
+  btn.id = 'scroll-top-btn';
+  btn.setAttribute('type', 'button');
+  btn.setAttribute('aria-label', 'Voltar ao topo');
+  btn.setAttribute('title', 'Voltar ao início da página');
+  btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>`;
+  document.body.appendChild(btn);
+
+  let isVisible = false;
+  window.addEventListener('scroll', () => {
+    // Só aparece depois que o usuário desce substancialmente (pelo menos 420px de rolagem)
+    if (window.scrollY > 420) {
+      if (!isVisible) {
+        btn.classList.add('is-visible');
+        isVisible = true;
+      }
+    } else {
+      if (isVisible) {
+        btn.classList.remove('is-visible');
+        isVisible = false;
+      }
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 })();
 
 // =========================================================
@@ -1002,16 +1048,16 @@ if (catParam) {
   if (!counterEl) return;
 
   // Número base atual de seguidores (fácil de editar quando a página atingir novas marcas!)
-  const BASE_FOLLOWERS = 56200;
+  const BASE_FOLLOWERS = 59000;
   
   // Variação orgânica sutil baseada no tempo do dia (simulação de pulso contínuo)
   const now = new Date();
   const dayMinutes = now.getHours() * 60 + now.getMinutes();
-  const organicVariation = Math.floor(dayMinutes / 8); // cresce com dinamismo ao longo do dia
+  const organicVariation = Math.floor(dayMinutes / 6); // ritmo de crescimento mais dinâmico
   const targetCount = BASE_FOLLOWERS + organicVariation;
 
-  let currentCount = Math.max(0, targetCount - 100); // começa ligeiramente abaixo para a animação
-  const duration = 1200; // 1.2 segundos de animação inicial rápida
+  let currentCount = Math.max(0, targetCount - 80); // começa ligeiramente abaixo para a animação
+  const duration = 900; // animação inicial mais ágil
   const startTime = performance.now();
 
   function formatNumber(num) {
@@ -1034,7 +1080,7 @@ if (catParam) {
       requestAnimationFrame(updateCounter);
     } else {
       counterEl.textContent = formatNumber(targetCount);
-      // Pulso orgânico mais ativo a cada 12 a 20 segundos (comunidade crescendo)
+      // Pulso orgânico mais frequente (a cada 4 a 9 segundos) acompanhando o ritmo do Instagram
       setupOrganicTick(targetCount);
     }
   }
@@ -1042,7 +1088,7 @@ if (catParam) {
   function setupOrganicTick(count) {
     let runningCount = count;
     function scheduleNext() {
-      const delay = Math.floor(Math.random() * (20000 - 12000)) + 12000;
+      const delay = Math.floor(Math.random() * (9000 - 4000)) + 4000;
       setTimeout(() => {
         runningCount += 1;
         if (counterEl) {
