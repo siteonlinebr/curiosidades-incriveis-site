@@ -344,10 +344,9 @@ button {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.instagram-button:hover,
-.instagram-link:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 134, 20, 0.25);
+.header-actions .instagram-button,
+.header-actions .instagram-link {
+  display: none !important;
 }
 
 .menu-toggle,
@@ -2677,52 +2676,202 @@ body.drawer-open {
 }
 
 /* =========================================================
-   BOTÃO VOLTAR AO TOPO (SCROLL TO TOP SUAVE)
+   CÁPSULA LATERAL FLUTUANTE DE REDES SOCIAIS (STICKY PILL)
    ========================================================= */
-.scroll-top-btn {
+.floating-social-pill {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(11, 23, 44, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: var(--yellow);
+  right: 22px;
+  top: 340px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(11, 19, 36, 0.78);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 12px 10px 18px;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.6), 0 0 24px rgba(22, 158, 255, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(80px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+}
+
+[data-theme="light"] .floating-social-pill {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+}
+
+.floating-social-pill.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0) !important;
+}
+
+.floating-social-badge {
+  background: #000000;
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 10px 6px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  user-select: none;
+}
+
+[data-theme="light"] .floating-social-badge {
+  background: #050810;
+  color: #ffffff;
+}
+
+.floating-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.floating-social-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 990;
+}
+
+.floating-social-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: transparent;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.floating-social-btn svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.floating-social-btn:hover {
+  transform: scale(1.18);
+  color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 16%, transparent);
+}
+
+/* Tooltip lateral ao passar o mouse (apenas Desktop) */
+.floating-social-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: var(--surface-raised);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(12px) scale(0.9);
-  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s, border-color 0.2s, background 0.2s;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 10000;
 }
 
-.scroll-top-btn.is-visible {
+.floating-social-item:hover .floating-social-tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0) scale(1);
+  transform: translateY(-50%) translateX(0);
 }
 
-.scroll-top-btn:hover {
-  background: var(--blue);
-  color: #fff;
-  border-color: var(--blue);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(22, 158, 255, 0.35);
+/* =========================================================
+   RESPONSIVIDADE: TABLET (max-width: 950px)
+   ========================================================= */
+@media (max-width: 950px) {
+  .floating-social-pill {
+    right: 14px;
+    top: 290px;
+    padding: 8px 6px 12px;
+    transform: translateX(70px) scale(0.92);
+  }
+
+  .floating-social-pill.is-visible {
+    transform: translateX(0) scale(0.92) !important;
+  }
+
+  .floating-social-badge {
+    font-size: 0.62rem;
+    padding: 8px 4px;
+    margin-bottom: 10px;
+  }
+
+  .floating-social-links {
+    gap: 12px;
+  }
+
+  .floating-social-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .floating-social-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
-.scroll-top-btn svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  stroke-width: 2.4;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* =========================================================
+   RESPONSIVIDADE: CELULAR (max-width: 600px)
+   ========================================================= */
+@media (max-width: 600px) {
+  .floating-social-pill {
+    right: 8px;
+    top: 240px;
+    padding: 6px 4px 10px;
+    transform: translateX(60px) scale(0.84);
+  }
+
+  .floating-social-pill.is-visible {
+    transform: translateX(0) scale(0.84) !important;
+  }
+
+  .floating-social-badge {
+    font-size: 0.55rem;
+    padding: 6px 3px;
+    margin-bottom: 8px;
+  }
+
+  .floating-social-links {
+    gap: 10px;
+  }
+
+  .floating-social-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .floating-social-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .floating-social-tooltip {
+    display: none !important;
+  }
 }
+

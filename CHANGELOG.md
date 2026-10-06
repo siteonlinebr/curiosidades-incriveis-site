@@ -4,7 +4,50 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.4] - 2026-09-29 (Versão Atual)
+## [v3.3.9] - 2026-10-05 (Versão Atual)
+### 💎 Pílula de Redes Sociais com Presença Reforçada e Blur Cósmico Intenso:
+- **Tamanho Ampliado no Desktop (PC):** Botões expandidos para `46px` com ícones nítidos de `23px` e badge de `"SEGUIR"` alongada (`10px 6px`), conferindo um visual sofisticado e marcante.
+- **Posição Rebaixada nos 3 Modos:** Altura ajustada para `top: 340px` no desktop, `top: 290px` no tablet e `top: 240px` no celular, encaixando-se naturalmente na área central-lateral de leitura.
+- **Blur Mais Forte e Vidro Translúcido:** Backdrop blur elevado para **`32px`** com opacidade calibrada (`rgba(11, 19, 36, 0.78)` no dark e `rgba(255, 255, 255, 0.85)` no light) em todos os dispositivos.
+- **Integridade Mobile e Tablet Preservada:** Dimensões originais intocadas para celulares e tablets, garantindo leveza e conforto sem obstrução visual.
+
+---
+
+## [v3.3.8] - 2026-10-05
+### 🎯 Calibração de Posição & Gatilho de 30% na Cápsula de Redes Sociais:
+- **Posição Rebaixada e Equilibrada:** A cápsula foi descida na lateral para `top: 260px` no desktop, `top: 220px` no tablet e `top: 180px` no mobile, ficando em perfeita harmonia com o fluxo de leitura dos artigos.
+- **Atraso de Rolagem de 30%:** O gatilho de exibição agora aguarda o usuário rolar aproximadamente 30% da página (mínimo de 450px), garantindo que ela não apareça imediatamente no topo e surja somente quando o visitante já está engajado com o conteúdo.
+
+---
+
+## [v3.3.7] - 2026-10-05
+### 🚀 Implementação Exclusiva da Cápsula Lateral Flutuante de Redes Sociais:
+- **Posição no Topo da Lateral Direita:** Fixada no canto direito superior (`top: 140px; right: 20px;`), iniciando exatamente onde a leitura começa, sem descer para o meio da tela.
+- **Acabamento Visual Imponente no Desktop:** Cápsula espaçosa com vidro escuro cósmico, blur aprimorado (`24px`), borda translúcida e tag vertical *"SEGUIR"*, acompanhada de tooltips no hover para Facebook e Instagram.
+- **Suporte Total a Tablet & Celular:** Ajuste responsivo calibrado (escala 0.92 em tablets e 0.84 em celulares), com padding compacto encostado na borda direita.
+- **Detecção de Rolagem Universal:** Disparo a partir de 280px de rolagem ouvindo eventos de `scroll` e `touchmove` tanto no `window` quanto no `document`, garantindo ativação imediata e consistente em qualquer aparelho.
+
+---
+
+## [v3.3.6] - 2026-10-05
+### 🧹 Limpeza de Elementos Flutuantes & Navbar Enxuta:
+- **Remoção Completa de Elementos Flutuantes:** Removidos do código JavaScript e CSS tanto o botão *"Voltar ao Topo"* quanto a cápsula lateral flutuante de redes sociais (*floating-social-pill*), eliminando qualquer divergência ou bug de rolagem em celulares, tablets e computadores.
+- **Navbar Desafogada Mantida:** O cabeçalho superior permanece sem o botão do Instagram, mantendo a logo, menu, busca e botão de alternância de tema limpos e bem distribuídos.
+
+---
+
+## [v3.3.5] - 2026-10-05
+### 🚀 Navbar Desafogada & Cápsula Lateral Flutuante de Redes Sociais:
+- **Navbar Desafogada:** Remoção do botão de Instagram no cabeçalho superior (`.header-actions`), liberando espaço visual limpo para o menu, busca e alternador de tema. O acesso ao Instagram no drawer mobile e no rodapé permanece intacto.
+- **Cápsula Flutuante de Redes Sociais (`floating-social-pill`):** Nova barra lateral flutuante em formato de pílula vertical no canto direito inspirada no padrão editorial do *Fatos Desconhecidos*, contendo a tag vertical *"SEGUIR"* e os ícones minimalistas de **Facebook** e **Instagram**.
+- **Gatilho de Rolagem Inteligente:** A cápsula lateral surge suavemente somente após uma rolagem substancial (~30% da página ou 480px), não invadindo o primeiro contato do visitante com o topo do site.
+- **Micro-interações de Hover no Desktop:** Ao passar o mouse sobre cada ícone, surge um balão lateral suave com o nome da rede social (*Facebook* / *Instagram*).
+- **Adaptação Mobile Compacta:** No celular, a cápsula adota escala compacta (escala 0.85) encostada na borda para não sobrepor textos de leitura.
+- **Reorganização de Ações Flutuantes:** O botão *"Voltar ao Topo"* foi reposicionado discretamente no canto inferior esquerdo (`left: 24px`), evitando qualquer conflito com a cápsula lateral de redes sociais na direita.
+
+---
+
+## [v3.3.4] - 2026-09-29
 ### 💡 Ticker "Você Sabia?" Aprimorado (Tooltip Desktop & Bottom Sheet Mobile):
 - **Desktop (Mouse Hover):** Ao passar o mouse sobre qualquer fato na fita "Você Sabia?", surge um balão flutuante suave (*tooltip card*) centralizado com borda cósmica azul, exibindo o fato integral sem nenhum corte e com o link de acesso direto à matéria correspondente.
 - **Mobile (Toque Interativo):** No celular, tocar no fato abre uma folha de rodapé instantânea (*bottom sheet*) moderna e deslizante, com alça de arraste, categoria, texto completo e botão de leitura direta. Permite ler o fato na íntegra sem deformar ou empurrar o layout do Hero.
