@@ -1027,9 +1027,33 @@ document.addEventListener('keydown', (event) => {
 })();
 
 // =========================================================
-// CÁPSULA LATERAL FLUTUANTE DE REDES SOCIAIS (STICKY PILL)
+// CÁPSULA LATERAL FLUTUANTE DE REDES SOCIAIS & BOTÃO VOLTAR AO TOPO
 // =========================================================
-(function initFloatingSocialPill() {
+(function initFloatingInteractions() {
+  const path = window.location.pathname;
+  const isHome = path === '/' || path.endsWith('/index.html') || (!path.includes('artigos') && !path.includes('.html'));
+
+  // 1. Botão Voltar ao Topo: criado exclusivamente em páginas de catálogo e artigos (nunca no index.html)
+  let scrollTopBtn = null;
+  if (!isHome) {
+    scrollTopBtn = document.createElement('button');
+    scrollTopBtn.className = 'scroll-top-btn';
+    scrollTopBtn.id = 'scroll-top-btn';
+    scrollTopBtn.setAttribute('type', 'button');
+    scrollTopBtn.setAttribute('aria-label', 'Voltar ao topo');
+    scrollTopBtn.setAttribute('title', 'Voltar ao início da página');
+    scrollTopBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>`;
+    document.body.appendChild(scrollTopBtn);
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // 2. Cápsula Lateral Flutuante de Redes Sociais
   const pill = document.createElement('div');
   pill.className = 'floating-social-pill';
   pill.id = 'floating-social-pill';
@@ -1054,31 +1078,34 @@ document.addEventListener('keydown', (event) => {
   `;
   document.body.appendChild(pill);
 
-  let isPillVisible = false;
-  function updatePillVisibility() {
+  // 3. Sincronização Perfeita: ambos surgem EXATAMENTE ao mesmo tempo (~30% de rolagem)
+  let areElementsVisible = false;
+  function updateFloatingVisibility() {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    // Atraso solicitado: ativa após ~30% de rolagem da página (ou min 450px)
+    // Mesmíssimo gatilho de 30% da página (mínimo 450px)
     const threshold = totalHeight > 0 ? Math.max(totalHeight * 0.3, 450) : 450;
 
     if (scrollPos > threshold) {
-      if (!isPillVisible) {
+      if (!areElementsVisible) {
         pill.classList.add('is-visible');
-        isPillVisible = true;
+        if (scrollTopBtn) scrollTopBtn.classList.add('is-visible');
+        areElementsVisible = true;
       }
     } else {
-      if (isPillVisible) {
+      if (areElementsVisible) {
         pill.classList.remove('is-visible');
-        isPillVisible = false;
+        if (scrollTopBtn) scrollTopBtn.classList.remove('is-visible');
+        areElementsVisible = false;
       }
     }
   }
 
-  window.addEventListener('scroll', updatePillVisibility, { passive: true });
-  window.addEventListener('touchmove', updatePillVisibility, { passive: true });
-  document.addEventListener('scroll', updatePillVisibility, { passive: true });
-  updatePillVisibility();
+  window.addEventListener('scroll', updateFloatingVisibility, { passive: true });
+  window.addEventListener('touchmove', updateFloatingVisibility, { passive: true });
+  document.addEventListener('scroll', updateFloatingVisibility, { passive: true });
+  updateFloatingVisibility();
 })();
 
 // =========================================================

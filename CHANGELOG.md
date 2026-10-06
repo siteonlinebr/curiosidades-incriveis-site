@@ -4,7 +4,21 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.9] - 2026-10-05 (Versão Atual)
+## [v3.3.11] - 2026-10-05 (Versão Atual)
+### 🐛 Correção de Legibilidade no Botão "🎲 Surpreenda-me" (Navbar):
+- **Contraste de Hover no Menu:** Corrigida a regra de estilo `.nav-surprise-btn:hover` com prioridade explícita (`color: #030a16 !important;`). Anteriormente, a regra genérica de links `.main-nav a:hover` forçava a cor azul sobre o fundo azul, tornando o texto invisível ao passar o mouse. Agora o texto permanece nítido e perfeitamente legível em alto contraste.
+
+---
+
+## [v3.3.10] - 2026-10-05
+### 🚀 Botão "Voltar ao Topo" Sincronizado no Lado Esquerdo:
+- **Exclusivo para Páginas de Conteúdo:** O botão circular suave de voltar ao topo foi reimplementado exclusivamente no catálogo (`artigos.html`) e nos artigos internos (nunca na Home `index.html`).
+- **Posicionamento no Canto Esquerdo:** Fixado em `bottom: 24px; left: 24px;` (com adaptação para tablet e celular), garantindo total harmonia com a pílula de redes sociais que fica na direita.
+- **Sincronização 100% Idêntica:** Compartilha exatamente o mesmo gatilho de 30% de rolagem da página (mínimo de 450px) dentro de um único motor de eventos. Quando o "SEGUIR" aparece na direita, o "Voltar ao Topo" surge instantaneamente na esquerda.
+
+---
+
+## [v3.3.9] - 2026-10-05
 ### 💎 Pílula de Redes Sociais com Presença Reforçada e Blur Cósmico Intenso:
 - **Tamanho Ampliado no Desktop (PC):** Botões expandidos para `46px` com ícones nítidos de `23px` e badge de `"SEGUIR"` alongada (`10px 6px`), conferindo um visual sofisticado e marcante.
 - **Posição Rebaixada nos 3 Modos:** Altura ajustada para `top: 340px` no desktop, `top: 290px` no tablet e `top: 240px` no celular, encaixando-se naturalmente na área central-lateral de leitura.

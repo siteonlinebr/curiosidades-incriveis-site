@@ -278,8 +278,8 @@ button {
 }
 
 .nav-surprise-btn:hover {
-  background: var(--blue);
-  color: #030a16;
+  background: var(--blue) !important;
+  color: #030a16 !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(82, 178, 255, 0.3);
 }
@@ -2676,6 +2676,63 @@ body.drawer-open {
 }
 
 /* =========================================================
+   BOTÃO VOLTAR AO TOPO (SCROLL TO TOP SUAVE - LADO ESQUERDO)
+   ========================================================= */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(11, 19, 36, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9990;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px) scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s, background 0.2s, border-color 0.2s;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] .scroll-top-btn {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.scroll-top-btn:hover {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+  transform: translateY(-3px) scale(1.08) !important;
+  box-shadow: 0 14px 32px rgba(22, 158, 255, 0.4);
+}
+
+.scroll-top-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================================================
    CÁPSULA LATERAL FLUTUANTE DE REDES SOCIAIS (STICKY PILL)
    ========================================================= */
 .floating-social-pill {
@@ -2803,6 +2860,13 @@ body.drawer-open {
    RESPONSIVIDADE: TABLET (max-width: 950px)
    ========================================================= */
 @media (max-width: 950px) {
+  .scroll-top-btn {
+    bottom: 20px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
   .floating-social-pill {
     right: 14px;
     top: 290px;
@@ -2839,6 +2903,13 @@ body.drawer-open {
    RESPONSIVIDADE: CELULAR (max-width: 600px)
    ========================================================= */
 @media (max-width: 600px) {
+  .scroll-top-btn {
+    bottom: 16px;
+    left: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
   .floating-social-pill {
     right: 8px;
     top: 240px;
