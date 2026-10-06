@@ -2870,32 +2870,32 @@ body.drawer-open {
   .floating-social-pill {
     right: 14px;
     top: 290px;
-    padding: 8px 6px 12px;
-    transform: translateX(70px) scale(0.92);
+    padding: 12px 9px 16px;
+    transform: translateX(80px);
   }
 
   .floating-social-pill.is-visible {
-    transform: translateX(0) scale(0.92) !important;
+    transform: translateX(0) !important;
   }
 
   .floating-social-badge {
-    font-size: 0.62rem;
-    padding: 8px 4px;
-    margin-bottom: 10px;
+    font-size: 0.72rem;
+    padding: 10px 6px;
+    margin-bottom: 14px;
   }
 
   .floating-social-links {
-    gap: 12px;
+    gap: 16px;
   }
 
   .floating-social-btn {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
   }
 
   .floating-social-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -2911,34 +2911,34 @@ body.drawer-open {
   }
 
   .floating-social-pill {
-    right: 8px;
+    right: 10px;
     top: 240px;
-    padding: 6px 4px 10px;
-    transform: translateX(60px) scale(0.84);
+    padding: 10px 7px 14px;
+    transform: translateX(70px);
   }
 
   .floating-social-pill.is-visible {
-    transform: translateX(0) scale(0.84) !important;
+    transform: translateX(0) !important;
   }
 
   .floating-social-badge {
-    font-size: 0.55rem;
-    padding: 6px 3px;
-    margin-bottom: 8px;
+    font-size: 0.65rem;
+    padding: 9px 5px;
+    margin-bottom: 12px;
   }
 
   .floating-social-links {
-    gap: 10px;
+    gap: 14px;
   }
 
   .floating-social-btn {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
   }
 
   .floating-social-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
   }
 
   .floating-social-tooltip {

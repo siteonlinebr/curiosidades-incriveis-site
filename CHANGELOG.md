@@ -4,7 +4,24 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.11] - 2026-10-05 (Versão Atual)
+## [v3.3.13] - 2026-10-06 (Versão Atual)
+### 🎯 Calibração Fina da Pílula Flutuante:
+- **Desktop (PC) Revertido para Escala Leve:** Os botões voltaram aos confortáveis `46px` com ícones de `23px`, badge de `"SEGUIR"` proporcional e padding enxuto (`12px 10px 18px`), mantendo a elegância minimalista no monitor.
+- **Mobile e Tablet Mantidos Ampliados:** Celulares e tablets preservam a área de clique ampliada (`42px` no mobile com ícones de `22px` e `48px` no tablet), garantindo excelente ergonomia de toque na ponta dos dedos.
+- **Bloqueio Total do Restante do Site:** Estrutura, botão voltar ao topo, cabeçalho e artigos 100% blindados.
+
+---
+
+## [v3.3.12] - 2026-10-06
+### 💎 Pílula de Redes Sociais Ampliada Globalmente (+35% a 40%):
+- **Desktop (PC):** Botões ampliados para `58px` com ícones nítidos de `30px`, badge `"SEGUIR"` com tipografia encorpada e padding generoso (`16px 14px 22px`).
+- **Tablet:** Botões aumentados para `48px` com ícones de `24px` e espaçamentos proporcionais.
+- **Mobile (Celular):** Botões ampliados para `42px` com ícones de `22px` (área de toque tátil confortável sem cobrir texto de leitura).
+- **Trancamento do Restante do Site:** O botão de voltar ao topo, cabeçalho, artigos, ticker e todo o restante da estrutura continuam rigorosamente bloqueados e intocados.
+
+---
+
+## [v3.3.11] - 2026-10-05
 ### 🐛 Correção de Legibilidade no Botão "🎲 Surpreenda-me" (Navbar):
 - **Contraste de Hover no Menu:** Corrigida a regra de estilo `.nav-surprise-btn:hover` com prioridade explícita (`color: #030a16 !important;`). Anteriormente, a regra genérica de links `.main-nav a:hover` forçava a cor azul sobre o fundo azul, tornando o texto invisível ao passar o mouse. Agora o texto permanece nítido e perfeitamente legível em alto contraste.
 
