@@ -4,7 +4,15 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.13] - 2026-10-06 (Versão Atual)
+## [v3.3.14] - 2026-10-06 (Versão Atual)
+### 🐛 Correção Definitiva de Posição no Canto Inferior Direito:
+- **Ancoragem Segura no Rodapé da Janela (`bottom`):** Substituído o cálculo rígido de `top` por posicionamento nativo ancorado na parte inferior (`bottom: 28px` no desktop, `bottom: 22px` no tablet e `bottom: 18px` no celular), eliminando qualquer risco de corte em telas com alturas menores.
+- **Margens Equilibradas:** Distância da borda direita calibrada (`right: 20px` no desktop, `right: 14px` no tablet e `right: 10px` no celular) com harmonia perfeita em relação ao botão de voltar ao topo na esquerda.
+- **Blindagem do Código:** Todas as outras seções do site continuam rigorosamente trancadas.
+
+---
+
+## [v3.3.13] - 2026-10-06
 ### 🎯 Calibração Fina da Pílula Flutuante:
 - **Desktop (PC) Revertido para Escala Leve:** Os botões voltaram aos confortáveis `46px` com ícones de `23px`, badge de `"SEGUIR"` proporcional e padding enxuto (`12px 10px 18px`), mantendo a elegância minimalista no monitor.
 - **Mobile e Tablet Mantidos Ampliados:** Celulares e tablets preservam a área de clique ampliada (`42px` no mobile com ícones de `22px` e `48px` no tablet), garantindo excelente ergonomia de toque na ponta dos dedos.
