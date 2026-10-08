@@ -29,6 +29,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -37,6 +39,8 @@ body {
   color: var(--text);
   font-family: Inter, Arial, sans-serif;
   transition: background 0.25s, color 0.25s;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body.search-open {
@@ -2163,9 +2167,61 @@ h1 {
     display: none !important;
   }
 
+  /* Em celulares, retira o seletor de tema da linha do cabeçalho */
+  .header-actions .theme-switch {
+    display: none !important;
+  }
+
+  /* Botão de menu no cabeçalho: 100% visível, acessível e sem corte */
   .menu-toggle,
   .menu-button {
     display: grid !important;
+    place-items: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+  }
+
+  .site-header {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .header-inner {
+    min-height: 64px;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-actions {
+    gap: 8px;
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .brand {
+    min-width: 0;
+    flex-shrink: 1;
+    gap: 8px;
+    font-size: 0.95rem;
+  }
+
+  .brand span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-logo,
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
   }
 }
 
@@ -2909,6 +2965,60 @@ h1 {
 .drawer-categories button:hover {
   background: color-mix(in srgb, var(--blue) 10%, transparent);
   color: var(--blue);
+}
+
+/* =========================================================
+   SEÇÃO DE TEMA NO MENU MOBILE (DRAWER)
+   ========================================================= */
+.drawer-theme-section {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.drawer-theme-section .drawer-section-title {
+  margin: 0 0 4px 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.drawer-theme-switch {
+  width: 100% !important;
+  display: flex !important;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  background: rgba(12, 19, 36, 0.75);
+}
+
+[data-theme="light"] .drawer-theme-switch {
+  background: #e9eff8;
+  border-color: rgba(9, 20, 38, 0.14);
+}
+
+.drawer-theme-switch .theme-switch-btn {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 42px; /* Área de toque confortável para celular */
+  border-radius: 9999px;
+}
+
+.drawer-theme-switch .theme-switch-indicator {
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  border-radius: 9999px;
 }
 
 .drawer-footer {

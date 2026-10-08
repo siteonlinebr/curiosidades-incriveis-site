@@ -408,6 +408,35 @@ export default function App() {
           </div>
         </nav>
 
+        <div className="drawer-theme-section">
+          <div className="drawer-section-title">Tema do site</div>
+          <div className="theme-switch drawer-theme-switch" role="group" aria-label="Controle de tema">
+            <span className="theme-switch-indicator" aria-hidden="true"></span>
+            <button
+              className="theme-switch-btn"
+              type="button"
+              data-theme-choice="light"
+              onClick={() => setThemeMode('light')}
+              aria-label="Ativar modo claro"
+              aria-pressed={theme === 'light'}
+            >
+              <span className="theme-switch-text">CLARO</span>
+              <span className="theme-switch-icon" aria-hidden="true">☀️</span>
+            </button>
+            <button
+              className="theme-switch-btn"
+              type="button"
+              data-theme-choice="dark"
+              onClick={() => setThemeMode('dark')}
+              aria-label="Ativar modo escuro"
+              aria-pressed={theme === 'dark'}
+            >
+              <span className="theme-switch-text">ESCURO</span>
+              <span className="theme-switch-icon" aria-hidden="true">🌙</span>
+            </button>
+          </div>
+        </div>
+
         <div className="drawer-footer">
           <a
             className="instagram-button"
