@@ -13,13 +13,15 @@
 }
 
 :root[data-theme="light"] {
-  --bg: #f5f8ff;
-  --surface: #ffffff;
-  --surface-raised: #e8effc;
+  --bg: #f4f6fa;
+  --surface: #fafbfe;
+  --surface-raised: #e9eff8;
   --text: #091426;
-  --muted: #5b6d8d;
-  --line: rgba(9, 20, 38, 0.13);
-  --shadow: 0 18px 44px rgba(19, 38, 70, 0.11);
+  --muted: #475569;
+  --blue: #0284c7;
+  --yellow: #d97706;
+  --line: rgba(9, 20, 38, 0.12);
+  --shadow: 0 14px 38px rgba(15, 23, 42, 0.08);
 }
 
 * {
@@ -199,6 +201,122 @@ button {
   stroke: currentColor;
   stroke-width: 1.8;
   stroke-linecap: round;
+}
+
+/* =========================================================
+   SELETOR DE TEMA EM FORMATO DE PÍLULA (CLARO ☀️ / ESCURO 🌙)
+   ========================================================= */
+.theme-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(12, 19, 36, 0.75);
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 2px;
+  user-select: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .theme-switch {
+  background: #e9eff8;
+  border-color: rgba(9, 20, 38, 0.14);
+  box-shadow: inset 0 1px 3px rgba(9, 20, 38, 0.08);
+}
+
+.theme-switch-indicator {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: 9999px;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  pointer-events: none;
+  z-index: 1;
+  transform: translateX(100%);
+  background: rgba(22, 158, 255, 0.18);
+  border: 1px solid rgba(22, 158, 255, 0.35);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 12px rgba(22, 158, 255, 0.2);
+}
+
+[data-theme="light"] .theme-switch-indicator {
+  transform: translateX(0);
+  background: #ffffff;
+  border: 1px solid rgba(9, 20, 38, 0.1);
+  box-shadow: 0 2px 8px rgba(9, 20, 38, 0.12);
+}
+
+.theme-switch-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.theme-switch-btn:hover {
+  color: var(--text);
+}
+
+.theme-switch-btn .theme-switch-icon {
+  font-size: 0.8rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+.theme-switch-btn[data-theme-choice="dark"] {
+  color: #ffffff;
+}
+.theme-switch-btn[data-theme-choice="light"] {
+  color: var(--muted);
+}
+
+[data-theme="light"] .theme-switch-btn[data-theme-choice="light"] {
+  color: #091426;
+  font-weight: 800;
+}
+[data-theme="light"] .theme-switch-btn[data-theme-choice="dark"] {
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  .theme-switch {
+    padding: 2px;
+    gap: 1px;
+  }
+  .theme-switch-indicator {
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+  }
+  .theme-switch-btn {
+    padding: 3px 7px;
+    font-size: 0.64rem;
+    gap: 3px;
+  }
+  .theme-switch-btn .theme-switch-icon {
+    font-size: 0.72rem;
+  }
 }
 
 .instagram-button,
@@ -446,7 +564,7 @@ h1 {
   font-size: clamp(1.6rem, 3.1vw, 2.5rem);
   line-height: 1.08;
   letter-spacing: -0.04em;
-  color: #ffffff;
+  color: var(--text);
   text-align: left;
   align-self: flex-start;
 }
@@ -1985,3 +2103,191 @@ h1 {
 body.drawer-open {
   overflow: hidden;
 }
+
+/* =========================================================
+   AJUSTES E CORREÇÕES DO MODO CLARO (CONTRASTE E LEGIBILIDADE)
+   ========================================================= */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] .hero h1,
+[data-theme="light"] .articles-hero .hero-content h1,
+[data-theme="light"] .articles-hero h1,
+[data-theme="light"] .article-header h1,
+[data-theme="light"] .article-prose h2,
+[data-theme="light"] .article-prose h3 {
+  color: #091426 !important;
+}
+
+[data-theme="light"] .hero-copy,
+[data-theme="light"] .hero-content-articles p,
+[data-theme="light"] .articles-hero .hero-content p,
+[data-theme="light"] .article-header-lead {
+  color: #334155;
+}
+
+[data-theme="light"] .eyebrow,
+[data-theme="light"] #IDColorBlue,
+[data-theme="light"] #color-blue,
+[data-theme="light"] .section-kicker {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .eyebrow.accent {
+  color: #b45309 !important;
+}
+
+/* Hero Stat no Modo Claro */
+[data-theme="light"] .hero-stat {
+  background: rgba(250, 251, 254, 0.94);
+  border-color: rgba(9, 20, 38, 0.12);
+  border-left: 3px solid #d97706;
+  box-shadow: 0 8px 24px rgba(9, 20, 38, 0.08);
+}
+
+[data-theme="light"] .hero-stat strong {
+  color: #091426;
+}
+
+[data-theme="light"] .hero-stat span.hero-stat-label {
+  color: #475569;
+}
+
+[data-theme="light"] .hero-stat-arrow {
+  color: #64748b;
+}
+
+/* Botões no Modo Claro */
+[data-theme="light"] .button-light {
+  background: #ffffff;
+  color: #091426;
+  border: 1px solid rgba(9, 20, 38, 0.16);
+  box-shadow: 0 2px 8px rgba(9, 20, 38, 0.06);
+}
+
+[data-theme="light"] .button-light:hover {
+  background: #f1f5f9;
+  border-color: rgba(9, 20, 38, 0.25);
+}
+
+/* Gradientes suaves do Hero no Modo Claro */
+[data-theme="light"] .hero::before {
+  background:
+    radial-gradient(circle at 75% 30%, rgba(2, 132, 199, 0.08), transparent 35%),
+    linear-gradient(90deg, rgba(244, 246, 250, 0.88) 0%, rgba(244, 246, 250, 0.45) 60%, transparent 100%);
+}
+
+[data-theme="light"] .hero::after {
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.1), transparent 65%);
+}
+
+/* Seção de Artigos no Modo Claro */
+[data-theme="light"] .articles-hero {
+  background:
+    radial-gradient(circle at 82% 35%, rgba(2, 132, 199, 0.08), transparent 30%),
+    radial-gradient(circle at 68% 100%, rgba(217, 119, 6, 0.06), transparent 26%);
+}
+
+[data-theme="light"] .hero-decoration {
+  background: #ffffff;
+  border-color: rgba(2, 132, 199, 0.25);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .hero-decoration span {
+  color: #0284c7;
+}
+
+[data-theme="light"] .category-pill {
+  background: #ffffff;
+  border-color: rgba(9, 20, 38, 0.12);
+  color: #475569;
+}
+
+[data-theme="light"] .category-pill:hover {
+  border-color: #0284c7;
+  color: #091426;
+}
+
+[data-theme="light"] .category-pill.active {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="light"] .featured-article {
+  background: #ffffff;
+  border-color: rgba(9, 20, 38, 0.1);
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.07);
+}
+
+[data-theme="light"] .article-category {
+  color: #0284c7;
+}
+
+[data-theme="light"] .featured-info h2 a,
+[data-theme="light"] .article-card h3 a {
+  color: #091426;
+}
+
+[data-theme="light"] .featured-info h2 a:hover,
+[data-theme="light"] .article-card h3 a:hover {
+  color: #0284c7;
+}
+
+[data-theme="light"] .featured-info > p,
+[data-theme="light"] .article-card p {
+  color: #475569;
+}
+
+[data-theme="light"] .article-meta {
+  color: #64748b;
+}
+
+[data-theme="light"] .read-link {
+  color: #091426;
+}
+
+[data-theme="light"] .read-link span {
+  color: #0284c7;
+}
+
+[data-theme="light"] .article-card {
+  background: #ffffff;
+  border-color: rgba(9, 20, 38, 0.1);
+}
+
+[data-theme="light"] .article-card:hover {
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] .card-image {
+  background: #e9eff8;
+}
+
+/* Callouts e Artigos Individuais no Modo Claro */
+[data-theme="light"] .article-prose {
+  color: #1e293b;
+}
+
+[data-theme="light"] .article-highlight-box {
+  background: #fffbeb;
+  border-left-color: #d97706;
+  color: #0f172a;
+}
+
+[data-theme="light"] .curiosity-card-callout {
+  background: #f1f5f9;
+  border-color: rgba(2, 132, 199, 0.28);
+}
+
+[data-theme="light"] .curiosity-card-callout strong {
+  color: #0284c7;
+}
+
+[data-theme="light"] .curiosity-card-callout p {
+  color: #1e293b;
+}
+

@@ -10,7 +10,7 @@
     />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="author" content="Curiosidades Incríveis" />
-    <link rel="canonical" href="https://curiosidadesincriveis.com/" />
+    <link rel="canonical" href="https://siteonlinebr.github.io/curiosidades-incriveis-site/" />
     <meta name="google-site-verification" content="google0cc1eee84fc6b69c" />
 
     <!-- Google tag (gtag.js) -->
@@ -28,7 +28,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Curiosidades Incríveis — Descubra algo novo todos os dias" />
     <meta property="og:description" content="Explore fatos fascinantes sobre animais, ciência, tecnologia, história e os maiores mistérios do mundo." />
-    <meta property="og:url" content="https://curiosidadesincriveis.com/" />
+    <meta property="og:url" content="https://siteonlinebr.github.io/curiosidades-incriveis-site/" />
     <meta property="og:site_name" content="Curiosidades Incríveis" />
     <meta property="og:image" content="images/banner-curiosidades-incriveis.png" />
     <meta property="og:image:alt" content="Banner cósmico Curiosidades Incríveis" />
@@ -55,12 +55,12 @@
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://curiosidadesincriveis.com/#organization",
+          "@id": "https://siteonlinebr.github.io/curiosidades-incriveis-site/#organization",
           "name": "Curiosidades Incríveis",
-          "url": "https://curiosidadesincriveis.com/",
+          "url": "https://siteonlinebr.github.io/curiosidades-incriveis-site/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://curiosidadesincriveis.com/favicon.png"
+            "url": "https://siteonlinebr.github.io/curiosidades-incriveis-site/favicon.png"
           },
           "sameAs": [
             "https://www.instagram.com/curiosidades.incriveis6"
@@ -68,12 +68,12 @@
         },
         {
           "@type": "WebSite",
-          "@id": "https://curiosidadesincriveis.com/#website",
-          "url": "https://curiosidadesincriveis.com/",
+          "@id": "https://siteonlinebr.github.io/curiosidades-incriveis-site/#website",
+          "url": "https://siteonlinebr.github.io/curiosidades-incriveis-site/",
           "name": "Curiosidades Incríveis",
           "description": "Fatos surpreendentes sobre animais, ciência, tecnologia, história e o mundo.",
           "publisher": {
-            "@id": "https://curiosidadesincriveis.com/#organization"
+            "@id": "https://siteonlinebr.github.io/curiosidades-incriveis-site/#organization"
           },
           "inLanguage": "pt-BR"
         }
@@ -95,21 +95,57 @@
         <!-- MENU DESKTOP -->
         <nav class="main-nav" aria-label="Navegação principal">
           <a class="active" href="index.html">Início</a>
-          <a href="#em-alta">Em alta</a>
-          <a href="#recentes">Recentes</a>
-          <a href="#categorias">Categorias</a>
           <a href="artigos.html">Artigos</a>
         </nav>
 
         <!-- AÇÕES DO TOPO -->
         <div class="header-actions">
+          <!-- BOTÃO EXPLORAR (ESTRELA) COM MENU FLUTUANTE -->
+          <div class="nav-explore-wrapper">
+            <button class="icon-button nav-explore-trigger" id="nav-explore-trigger" type="button" aria-label="Explorar seções" aria-expanded="false" aria-haspopup="true" title="Explorar (Em alta, Recentes, Categorias)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </button>
+            <div class="nav-explore-menu" id="nav-explore-menu" role="menu" aria-label="Menu de exploração">
+              <a class="nav-explore-item" href="#em-alta" role="menuitem">
+                <span class="explore-item-icon">🔥</span>
+                <span class="explore-item-content">
+                  <span class="explore-item-title">Em alta</span>
+                  <span class="explore-item-sub">Destaques e tendências</span>
+                </span>
+              </a>
+              <a class="nav-explore-item" href="#recentes" role="menuitem">
+                <span class="explore-item-icon">⏱️</span>
+                <span class="explore-item-content">
+                  <span class="explore-item-title">Recentes</span>
+                  <span class="explore-item-sub">Últimas publicações</span>
+                </span>
+              </a>
+              <a class="nav-explore-item" href="#categorias" role="menuitem">
+                <span class="explore-item-icon">🗂️</span>
+                <span class="explore-item-content">
+                  <span class="explore-item-title">Categorias</span>
+                  <span class="explore-item-sub">Explore por assunto</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
           <button class="icon-button search-trigger" type="button" aria-label="Abrir pesquisa" aria-expanded="false">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
           </button>
-          <button class="icon-button theme-toggle" type="button" aria-label="Ativar modo claro" title="Mudar tema">
-            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
-            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z" /></svg>
-          </button>
+          <div class="theme-switch" role="group" aria-label="Controle de tema">
+            <span class="theme-switch-indicator" aria-hidden="true"></span>
+            <button class="theme-switch-btn" type="button" data-theme-choice="light" aria-label="Ativar modo claro">
+              <span class="theme-switch-text">CLARO</span>
+              <span class="theme-switch-icon" aria-hidden="true">☀️</span>
+            </button>
+            <button class="theme-switch-btn" type="button" data-theme-choice="dark" aria-label="Ativar modo escuro">
+              <span class="theme-switch-text">ESCURO</span>
+              <span class="theme-switch-icon" aria-hidden="true">🌙</span>
+            </button>
+          </div>
           <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer">Instagram ↗</a>
           <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
             <span></span><span></span><span></span>

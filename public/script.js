@@ -563,34 +563,73 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-// Alternância de Tema Claro / Escuro
+// =========================================================
+// ALTERNÂNCIA DE TEMA CLARO / ESCURO (SELETOR VISUAL PÍLULA)
+// =========================================================
 const root = document.documentElement;
-const themeToggles = document.querySelectorAll('.theme-toggle');
 const savedTheme = localStorage.getItem('ci-theme');
 
-if (savedTheme === 'light') {
-  root.dataset.theme = 'light';
+function applyTheme(themeName) {
+  if (themeName === 'light') {
+    root.dataset.theme = 'light';
+    localStorage.setItem('ci-theme', 'light');
+  } else {
+    delete root.dataset.theme;
+    localStorage.setItem('ci-theme', 'dark');
+  }
+  updateThemeUI();
 }
 
-function updateThemeLabel() {
+function updateThemeUI() {
   const isLight = root.dataset.theme === 'light';
-  themeToggles.forEach((btn) => {
+
+  // Atualiza controles no formato de pílula
+  document.querySelectorAll('.theme-switch').forEach((sw) => {
+    const lightBtn = sw.querySelector('[data-theme-choice="light"]');
+    const darkBtn = sw.querySelector('[data-theme-choice="dark"]');
+    if (lightBtn) lightBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+    if (darkBtn) darkBtn.setAttribute('aria-pressed', isLight ? 'false' : 'true');
+  });
+
+  // Atualiza botões legados caso existam
+  document.querySelectorAll('.theme-toggle').forEach((btn) => {
     btn.setAttribute('aria-label', isLight ? 'Ativar modo escuro' : 'Ativar modo claro');
   });
 }
-updateThemeLabel();
 
-themeToggles.forEach((btn) => {
-  btn.addEventListener('click', () => {
+// Aplica tema salvo logo na inicialização
+if (savedTheme === 'light') {
+  root.dataset.theme = 'light';
+}
+updateThemeUI();
+
+// Eventos e delegação para cliques no seletor de tema
+document.addEventListener('click', (e) => {
+  const choiceBtn = e.target.closest('.theme-switch-btn');
+  if (choiceBtn) {
+    e.preventDefault();
+    const choice = choiceBtn.dataset.themeChoice;
+    applyTheme(choice);
+    return;
+  }
+
+  // Se o usuário clicar na área da pílula fora dos botões, alterna entre os dois
+  const switchBox = e.target.closest('.theme-switch');
+  if (switchBox && !choiceBtn) {
+    e.preventDefault();
+    const currentIsLight = root.dataset.theme === 'light';
+    applyTheme(currentIsLight ? 'dark' : 'light');
+    return;
+  }
+
+  // Compatibilidade com botões legados
+  const legacyToggle = e.target.closest('.theme-toggle');
+  if (legacyToggle) {
+    e.preventDefault();
     const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
-    if (nextTheme === 'dark') {
-      delete root.dataset.theme;
-    } else {
-      root.dataset.theme = 'light';
-    }
-    localStorage.setItem('ci-theme', nextTheme);
-    updateThemeLabel();
-  });
+    applyTheme(nextTheme);
+    return;
+  }
 });
 
 // =========================================================
@@ -842,6 +881,86 @@ if (navDropdown) {
 }
 
 // =========================================================
+// ELEMENTO DE EXPLORAÇÃO NA NAVBAR (ESTRELA & DROPDOWN - OPÇÃO 1)
+// =========================================================
+const navExploreTrigger = document.querySelector('#nav-explore-trigger');
+const navExploreMenu = document.querySelector('#nav-explore-menu');
+
+function closeNavExplore() {
+  if (navExploreMenu) {
+    navExploreMenu.classList.remove('is-open');
+  }
+  if (navExploreTrigger) {
+    navExploreTrigger.classList.remove('is-active');
+    navExploreTrigger.setAttribute('aria-expanded', 'false');
+  }
+}
+
+function openNavExplore() {
+  if (typeof closeSearch === 'function') closeSearch();
+  if (navExploreMenu) {
+    navExploreMenu.classList.add('is-open');
+  }
+  if (navExploreTrigger) {
+    navExploreTrigger.classList.add('is-active');
+    navExploreTrigger.setAttribute('aria-expanded', 'true');
+  }
+}
+
+if (navExploreTrigger && navExploreMenu) {
+  navExploreTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navExploreMenu.classList.contains('is-open');
+    if (isOpen) {
+      closeNavExplore();
+    } else {
+      openNavExplore();
+    }
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-explore-wrapper')) {
+      closeNavExplore();
+    }
+  });
+
+  // Fecha com a tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeNavExplore();
+    }
+  });
+
+  // Rolagem suave e navegação fluida ao clicar nas opções
+  navExploreMenu.querySelectorAll('.nav-explore-item').forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const href = item.getAttribute('href') || '';
+      const hashIndex = href.indexOf('#');
+      if (hashIndex !== -1) {
+        const hash = href.slice(hashIndex);
+        const isHomePage = window.location.pathname === '/' ||
+                           window.location.pathname.endsWith('/index.html') ||
+                           (!window.location.pathname.includes('/artigos') && !window.location.pathname.endsWith('.html'));
+        if (isHomePage) {
+          const target = document.querySelector(hash);
+          if (target) {
+            e.preventDefault();
+            closeNavExplore();
+            target.scrollIntoView({ behavior: 'smooth' });
+            if (window.history && window.history.pushState) {
+              window.history.pushState(null, null, hash);
+            }
+            return;
+          }
+        }
+      }
+      closeNavExplore();
+    });
+  });
+}
+
+// =========================================================
 // =========================================================
 // PAINEL DE PESQUISA RÁPIDA COM RESULTADOS AO VIVO
 // =========================================================
@@ -907,6 +1026,7 @@ function executeLiveSearch(query) {
 
 if (searchTrigger && searchPanel) {
   searchTrigger.addEventListener('click', () => {
+    closeNavExplore();
     searchPanel.classList.add('is-open');
     searchPanel.setAttribute('aria-hidden', 'false');
     searchTrigger.setAttribute('aria-expanded', 'true');
@@ -1078,13 +1198,11 @@ document.addEventListener('keydown', (event) => {
   `;
   document.body.appendChild(pill);
 
-  // 3. Sincronização Perfeita: ambos surgem EXATAMENTE ao mesmo tempo (~30% de rolagem)
+  // 3. Sincronização de Visibilidade ao Rolar
   let areElementsVisible = false;
   function updateFloatingVisibility() {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    // Mesmíssimo gatilho de 30% da página (mínimo 450px)
     const threshold = totalHeight > 0 ? Math.max(totalHeight * 0.3, 450) : 450;
 
     if (scrollPos > threshold) {

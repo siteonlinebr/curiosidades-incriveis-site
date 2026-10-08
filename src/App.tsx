@@ -39,15 +39,19 @@ export default function App() {
     }
   }, []);
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    if (nextTheme === 'light') {
+  const setThemeMode = (mode: 'light' | 'dark') => {
+    setTheme(mode);
+    if (mode === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
     } else {
       document.documentElement.removeAttribute('data-theme');
     }
-    localStorage.setItem('ci-theme', nextTheme);
+    localStorage.setItem('ci-theme', mode);
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setThemeMode(nextTheme);
   };
 
   // Keyboard escape handler for search modal
@@ -258,19 +262,31 @@ export default function App() {
               <Search className="w-[18px] h-[18px]" />
             </button>
 
-            <button
-              className="icon-button theme-toggle"
-              type="button"
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
-              title="Mudar tema"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-[18px] h-[18px]" />
-              ) : (
-                <Moon className="w-[18px] h-[18px]" />
-              )}
-            </button>
+            <div className="theme-switch" role="group" aria-label="Controle de tema">
+              <span className="theme-switch-indicator" aria-hidden="true"></span>
+              <button
+                className="theme-switch-btn"
+                type="button"
+                data-theme-choice="light"
+                onClick={() => setThemeMode('light')}
+                aria-label="Ativar modo claro"
+                aria-pressed={theme === 'light'}
+              >
+                <span className="theme-switch-text">CLARO</span>
+                <span className="theme-switch-icon" aria-hidden="true">☀️</span>
+              </button>
+              <button
+                className="theme-switch-btn"
+                type="button"
+                data-theme-choice="dark"
+                onClick={() => setThemeMode('dark')}
+                aria-label="Ativar modo escuro"
+                aria-pressed={theme === 'dark'}
+              >
+                <span className="theme-switch-text">ESCURO</span>
+                <span className="theme-switch-icon" aria-hidden="true">🌙</span>
+              </button>
+            </div>
 
             <a
               className="instagram-button"

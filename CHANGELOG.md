@@ -4,7 +4,28 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.14] - 2026-10-06 (Versão Atual)
+## [v3.3.16] - 2026-10-08 (Versão Atual)
+### ⭐ Botão de Exploração Cósmica na Navbar (Opção 1):
+- **Botão com Ícone de Estrela no Cabeçalho:** Adicionado botão de exploração circular (`.nav-explore-trigger`) posicionado exatamente à esquerda da lupa de pesquisa, mantendo a consistência visual idêntica aos botões da lupa e alternador de tema.
+- **Menu Suspenso (Dropdown) com Efeito Vidro:** Ao clicar no botão, abre um menu elegante posicionado logo abaixo (`top: calc(100% + 12px)`), com backdrop-filter blur de 28px, borda refinada e sombra suave, contendo as três seções fundamentais de exploração:
+  - 🔥 **Em Alta** (Destaques e tendências)
+  - ⏱️ **Recentes** (Últimas publicações)
+  - 🗂️ **Categorias** (Explore por assunto)
+- **Navegação Inteligente e Acessibilidade:** Na Home, o clique realiza rolagem suave diretamente para a seção correspondente e fecha o menu; nas demais páginas, direciona para a âncora na Home. Suporta fechamento automático ao clicar fora, ao pressionar `Escape` ou ao abrir a pesquisa.
+- **Navbar Desktop Minimalista:** A navegação permanente do Desktop foi despoluída, mantendo "Início" e "Artigos", enquanto "Em Alta", "Recentes" e "Categorias" foram unificados no botão de exploração.
+- **Blindagem Total do Restante do Site:** A pílula lateral flutuante de redes sociais (com o blur de 42px), o botão de voltar ao topo, tema claro/escuro, artigos e todos os elementos existentes permanecem 100% intactos e preservados.
+
+---
+
+## [v3.3.15] - 2026-10-06
+### 💎 Blur Intenso & Efeito Vidro Realçado no Background da Pílula:
+- **Backdrop Blur Elevado (+31%):** Desfoque de vidro ampliado de `32px` para **`42px`** com filtro de saturação suave (`saturate(160%)`), tornando a refração do conteúdo por trás da pílula muito mais viva e elegante.
+- **Transparência Calibrada:** Opacidade do fundo reduzida sutilmente (`rgba(11, 19, 36, 0.62)` no tema escuro e `rgba(255, 255, 255, 0.68)` no tema claro), permitindo que o blur atue com profundidade real sem perder a legibilidade dos ícones ou da tag de `"SEGUIR"`.
+- **Blindagem do Código:** Ícones, botões, bordas, botão de voltar ao topo e todas as demais páginas permanecem 100% trancados e intactos.
+
+---
+
+## [v3.3.14] - 2026-10-06
 ### 🐛 Correção Definitiva de Posição no Canto Inferior Direito:
 - **Ancoragem Segura no Rodapé da Janela (`bottom`):** Substituído o cálculo rígido de `top` por posicionamento nativo ancorado na parte inferior (`bottom: 28px` no desktop, `bottom: 22px` no tablet e `bottom: 18px` no celular), eliminando qualquer risco de corte em telas com alturas menores.
 - **Margens Equilibradas:** Distância da borda direita calibrada (`right: 20px` no desktop, `right: 14px` no tablet e `right: 10px` no celular) com harmonia perfeita em relação ao botão de voltar ao topo na esquerda.
