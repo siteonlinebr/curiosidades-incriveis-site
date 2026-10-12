@@ -4,7 +4,24 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.3.16] - 2026-10-08 (Versão Atual)
+## [v3.4.0] - 2026-10-12 (Versão Atual)
+### 🚗 Novo Artigo Publicado (Engenharia de Tráfego & Mito Viral):
+- **Novo Artigo no Ar:** *"A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade"* (`artigos/rodovia-36-faixas-china.html`).
+- **Categoria:** Mundo (`mundo`) • Nível 2 — Médio • 5 min de leitura.
+- **Rigor Factual & Ajustes Editoriais Integrados:**
+  - Desmistificação da "rodovia de 36 faixas": esclarecimento de que as 36 cabines pertencem à praça de pedágio de Wuzhuang (via expressa G42/Anhui), projetada para atendimento paralelo, e não uma rodovia contínua nessa largura.
+  - Contexto da *Golden Week* (Semana Dourada) e a política governamental de isenção de pedágio para carros de passeio, sem afirmações especulativas sobre horários exatos de retorno coletivo.
+  - Física do efeito gargalo (*bottleneck effect*) e a ciência das ondas de trânsito fantasma (*phantom traffic jams*) explicadas com rigor científico sem imputá-las como causa periciada daquele caso específico.
+  - Reflexão sobre limites físicos de infraestrutura viária e conscientização contra manchetes sensacionalistas na internet.
+- **Integração no Site:**
+  - Artigo registrado no topo da lista oficial (`script.js` e `public/script.js`), sendo promovido automaticamente para a seção **Em Alta** (posição #1 em Todas e em Mundo) e **Artigos Recentes**.
+  - Card integrado ao catálogo geral em `artigos.html` e `public/artigos.html`.
+  - Indexado no `sitemap.xml` e `public/sitemap.xml`.
+  - Suporte completo a Modo Claro e Modo Escuro, metadados Open Graph, Twitter Card e Schema.org Article.
+
+---
+
+## [v3.3.16] - 2026-10-08
 ### ⭐ Botão de Exploração Cósmica na Navbar (Opção 1):
 - **Botão com Ícone de Estrela no Cabeçalho:** Adicionado botão de exploração circular (`.nav-explore-trigger`) posicionado exatamente à esquerda da lupa de pesquisa, mantendo a consistência visual idêntica aos botões da lupa e alternador de tema.
 - **Menu Suspenso (Dropdown) com Efeito Vidro:** Ao clicar no botão, abre um menu elegante posicionado logo abaixo (`top: calc(100% + 12px)`), com backdrop-filter blur de 28px, borda refinada e sombra suave, contendo as três seções fundamentais de exploração:

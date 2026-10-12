@@ -5,6 +5,20 @@
 // 7 Artigos Oficiais existentes no portal
 const articles = [
   {
+    "id": "rodovia-36-faixas-china",
+    "title": "A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade",
+    "category": "Mundo",
+    "categorySlug": "mundo",
+    "readingTime": "5 min de leitura",
+    "description": "Entenda o que realmente aconteceu no famoso congestionamento das 36 faixas na China: a praça de pedágio de Wuzhuang, a Golden Week e a física real do tráfego.",
+    "image": "images/artigo-rodovia-36-faixas.jpg",
+    "link": "artigos/rodovia-36-faixas-china.html",
+    "featured": true,
+    "recent": true,
+    "popular": false,
+    "quickFact": false
+  },
+  {
     "id": "polvo-tres-coracoes",
     "title": "O Mistério dos Polvos: 3 Corações, Sangue Azul e Inteligência de Outro Mundo",
     "category": "Animais",
