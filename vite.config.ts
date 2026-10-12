@@ -16,6 +16,7 @@ export default defineConfig(() => {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           artigos: path.resolve(__dirname, 'artigos.html'),
+          noticias: path.resolve(__dirname, 'noticias.html'),
         },
       },
     },

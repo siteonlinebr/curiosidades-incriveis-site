@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias • Curiosidades Incríveis</title>
+    <meta
+      name="description"
+      content="Os acontecimentos, descobertas, lançamentos e assuntos relevantes apresentados de maneira acessível e interessante pelo Curiosidades Incríveis."
+    />
+    <link rel="canonical" href="https://curiosidadesincriveis.com/noticias.html" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Open Graph / Meta Compartilhamento -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Notícias • Curiosidades Incríveis" />
+    <meta
+      property="og:description"
+      content="Acontecimentos, descobertas e lançamentos explicados de forma clara, surpreendente e direta ao ponto."
+    />
+    <meta property="og:image" content="banner-curiosidades-incriveis.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos Oficiais -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Script rápido de prevenção de Flash de Tema Claro/Escuro -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("ci-theme");
+          if (saved === "light") {
+            document.documentElement.dataset.theme = "light";
+          } else {
+            delete document.documentElement.dataset.theme;
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO PRINCIPAL -->
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href="index.html" aria-label="Curiosidades Incríveis - início">
+          <img class="brand-logo" src="favicon.png" alt="" />
+          <span>Curiosidades <strong>Incríveis</strong></span>
+        </a>
+
+        <!-- MENU DESKTOP -->
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="index.html">Início</a>
+          <a href="artigos.html">Artigos</a>
+          <a class="active" href="noticias.html">Notícias</a>
+        </nav>
+
+        <!-- AÇÕES DO TOPO -->
+        <div class="header-actions">
+          <!-- BOTÃO EXPLORAR (ESTRELA) COM MENU FLUTUANTE -->
+          <div class="nav-explore-wrapper">
+            <button
+              class="icon-button nav-explore-trigger"
+              id="nav-explore-trigger"
+              type="button"
+              aria-label="Explorar seções"
+              aria-expanded="false"
+              aria-haspopup="true"
+              title="Explorar (Em alta, Recentes, Categorias)"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </button>
+            <div class="nav-explore-menu" id="nav-explore-menu" role="menu" aria-label="Menu de exploração">
+              <a class="nav-explore-item" href="index.html#em-alta" role="menuitem">
+                <span class="explore-item-icon">🔥</span>
+                <span class="explore-item-content">
+                  <span class="explore-item-title">Em alta</span>
+                  <span class="explore-item-sub">Destaques e tendências</span>
+                </span>
+              </a>
+              <a class="nav-explore-item" href="index.html#recentes" role="menuitem">
+                <span class="explore-item-icon">⏱️</span>
+                <span class="explore-item-content">
+                  <span class="explore-item-title">Recentes</span>
+                  <span class="explore-item-sub">Últimas publicações</span>
+                </span>
+              </a>
+              <a class="nav-explore-item" href="index.html#categorias" role="menuitem">
+                <span class="explore-item-icon">🗂️</span>
+                <span class="explore-item-content">
+                  <span class="explore-item-title">Categorias</span>
+                  <span class="explore-item-sub">Explore por assunto</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <button
+            class="icon-button search-trigger"
+            type="button"
+            aria-label="Abrir pesquisa"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+            </svg>
+          </button>
+
+          <!-- SELETOR VISUAL DE TEMA COM PÍLULA E TEXTO -->
+          <div class="theme-switch" role="group" aria-label="Controle de tema">
+            <span class="theme-switch-indicator" aria-hidden="true"></span>
+            <button
+              class="theme-switch-btn"
+              type="button"
+              data-theme-choice="light"
+              aria-label="Ativar modo claro"
+            >
+              <span class="theme-switch-text">CLARO</span>
+              <span class="theme-switch-icon" aria-hidden="true">☀️</span>
+            </button>
+            <button
+              class="theme-switch-btn"
+              type="button"
+              data-theme-choice="dark"
+              aria-label="Ativar modo escuro"
+            >
+              <span class="theme-switch-text">ESCURO</span>
+              <span class="theme-switch-icon" aria-hidden="true">🌙</span>
+            </button>
+          </div>
+
+          <a
+            class="instagram-button"
+            href="https://www.instagram.com/curiosidades.incriveis6"
+            target="_blank"
+            rel="noreferrer"
+            >Instagram ↗</a
+          >
+
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- GAVETA LATERAL MOBILE (DRAWER) -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="mobile-drawer" id="mobile-drawer" aria-label="Menu móvel">
+      <div class="drawer-header">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="favicon.png" alt="" />
+          <span>Curiosidades <strong>Incríveis</strong></span>
+        </a>
+        <button class="drawer-close" id="drawer-close" type="button" aria-label="Fechar menu">✕</button>
+      </div>
+
+      <nav class="drawer-nav">
+        <a href="index.html">🏠 Início</a>
+        <a href="artigos.html">📚 Todos os Artigos</a>
+        <a class="active" href="noticias.html">📰 Notícias</a>
+        <button
+          class="nav-surprise-btn drawer-surprise-btn"
+          type="button"
+          style="margin: 8px 0; justify-content: center;"
+        >
+          <span>🎲</span> Curiosidade Aleatória
+        </button>
+
+        <div class="drawer-section-title">Categorias</div>
+        <div class="drawer-categories">
+          <a href="artigos.html?categoria=animais">🐾 Animais</a>
+          <a href="artigos.html?categoria=ciencia">🔬 Ciência</a>
+          <a href="artigos.html?categoria=tecnologia">💻 Tecnologia</a>
+          <a href="artigos.html?categoria=historia">📜 História</a>
+          <a href="artigos.html?categoria=mundo">🌍 Mundo</a>
+        </div>
+      </nav>
+
+      <div class="drawer-theme-section">
+        <div class="drawer-section-title">Tema do site</div>
+        <div class="theme-switch drawer-theme-switch" role="group" aria-label="Controle de tema">
+          <span class="theme-switch-indicator" aria-hidden="true"></span>
+          <button
+            class="theme-switch-btn"
+            type="button"
+            data-theme-choice="light"
+            aria-label="Ativar modo claro"
+          >
+            <span class="theme-switch-text">CLARO</span>
+            <span class="theme-switch-icon" aria-hidden="true">☀️</span>
+          </button>
+          <button
+            class="theme-switch-btn"
+            type="button"
+            data-theme-choice="dark"
+            aria-label="Ativar modo escuro"
+          >
+            <span class="theme-switch-text">ESCURO</span>
+            <span class="theme-switch-icon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <a
+          class="instagram-button"
+          href="https://www.instagram.com/curiosidades.incriveis6"
+          target="_blank"
+          rel="noreferrer"
+          style="justify-content: center;"
+        >
+          Seguir no Instagram ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- PAINEL DE PESQUISA -->
+    <div class="search-panel" aria-hidden="true">
+      <div class="search-box container">
+        <label for="search-input">O que você quer descobrir?</label>
+        <div class="search-field">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+          </svg>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Ex.: telescópio, inteligência artificial, espaço..."
+            autocomplete="off"
+          />
+          <button class="search-close" type="button">Fechar</button>
+        </div>
+        <div class="search-suggestions" id="search-suggestions">
+          <span class="search-suggestions-label">💡 Sugestões:</span>
+          <button type="button" class="search-chip" data-query="ciência">🔬 Ciência</button>
+          <button type="button" class="search-chip" data-query="tecnologia">💻 Tecnologia</button>
+          <button type="button" class="search-chip" data-query="games">🎮 Games</button>
+          <button type="button" class="search-chip" data-query="animais">🐾 Animais</button>
+          <button type="button" class="search-chip" data-query="universo">🪐 Universo</button>
+        </div>
+        <p class="search-message" aria-live="polite">Pesquise entre os artigos ou escolha um tema sugerido acima.</p>
+        <div class="search-live-results" id="search-live-results"></div>
+      </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA DE NOTÍCIAS -->
+    <main id="conteudo" class="news-page container">
+      <!-- A. CABEÇALHO DA SEÇÃO -->
+      <section class="news-header">
+        <div class="breadcrumb" style="margin-bottom: 14px;">
+          <a href="index.html">Início</a> <span aria-hidden="true">›</span> <span>Notícias</span>
+        </div>
+        <h1>Notícias</h1>
+        <p class="news-header-desc">
+          Os acontecimentos, descobertas, lançamentos e assuntos relevantes apresentados de maneira acessível e interessante.
+        </p>
+        <div class="news-demo-alert" role="status">
+          <strong>Estrutura Visual</strong>
+          <span>Esta área está preparada para receber notícias reais em breve. Os itens abaixo são dados demonstrativos temporários para validação de layout e navegação.</span>
+        </div>
+      </section>
+
+      <!-- B. NAVEGAÇÃO POR CATEGORIAS (7 Categorias Oficiais + Todas) -->
+      <nav class="news-category-bar-wrapper" aria-label="Filtrar notícias por categoria">
+        <div class="news-category-bar" id="news-category-bar">
+          <button class="news-cat-btn active" type="button" data-cat="todas">
+            Todas
+          </button>
+          <button class="news-cat-btn" type="button" data-cat="tecnologia">
+            Tecnologia
+          </button>
+          <button class="news-cat-btn" type="button" data-cat="games">
+            Games
+          </button>
+          <button class="news-cat-btn" type="button" data-cat="politica">
+            Política
+          </button>
+          <button class="news-cat-btn" type="button" data-cat="ciencia">
+            Ciência
+          </button>
+          <button class="news-cat-btn" type="button" data-cat="animais">
+            Animais
+          </button>
+          <button class="news-cat-btn" type="button" data-cat="mundo">
+            Mundo
+          </button>
+          <button class="news-cat-btn" type="button" data-cat="entretenimento">
+            Entretenimento
+          </button>
+        </div>
+      </nav>
+
+      <!-- C. DESTAQUE PRINCIPAL E ÚLTIMAS NOTÍCIAS (65% / 35% no Desktop, 1 Coluna no Mobile) -->
+      <section class="news-hero-grid" id="news-hero-section">
+        <!-- COLUNA 1: DESTAQUE PRINCIPAL (~65%) -->
+        <article class="news-featured-card" id="news-featured-card">
+          <div class="news-featured-media">
+            <img
+              id="hero-news-img"
+              src="images/artigo-destaque.jpg"
+              alt="Destaque principal da área de Notícias"
+              loading="eager"
+            />
+            <span class="news-credit-tag" id="hero-news-credit">Crédito demonstrativo</span>
+          </div>
+          <div class="news-featured-body">
+            <div class="news-meta-row">
+              <span class="cat-tag" data-cat="ciencia" id="hero-news-cat">Ciência</span>
+              <span class="news-meta-sep" aria-hidden="true">·</span>
+              <span id="hero-news-date">há 2 horas</span>
+              <span class="news-meta-sep" aria-hidden="true">·</span>
+              <span id="hero-news-reading">3 min de leitura</span>
+            </div>
+            <h2 class="news-featured-title" id="hero-news-title">
+              <a href="#noticia-demo">[Demonstração] Telescópio espacial registra detalhes inéditos em berçário de estrelas</a>
+            </h2>
+            <p class="news-featured-summary" id="hero-news-summary">
+              Estrutura pronta para receber a contextualização da notícia real. O modelo apresenta imagem imponente, leitura rápida e curadoria focada em descobertas impressionantes.
+            </p>
+            <div>
+              <a class="news-read-action" href="#noticia-demo" title="Ler notícia (demonstração)">
+                Ler notícia completa <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- COLUNA 2: ÚLTIMAS NOTÍCIAS (~35%) -->
+        <aside class="news-latest-column" aria-label="Últimas publicações">
+          <div class="news-latest-header">
+            <h3>Últimas notícias</h3>
+            <span class="news-latest-badge">Recentes</span>
+          </div>
+          <div class="news-compact-list" id="news-latest-list">
+            <!-- Itens preenchidos via JavaScript a partir de news-data.js -->
+          </div>
+        </aside>
+      </section>
+
+      <!-- D. LISTAGEM GERAL DE NOTÍCIAS (Grid Responsiva com Filtro) -->
+      <section class="news-feed-section" id="news-feed-section">
+        <div class="news-feed-header">
+          <h3 id="news-feed-title">Mais notícias</h3>
+          <span class="news-feed-count" id="news-feed-count"></span>
+        </div>
+        <div class="news-feed-grid" id="news-feed-grid">
+          <!-- Cards preenchidos via JavaScript a partir de news-data.js -->
+        </div>
+        <div class="news-empty-state" id="news-empty-state" style="display: none;">
+          <h4>Nenhuma notícia encontrada nesta categoria</h4>
+          <p>Esta categoria ainda não possui exemplos demonstrativos carregados.</p>
+          <button class="news-cat-btn active" type="button" id="reset-filter-btn">
+            Ver todas as notícias
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ PRINCIPAL -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img class="brand-logo" src="favicon.png" alt="" />
+            <span>Curiosidades <strong>Incríveis</strong></span>
+          </a>
+          <p>Fatos surpreendentes sobre animais, ciência, história, tecnologia e os mistérios do universo.</p>
+        </div>
+        <div>
+          <h3>Navegação</h3>
+          <a href="index.html">Início</a>
+          <a href="artigos.html">Artigos</a>
+          <a href="noticias.html">Notícias</a>
+          <a href="index.html#em-alta">Em alta</a>
+          <a href="index.html#recentes">Recentes</a>
+          <a href="index.html#categorias">Categorias</a>
+        </div>
+        <div>
+          <h3>Categorias</h3>
+          <a href="artigos.html?categoria=animais">Animais</a>
+          <a href="artigos.html?categoria=ciencia">Ciência</a>
+          <a href="artigos.html?categoria=tecnologia">Tecnologia</a>
+          <a href="artigos.html?categoria=historia">História</a>
+          <a href="artigos.html?categoria=mundo">Mundo</a>
+        </div>
+        <div>
+          <h3>Conecte-se</h3>
+          <a href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer">Instagram ↗</a>
+          <button type="button" class="footer-link-btn" id="footer-contact-btn">Contato</button>
+          <button type="button" class="footer-link-btn" id="footer-privacy-btn">Política de privacidade</button>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> Curiosidades Incríveis • ✦ Fatos Verificados</span>
+        <span>Feito para quem nunca para de perguntar.</span>
+      </div>
+    </footer>
+
+    <!-- MODAL DE CONTATO -->
+    <div class="modal-overlay" id="contact-modal" aria-hidden="true">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3>📬 Entre em Contato</h3>
+          <button type="button" class="modal-close-btn" data-close-modal="contact-modal" aria-label="Fechar">✕</button>
+        </div>
+        <div class="modal-body">
+          <p>Tem uma sugestão de pauta intrigante, dúvida, feedback ou proposta de parceria? Adoramos conversar com mentes curiosas!</p>
+          <div class="contact-card-box">
+            <div>
+              <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; font-weight: 700; display: block;">E-mail oficial</span>
+              <strong id="contact-email-text" style="font-size: 0.92rem;">contatocuriosidadesincriveis6@gmail.com</strong>
+            </div>
+            <button type="button" class="copy-email-btn" id="copy-email-action">📋 Copiar e-mail</button>
+          </div>
+          <div style="margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <a class="button button-primary" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer" style="flex: 1; min-width: 200px; text-decoration: none;">
+              Falar no Instagram Direct ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DE POLÍTICA DE PRIVACIDADE -->
+    <div class="modal-overlay" id="privacy-modal" aria-hidden="true">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3>🔒 Política de Privacidade</h3>
+          <button type="button" class="modal-close-btn" data-close-modal="privacy-modal" aria-label="Fechar">✕</button>
+        </div>
+        <div class="modal-body">
+          <p>A sua privacidade é prioridade absoluta no <strong>Curiosidades Incríveis</strong>. Nosso compromisso é com o conhecimento transparente e seguro:</p>
+          <ul style="padding-left: 20px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>Zero venda de dados:</strong> Nunca comercializamos, alugamos ou compartilhamos dados pessoais com terceiros.</li>
+            <li><strong>Google Analytics:</strong> Utilizamos métricas de navegação apenas para entender o interesse geral do leitor.</li>
+            <li><strong>Cookies técnicos:</strong> Armazenamos apenas preferências essenciais no seu navegador (como a escolha de tema Claro/Escuro via localStorage).</li>
+            <li><strong>LGPD / GDPR:</strong> Respeitamos integralmente os seus direitos de titular de dados conforme a legislação vigente.</li>
+          </ul>
+          <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 0;">Dúvidas sobre privacidade? Escreva para <a href="mailto:contatocuriosidadesincriveis6@gmail.com" style="color: var(--blue);">contatocuriosidadesincriveis6@gmail.com</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="news-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // =========================================================
+      // LÓGICA DE APRESENTAÇÃO E FILTRAGEM DA ÁREA DE NOTÍCIAS
+      // =========================================================
+      (function initNewsPage() {
+        if (!window.CI_NEWS || !window.CI_NEWS.items) return;
+
+        const newsItems = window.CI_NEWS.items;
+        const calcRelTime = window.CI_NEWS.calculateRelativeTime;
+
+        const heroImg = document.getElementById("hero-news-img");
+        const heroCredit = document.getElementById("hero-news-credit");
+        const heroCat = document.getElementById("hero-news-cat");
+        const heroDate = document.getElementById("hero-news-date");
+        const heroReading = document.getElementById("hero-news-reading");
+        const heroTitle = document.getElementById("hero-news-title");
+        const heroSummary = document.getElementById("hero-news-summary");
+
+        const latestList = document.getElementById("news-latest-list");
+        const feedGrid = document.getElementById("news-feed-grid");
+        const feedCount = document.getElementById("news-feed-count");
+        const emptyState = document.getElementById("news-empty-state");
+        const catButtons = document.querySelectorAll(".news-cat-btn");
+        const heroSection = document.getElementById("news-hero-section");
+        const resetBtn = document.getElementById("reset-filter-btn");
+
+        let activeCategory = "todas";
+
+        // Renderiza Destaque Principal
+        const heroItem = newsItems.find((n) => n.isFeaturedHero) || newsItems[0];
+        if (heroItem && heroTitle) {
+          heroImg.src = heroItem.image;
+          heroCredit.textContent = heroItem.imageCredit || "Crédito demonstrativo";
+          heroCat.textContent = heroItem.category;
+          heroCat.setAttribute("data-cat", heroItem.categorySlug);
+          heroDate.textContent = calcRelTime(heroItem.publishedAt);
+          heroReading.textContent = heroItem.readingTime;
+          heroTitle.querySelector("a").textContent = heroItem.title;
+          heroSummary.textContent = heroItem.summary;
+        }
+
+        // Renderiza Coluna de Últimas Notícias
+        function renderLatestNews() {
+          if (!latestList) return;
+          const latestItems = newsItems.filter((n) => n.isLatest);
+          latestList.innerHTML = latestItems
+            .map(
+              (item) => `
+            <a class="news-compact-item" href="#${item.id}" title="${item.title}">
+              <div class="news-compact-thumb">
+                <img src="${item.image}" alt="${item.title}" loading="lazy" />
+              </div>
+              <div class="news-compact-info">
+                <span class="cat-tag" data-cat="${item.categorySlug}">${item.category}</span>
+                <span class="news-compact-title">${item.title}</span>
+                <span class="news-compact-meta">
+                  <span>${calcRelTime(item.publishedAt)}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>${item.readingTime}</span>
+                </span>
+              </div>
+            </a>
+          `
+            )
+            .join("");
+        }
+        renderLatestNews();
+
+        // Renderiza Listagem Geral / Filtrada
+        function renderFeed(catSlug) {
+          if (!feedGrid) return;
+
+          let filtered = newsItems.filter((n) => !n.isFeaturedHero);
+          if (catSlug && catSlug !== "todas") {
+            filtered = newsItems.filter((n) => n.categorySlug === catSlug);
+            // Quando filtrando por categoria específica, podemos focar a lista
+          }
+
+          if (filtered.length === 0) {
+            feedGrid.innerHTML = "";
+            feedGrid.style.display = "none";
+            emptyState.style.display = "block";
+            feedCount.textContent = "0 publicações";
+            return;
+          }
+
+          emptyState.style.display = "none";
+          feedGrid.style.display = "grid";
+          feedCount.textContent = `${filtered.length} ${filtered.length === 1 ? "exemplo" : "exemplos"}`;
+
+          feedGrid.innerHTML = filtered
+            .map(
+              (item) => `
+            <article class="news-feed-card" id="${item.id}">
+              <div class="news-card-media">
+                <img src="${item.image}" alt="${item.title}" loading="lazy" />
+                ${item.imageCredit ? `<span class="news-credit-tag">${item.imageCredit}</span>` : ""}
+              </div>
+              <div class="news-card-body">
+                <div class="news-meta-row">
+                  <span class="cat-tag" data-cat="${item.categorySlug}">${item.category}</span>
+                  <span class="news-meta-sep" aria-hidden="true">·</span>
+                  <span>${calcRelTime(item.publishedAt)}</span>
+                  <span class="news-meta-sep" aria-hidden="true">·</span>
+                  <span>${item.readingTime}</span>
+                </div>
+                <h4 class="news-card-title">${item.title}</h4>
+                <p class="news-card-summary">${item.summary}</p>
+                <div class="news-card-footer">
+                  <span>Estrutura demonstrativa</span>
+                  <a class="news-read-action" href="#${item.id}" style="font-size: 0.82rem;">Ver detalhes →</a>
+                </div>
+              </div>
+            </article>
+          `
+            )
+            .join("");
+        }
+
+        renderFeed("todas");
+
+        // Eventos de clique nas categorias
+        catButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const cat = btn.getAttribute("data-cat");
+            activeCategory = cat;
+
+            catButtons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            renderFeed(cat);
+          });
+        });
+
+        if (resetBtn) {
+          resetBtn.addEventListener("click", () => {
+            const allBtn = document.querySelector('.news-cat-btn[data-cat="todas"]');
+            if (allBtn) allBtn.click();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
