@@ -4,7 +4,48 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.4.0] - 2026-10-12 (Versão Atual)
+## [v3.6.0] - 2026-10-13 (Versão Atual)
+### 📰 Publicação Oficial da Editoria de Notícias (18 Matérias Verificadas):
+- **Lançamento das 18 Notícias Reais & Fatos Verificados:** A área visual demonstrativa de Notícias foi convertida em uma editoria funcional com apuração rigorosa, fontes primárias e ressalvas transparentes.
+- **Distribuição Editorial Cumprida com Precisão:**
+  - 💻 **Tecnologia (3):** Microsoft Maia 300 chip de IA, Fiscalização de IA no setor bancário e Volantis laser interconexão óptica.
+  - 🎮 **Games (3):** Gears of War: E-Day (Xbox/PC), Star Wars: Galactic Racer e Castlevania: Belmont’s Curse (Konami/Dead Cells).
+  - 🏛️ **Política (2):** Segundo turno presidencial no Brasil (Lula e Flávio Bolsonaro) e Cúpula de cooperação Reino Unido-União Europeia.
+  - 🔬 **Ciência (3):** Debate sobre neurogênese no cérebro adulto humano, Nobel de Química (quiralidade e moléculas espelhadas) e Nobel de Física (observatório IceCube e neutrinos cósmicos na Antártica - Destaque Hero).
+  - 🐾 **Animais (3):** Tartaruga Jonathan (194 anos e genética da longevidade), Carcaças de elefantes na savana do Kruger e Fóssil egípcio de crocodiliano (*Herugavialis cairensis*).
+  - 🌍 **Mundo (2):** Expedição em Nikumaroro sobre pista de Amelia Earhart e Alerta do FMI sobre riscos globais (IA, dívida e geopolítica).
+  - 🎬 **Entretenimento (2):** Filme live-action de Cyberpunk 2077 com Paramount e Guia semanal de streaming/cinema (Norm Macdonald, Tenzing e Marvel).
+- **18 Páginas Individuais (`noticias/*.html` e `public/noticias/*.html`):**
+  - Cada matéria conta com página própria, texto jornalístico em parágrafos semânticos, imagem hero de 1200x675 com créditos, bloco de fontes consultadas com links externos seguros, botão de retorno e seção de recomendação contextual (*Outras Notícias Recentes*).
+  - Metadados completos com dados estruturados Schema.org `NewsArticle` (JSON-LD), OpenGraph, Twitter Cards e URL canônica.
+- **Atualização da Página Geral (`noticias.html` e `public/noticias.html`):**
+  - Remoção do alerta demonstrativo temporário e substituição pelo selo de cobertura oficial verificada.
+  - Integração do destaque principal (Destaque Hero), coluna lateral de últimas publicações e feed com filtros dinâmicos ativos para as 7 categorias e "Todas".
+- **Integração de Infraestrutura & SEO:**
+  - Registro de todas as 18 notícias no `vite.config.ts` via entradas dinâmicas do Rollup para geração estática em `dist/`.
+  - Atualização do `sitemap.xml` para contemplar as 18 URLs de notícias (totalizando 49 URLs no sitemap).
+  - Blindagem do site existente: Home, acervo de 28 artigos, pílula de redes sociais (blur 42px), botão de estrela e temas claro/escuro preservados.
+
+---
+
+## [v3.5.0] - 2026-10-13
+### 🧭 Seção "Continue Explorando" nos 28 Artigos do Portal:
+- **Implementação da Seção "🧭 Continue Explorando":** Criada seção de retenção editorial e recomendação contextual ao final de cada um dos 28 artigos publicados no portal, antes do rodapé de compartilhamento.
+- **Grade com 3 Artigos Recomendados por Matéria:**
+  - Seleção contextual inteligente priorizando 2 artigos da mesma categoria temática e 1 destaque editorial complementar de outra categoria, garantindo variedade e engajamento.
+  - Exclusão estrita do artigo atualmente aberto (sem repetições ou auto-referência).
+  - Cards com foto em alta resolução, selo da categoria, tempo de leitura formatado, título estilizado com Space Grotesk, resumo descritivo de duas linhas e link de chamada à ação (`Ler artigo →`).
+- **Renderização Híbrida & Alta Performance:**
+  - Inserção estática em todos os 28 arquivos HTML (`artigos/*.html` e `public/artigos/*.html`) para indexação imediata por motores de busca (SEO interno) e carregamento sem layout shift (CLS 0).
+  - Módulo dinâmico em `script.js` e `public/script.js` (`initContinueExplorando`) que reconhece a URL, previne duplicidades e assegura compatibilidade universal com futuras publicações.
+- **Design Responsivo & Estética Blindada:**
+  - Grid de 3 colunas no desktop, 2 colunas no tablet e 1 coluna em smartphones.
+  - Suporte completo aos modos Claro e Escuro, com contraste WCAG AA, bordas suaves e efeito hover elevado.
+  - Estrutura geral 100% preservada: pílula lateral flutuante de redes sociais com blur de 42px, botão de exploração cósmica, botão voltar ao topo e catálogo de artigos permanecem intactos.
+
+---
+
+## [v3.4.0] - 2026-10-12
 ### 🚗 Novo Artigo Publicado (Engenharia de Tráfego & Mito Viral):
 - **Novo Artigo no Ar:** *"A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade"* (`artigos/rodovia-36-faixas-china.html`).
 - **Categoria:** Mundo (`mundo`) • Nível 2 — Médio • 5 min de leitura.

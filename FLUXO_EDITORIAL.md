@@ -58,39 +58,73 @@ Para um tema ser aprovado e transformado em artigo, ele deve atender a **pelo me
 
 ---
 
-## 4. Estado Atual do Catálogo (25 Artigos: 5 por Categoria)
+## 4. Os Dois Caminhos de Publicação Editorial
 
-### 🐾 Animais (5)
-1. `polvo-tres-coracoes.html` (4 min) — Em alta
-2. `corvos-inteligencia.html` (4 min) — Em alta
-3. `abelhas-rostos.html` (4 min)
-4. `animal-imortal-agua-viva.html` (4 min) — Recentes
-5. `camarao-mantis-soco.html` (⚡ 3 min) — Fato Rápido & Recentes
+O portal **Curiosidades Incríveis** opera em dois fluxos complementares de produção de conteúdo:
 
-### 🔬 Ciência (5)
-1. `som-mais-alto-krakatoa.html` (4 min) — Em alta
-2. `exemplo-artigo.html` (5 min)
-3. `por-que-ceu-azul.html` (4 min)
-4. `gelo-quente-estados-materia.html` (4 min)
-5. `tempo-topo-montanha.html` (⚡ 3 min) — Fato Rápido & Recentes
+### 📦 CAMINHO 1: Artigos de Volume / Acervo Inicial (25 Artigos)
+- **Objetivo:** Construir uma base sólida, densa e categorizada de conteúdo para preencher o portal, ranquear em pesquisas e oferecer variedade imediata de leitura.
+- **Estrutura:** 5 artigos por categoria (25 artigos no total), com introdução cativante, 2 seções de aprofundamento factual, caixa de destaque temática, fato curioso em callout e conclusão elegante, calibrados para o tempo de leitura real (3 a 5 min).
 
-### 💻 Tecnologia (5)
-1. `bug-guerra-nuclear-1983.html` (4 min) — Em alta
-2. `internet-funciona.html` (5 min)
-3. `mecanismo-anticitera-computador.html` (4 min)
-4. `sete-chaves-internet.html` (4 min) — Recentes
-5. `virus-stuxnet-arma-digital.html` (⚡ 3 min) — Fato Rápido & Recentes
+### 🎬 CAMINHO 2: Artigos Editoriais Profundos / Transcrição de Vídeos Virais (3 Artigos)
+- **Objetivo:** Transformar vídeos de alto impacto e repercussão das redes sociais (Instagram/TikTok/Reels) em matérias jornalísticas de altíssimo rigor, com desmistificação de fakes e ciência profunda.
+- **Fluxo Operacional:** 
+  1. Transcrição e triagem do vídeo viral.
+  2. Proposta estruturada em 5 tópicos (introdução, desmistificação, contextualização, física/biologia real e conclusão reflexiva).
+  3. Validação e aprovação prévia de tópicos pelo editor.
+  4. Redação em profundidade com rigor científico, checagem factual e arte visual de alta fidelidade cinematográfica.
 
-### 📜 História (5)
-1. `epidemia-danca-1518.html` (4 min) — Em alta
-2. `origem-palavras.html` (4 min)
-3. `fogo-grego-arma-secreta.html` (4 min)
-4. `guerra-dos-emus.html` (⚡ 3 min) — Fato Rápido & Recentes
-5. `adaga-tutancamon-meteorito.html` (⚡ 3 min) — Fato Rápido & Recentes
+---
 
-### 🌍 Mundo & Mistérios (5)
-1. `ponto-nemo-lugar-solitario.html` (4 min) — Em alta
-2. `lugares-incriveis.html` (6 min)
-3. `lago-natron-petrificador.html` (4 min) — Recentes
-4. `floresta-arvores-tortas-polonia.html` (4 min) — Recentes
-5. `porta-do-inferno-darvaza.html` (⚡ 3 min) — Fato Rápido & Recentes
+## 5. Relação Oficial das Duas Listas
+
+### 📋 LISTA 1: Caminho 1 (Volume & Acervo Inicial — 25 Artigos)
+
+#### 🐾 Animais (5 artigos)
+1. `polvo-tres-coracoes.html` — *O Mistério dos Polvos: 3 Corações, Sangue Azul e Inteligência de Outro Mundo* (4 min)
+2. `abelhas-rostos.html` — *As abelhas conseguem reconhecer rostos humanos?* (3 min)
+3. `corvos-inteligencia.html` — *A Inteligência dos Corvos: Eles Guardam Rancor e Planejam o Futuro* (4 min)
+4. `animal-imortal-agua-viva.html` — *O Animal Imortal: A Água-Viva Turritopsis dohrnii* (4 min)
+5. `camarao-mantis-soco.html` — *O Soco Supersônico do Camarão Mantis* (3 min)
+
+#### 🔬 Ciência (5 artigos)
+6. `exemplo-artigo.html` — *O Que Havia Antes do Big Bang?* (5 min)
+7. `por-que-ceu-azul.html` — *Por que o Céu é Azul? A Física da Dispersão de Rayleigh* (4 min)
+8. `som-mais-alto-krakatoa.html` — *O Som Mais Alto Já Registrado na Terra: O Rugido do Krakatoa* (4 min)
+9. `gelo-quente-estados-materia.html` — *Gelo Quente e Novos Estados da Matéria* (4 min)
+10. `tempo-topo-montanha.html` — *O Tempo Passa Mais Rápido no Topo de uma Montanha?* (3 min)
+
+#### 💻 Tecnologia (5 artigos)
+11. `internet-funciona.html` — *Como a Internet Realmente Funciona Sob os Oceanos* (5 min)
+12. `bug-guerra-nuclear-1983.html` — *O Bug que Quase Provocou a Terceira Guerra Mundial em 1983* (4 min)
+13. `sete-chaves-internet.html` — *As 7 Chaves Físicas que Podem Reiniciar a Internet* (4 min)
+14. `mecanismo-anticitera-computador.html` — *O Mecanismo de Anticitera: O Computador Analógico de 2.000 Anos* (4 min)
+15. `virus-stuxnet-arma-digital.html` — *Stuxnet: A Primeira Arma Digital do Mundo Físico* (3 min)
+
+#### 📜 História (5 artigos)
+16. `origem-palavras.html` — *A Fascinante Origem de 7 Palavras que Usamos Todos os Dias* (4 min)
+17. `guerra-dos-emus.html` — *A Grande Guerra dos Êmus: Quando a Austrália Perdeu para Pássaros* (3 min)
+18. `epidemia-danca-1518.html` — *A Misteriosa Epidemia da Dança de 1518 em Estrasburgo* (4 min)
+19. `fogo-grego-arma-secreta.html` — *Fogo Grego: A Fórmula Militar Mais Bem Guardada da Antiguidade* (4 min)
+20. `adaga-tutancamon-meteorito.html` — *A Adaga de Tutancâmon Veio do Espaço Sideral?* (3 min)
+
+#### 🌍 Mundo & Mistérios (5 artigos)
+21. `lugares-incriveis.html` — *7 Lugares Mais Extremos e Fascinantes do Planeta Terra* (5 min)
+22. `porta-do-inferno-darvaza.html` — *A Porta do Inferno: A Cratera de Darvaza que Queima Há Décadas* (3 min)
+23. `ponto-nemo-lugar-solitario.html` — *Ponto Nemo: O Lugar Mais Isolado do Planeta Terra* (4 min)
+24. `lago-natron-petrificador.html` — *O Lago Natron: O Espelho d'Água que Petrifica Animais* (4 min)
+25. `floresta-arvores-tortas-polonia.html` — *A Misteriosa Floresta Torta da Polônia: Krzywy Las* (4 min)
+
+---
+
+### 🌟 LISTA 2: Caminho 2 (Vídeos Virais / Curadoria & Rigor Científico — 3 Artigos)
+
+1. `dinossauros-aves-evolucao.html` — *Os Dinossauros Não Foram Extintos: Como as aves modernas guardam o legado dos gigantes pré-históricos* (6 min • Ciência)
+   - *Origem:* Vídeo viral sobre a sobrevivência evolutiva das aves após a extinção K-Pg.
+   - *Foco:* Paleontologia comparada, homologia esquelética, proto-penas e biologia evolutiva.
+2. `animais-humanos-aproximacao.html` — *Eles Sentem o Que Sentimos? A ciência real por trás dos animais que se aproximam de nós* (5 min • Animais)
+   - *Origem:* Vídeo viral de aproximação entre animais selvagens (leão-marinho, borboleta) e humanos.
+   - *Foco:* Etologia, desmistificação de antropomorfismo, *mud-puddling*, neofilia e habituação.
+3. `rodovia-36-faixas-china.html` — *A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade* (5 min • Mundo)
+   - *Origem:* Vídeo viral sobre suposta rodovia chinesa de 36 faixas que estreita para 4.
+   - *Foco:* Engenharia de tráfego, praça de pedágio de Wuzhuang, Golden Week e dinâmica de ondas de trânsito fantasma.

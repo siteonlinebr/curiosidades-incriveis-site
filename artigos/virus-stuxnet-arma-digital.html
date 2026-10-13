@@ -205,37 +205,133 @@
       <div class="article-body-container">
         <div class="article-prose">
           <p>
-            Em 2010, um malware misterioso destruiu centenas de centrífugas nucleares de urânio no Irã sem detonar um único explosivo e sem que a instalação tivesse conexão com a internet.
+            Até o ano de 2010, o mundo da segurança cibernética operava sob uma premissa clara: vírus de computador, malwares e cavalos de Troia eram ameaças digitais restritas ao mundo virtual — eles podiam roubar dados sigilosos, esvaziar contas bancárias ou corromper sistemas operacionais, mas não podiam quebrar aço, dobrar tubulações ou explodir motores no mundo físico.
+          </p>
+          <p>
+            Tudo mudou quando especialistas em segurança da Bielorrússia detectaram um pedaço de código enigmático que se espalhava silenciosamente pelo Oriente Médio. Seu nome era <strong>Stuxnet</strong>. Ele não buscava cartões de crédito nem espionava e-mails: tratava-se do primeiro míssil cibernético militar do planeta, concebido com um único e aterrorizante propósito: destruir instalações nucleares pesadas sem disparar um único tiro.
           </p>
 
-          <h2>A invasão através de um air gap</h2>
+          <h2>A Fortaleza de Natanz e a Invasão do "Air Gap"</h2>
           <p>
-            A usina de Natanz era uma das instalações mais protegidas do planeta, isolada da internet mundial por um air gap total. O Stuxnet conseguiu entrar através de um simples pen drive USB infectado inserido por um técnico desavisado. Uma vez lá dentro, ele usou quatro vulnerabilidades de dia zero para se espalhar silenciosamente.
+            O alvo da operação era o complexo nuclear subterrâneo de <strong>Natanz</strong>, no coração do Irã. Construída a dezenas de metros abaixo do solo desértico e protegida por camadas massivas de concreto armado à prova de bombardeios aéreos, a usina abrigava milhares de centrífugas de enriquecimento de urânio ultrassensíveis (do modelo <em>IR-1</em>).
+          </p>
+          <p>
+            Para se blindar contra ciberataques, a instalação operava sob rigoroso <strong>air gap</strong> — isto é, sua rede interna de computadores estava 100% desconectada da internet pública mundial. Nenhuma invasão remota convencional por Wi-Fi ou cabos de fibra óptica era fisicamente possível.
+          </p>
+          <p>
+            A inteligência por trás do Stuxnet (desenvolvido conjuntamente pelos serviços de inteligência dos Estados Unidos e de Israel sob o codinome secreto <em>Operation Olympic Games</em>) superou essa barreira intransponível utilizando o elo mais fraco de qualquer sistema: o comportamento humano. O malware foi transferido para pen drives USB comuns distribuídos estrategicamente a prestadores de serviços de engenharia e técnicos industriais iranianos. Bastou que um técnico desavisado plugasse o dispositivo em um terminal interno para que o verme penetrasse a fortaleza digital.
           </p>
 
           <div class="article-highlight-box">
-            💡 O vírus não roubava senhas nem travava telas. Ele procurava exclusivamente por controladores lógicos programáveis (PLCs) da Siemens que regulavam a rotação das centrífugas de enriquecimento de urânio.
+            💡 <strong>Um Nível de Sofisticação Jamais Visto:</strong> Para se infiltrar sem disparar alertas antivírus, o Stuxnet utilizava nada menos que <strong>quatro vulnerabilidades inéditas de "dia zero" (zero-day)</strong> do sistema operacional Windows — algo que custaria milhões de dólares no mercado negro — e vinha assinado com certificados digitais criptográficos legítimos roubados de duas grandes fabricantes globais de microchips de Taiwan (Realtek e JMicron).
           </div>
 
-          <h2>Destruição mecânica invisível</h2>
+          <h2>A Sabotagem Mecânica: Acelerando Turbinas à Destruição</h2>
           <p>
-            O Stuxnet alterava a velocidade das turbinas para fazê-las girar a frequências de ressonância perigosas enquanto enviava dados falsos para os monitores dos engenheiros, mostrando que tudo operava em perfeita normalidade. Mais de 1.000 centrífugas literalmente se despedaçaram por forças descontroladas.
+            Uma vez dentro da rede de Natanz, o vírus comportou-se com paciência cirúrgica. Ele ignorou computadores domésticos e bancos de dados comuns, vasculhando a rede exclusivamente em busca de Controladores Lógicos Programáveis (PLCs) da série <em>Siemens Simatic S7-300</em> conectados a conversores de frequência industrial específicos de fabricação finlandesa e iraniana.
+          </p>
+          <p>
+            Ao identificar os alvos, o código aplicou um golpe de mestre inspirado em filmes de assalto a banco:
+          </p>
+          <ul>
+            <li><strong>O Loop de Telemetria Falsa:</strong> O vírus gravou 21 segundos de dados operacionais normais das centrífugas (pressão, temperatura e vibração) e começou a reproduzi-los em um loop falso contínuo nos monitores da sala de controle dos operadores iranianos.</li>
+            <li><strong>Ataque por Frequência de Ressonância:</strong> Enquanto os técnicos viam telas calmas indicando funcionamento perfeito, o Stuxnet assumiu o controle das válvulas: ele acelerou as centrífugas da velocidade normal de 1.064 Hz para perigosos 1.410 Hz durante 15 minutos, forçando o alumínio ao limite de ressonância mecânica, e depois freou bruscamente os motores para quase zero.</li>
+          </ul>
+          <p>
+            O choque térmico e as forças centrífugas violentas fizeram com que os rotores de alumínio se empenassem, batessem nas paredes externas e se despedaçassem em cascata no interior dos poços de contenção. Estima-se que mais de <strong>1.000 centrífugas iranianas tenham sido destruídas</strong> fisicamente sem que os cientistas locais compreendessem o motivo da falha.
           </p>
 
           <div class="curiosity-card-callout">
-            <strong>✨ A ERA DA CIBERGUERRA</strong>
+            <strong>✨ A FUGA DO VÍRUS PARA O MUNDO</strong>
             <p>
-              Com mais de 15.000 linhas de código complexo e certificados digitais roubados de empresas de Taiwan, o Stuxnet é amplamente considerado por especialistas a primeira arma cibernética militar de grau governamental já implantada.
+              O plano quase perfeito só foi descoberto porque uma versão atualizada do código continha um erro de replicação: ele escapou do ambiente fechado de Natanz no laptop de um engenheiro e espalhou-se pela internet global em 2010. Como o malware não encontrava os PLCs específicos da Siemens fora da usina, permanecia inofensivo em milhões de computadores pelo mundo, revelando aos analistas a sua existência!
             </p>
           </div>
 
-          <h2>Conclusão</h2>
+          <h2>Conclusão: A Abertura da Caixa de Pandora Digital</h2>
           <p>
-            O caso Stuxnet inaugurou uma nova era na geopolítica: linhas de código agora podem quebrar engrenagens, desativar redes elétricas e causar danos comparáveis a mísseis balísticos com um toque no teclado.
+            O Stuxnet mudou para sempre a história dos conflitos geopolíticos. Ele comprovou que softwares militares invisíveis têm o mesmo poder destrutivo de esquadrões de bombardeiros, abrindo uma era em que usinas hidrelétricas, redes de distribuição de água, hospitais e redes elétricas de países inteiros são alvos potenciais de armas compostas unicamente por zeros e uns.
           </p>
         </div>
 
-        <div class="article-share-footer">
+                <!-- SEÇÃO: 🧭 CONTINUE EXPLORANDO -->
+        <section class="continue-explorando-section" id="continue-explorando" aria-labelledby="continue-explorando-heading">
+          <div class="continue-explorando-header">
+            <div class="continue-explorando-badge">
+              <span class="badge-dot" aria-hidden="true"></span> RECOMENDADOS PARA VOCÊ
+            </div>
+            <h2 class="continue-explorando-title" id="continue-explorando-heading">
+              🧭 Continue Explorando
+            </h2>
+            <p class="continue-explorando-desc">
+              Mais curiosidades fascinantes selecionadas para você continuar descobrindo o extraordinário.
+            </p>
+          </div>
+          <div class="continue-explorando-grid">
+            <article class="continue-card">
+              <a class="continue-card-image" href="internet-funciona.html" title="Ler: Como a Internet Realmente Funciona Debaixo dos Oceanos?">
+                <img src="../images/artigo-internet.jpg" alt="Como a Internet Realmente Funciona Debaixo dos Oceanos?" loading="lazy">
+                <span class="continue-card-badge">TECNOLOGIA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>5 min de leitura</span>
+                  <span>•</span>
+                  <span>Tecnologia</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="internet-funciona.html">Como a Internet Realmente Funciona Debaixo dos Oceanos?</a>
+                </h3>
+                <p class="continue-card-excerpt">Quase 99% de todo o tráfego de dados intercontinental atravessa cabos de fibra óptica no fundo do mar.</p>
+                <a class="continue-card-link" href="internet-funciona.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+            <article class="continue-card">
+              <a class="continue-card-image" href="bug-guerra-nuclear-1983.html" title="Ler: O Homem que Salvou o Mundo de um Bug de Computador em 1983">
+                <img src="../images/artigo-stanislav-bug.jpg" alt="O Homem que Salvou o Mundo de um Bug de Computador em 1983" loading="lazy">
+                <span class="continue-card-badge">TECNOLOGIA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>4 min de leitura</span>
+                  <span>•</span>
+                  <span>Tecnologia</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="bug-guerra-nuclear-1983.html">O Homem que Salvou o Mundo de um Bug de Computador em 1983</a>
+                </h3>
+                <p class="continue-card-excerpt">Stanislav Petrov confiou em sua intuição quando o sistema soviético apontou ataque de mísseis americanos que na verdade eram reflexos do Sol.</p>
+                <a class="continue-card-link" href="bug-guerra-nuclear-1983.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+            <article class="continue-card">
+              <a class="continue-card-image" href="rodovia-36-faixas-china.html" title="Ler: A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade">
+                <img src="../images/artigo-rodovia-36-faixas.jpg" alt="A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade" loading="lazy">
+                <span class="continue-card-badge">MUNDO</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>5 min de leitura</span>
+                  <span>•</span>
+                  <span>Mundo</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="rodovia-36-faixas-china.html">A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade</a>
+                </h3>
+                <p class="continue-card-excerpt">Entenda o que realmente aconteceu no famoso congestionamento das 36 faixas na China: a praça de pedágio de Wuzhuang, a Golden Week e a física real do tráfego.</p>
+                <a class="continue-card-link" href="rodovia-36-faixas-china.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+<div class="article-share-footer">
           <a class="button button-light" href="../artigos.html">← Voltar para todos os artigos</a>
           <a class="button button-primary" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
             Seguir no Instagram →

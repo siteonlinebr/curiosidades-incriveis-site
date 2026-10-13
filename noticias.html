@@ -267,9 +267,9 @@
         <p class="news-header-desc">
           Os acontecimentos, descobertas, lançamentos e assuntos relevantes apresentados de maneira acessível e interessante.
         </p>
-        <div class="news-demo-alert" role="status">
-          <strong>Estrutura Visual</strong>
-          <span>Esta área está preparada para receber notícias reais em breve. Os itens abaixo são dados demonstrativos temporários para validação de layout e navegação.</span>
+        <div class="news-verified-badge" role="status" style="margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--blue); font-weight: 600;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; box-shadow: 0 0 10px #4ade80;" aria-hidden="true"></span>
+          Cobertura Oficial • 18 Reportagens com Fontes Verificadas
         </div>
       </section>
 
@@ -325,13 +325,13 @@
               <span id="hero-news-reading">3 min de leitura</span>
             </div>
             <h2 class="news-featured-title" id="hero-news-title">
-              <a href="#noticia-demo">[Demonstração] Telescópio espacial registra detalhes inéditos em berçário de estrelas</a>
+              <a href="noticias/nobel-fisica-neutrinos-icecube-antartida.html">Detector no gelo da Antártida revela partículas cósmicas e rende Nobel de Física a Francis Halzen</a>
             </h2>
             <p class="news-featured-summary" id="hero-news-summary">
-              Estrutura pronta para receber a contextualização da notícia real. O modelo apresenta imagem imponente, leitura rápida e curadoria focada em descobertas impressionantes.
+              O observatório IceCube, com sensores a 2.500 metros sob a calota polar do Polo Sul, captura neutrinos de alta energia de regiões extremas do Universo.
             </p>
             <div>
-              <a class="news-read-action" href="#noticia-demo" title="Ler notícia (demonstração)">
+              <a class="news-read-action" id="hero-news-action" href="noticias/nobel-fisica-neutrinos-icecube-antartida.html" title="Ler notícia completa">
                 Ler notícia completa <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -489,13 +489,21 @@
         const heroItem = newsItems.find((n) => n.isFeaturedHero) || newsItems[0];
         if (heroItem && heroTitle) {
           heroImg.src = heroItem.image;
-          heroCredit.textContent = heroItem.imageCredit || "Crédito demonstrativo";
+          heroCredit.textContent = heroItem.imageCredit || "Divulgação Científica";
           heroCat.textContent = heroItem.category;
           heroCat.setAttribute("data-cat", heroItem.categorySlug);
           heroDate.textContent = calcRelTime(heroItem.publishedAt);
           heroReading.textContent = heroItem.readingTime;
-          heroTitle.querySelector("a").textContent = heroItem.title;
+          const heroLink = heroTitle.querySelector("a");
+          if (heroLink) {
+            heroLink.textContent = heroItem.title;
+            heroLink.href = heroItem.link;
+          }
           heroSummary.textContent = heroItem.summary;
+          const heroAction = document.getElementById("hero-news-action") || document.querySelector("#news-featured-card .news-read-action");
+          if (heroAction) {
+            heroAction.href = heroItem.link;
+          }
         }
 
         // Renderiza Coluna de Últimas Notícias
@@ -505,7 +513,7 @@
           latestList.innerHTML = latestItems
             .map(
               (item) => `
-            <a class="news-compact-item" href="#${item.id}" title="${item.title}">
+            <a class="news-compact-item" href="${item.link}" title="${item.title}">
               <div class="news-compact-thumb">
                 <img src="${item.image}" alt="${item.title}" loading="lazy" />
               </div>
@@ -532,29 +540,28 @@
           let filtered = newsItems.filter((n) => !n.isFeaturedHero);
           if (catSlug && catSlug !== "todas") {
             filtered = newsItems.filter((n) => n.categorySlug === catSlug);
-            // Quando filtrando por categoria específica, podemos focar a lista
           }
 
           if (filtered.length === 0) {
             feedGrid.innerHTML = "";
             feedGrid.style.display = "none";
             emptyState.style.display = "block";
-            feedCount.textContent = "0 publicações";
+            feedCount.textContent = "0 notícias";
             return;
           }
 
           emptyState.style.display = "none";
           feedGrid.style.display = "grid";
-          feedCount.textContent = `${filtered.length} ${filtered.length === 1 ? "exemplo" : "exemplos"}`;
+          feedCount.textContent = `${filtered.length} ${filtered.length === 1 ? "notícia" : "notícias"}`;
 
           feedGrid.innerHTML = filtered
             .map(
               (item) => `
             <article class="news-feed-card" id="${item.id}">
-              <div class="news-card-media">
+              <a href="${item.link}" class="news-card-media" title="${item.title}" style="text-decoration: none; display: block;">
                 <img src="${item.image}" alt="${item.title}" loading="lazy" />
                 ${item.imageCredit ? `<span class="news-credit-tag">${item.imageCredit}</span>` : ""}
-              </div>
+              </a>
               <div class="news-card-body">
                 <div class="news-meta-row">
                   <span class="cat-tag" data-cat="${item.categorySlug}">${item.category}</span>
@@ -563,11 +570,13 @@
                   <span class="news-meta-sep" aria-hidden="true">·</span>
                   <span>${item.readingTime}</span>
                 </div>
-                <h4 class="news-card-title">${item.title}</h4>
+                <h4 class="news-card-title">
+                  <a href="${item.link}" style="color: inherit; text-decoration: none;">${item.title}</a>
+                </h4>
                 <p class="news-card-summary">${item.summary}</p>
                 <div class="news-card-footer">
-                  <span>Estrutura demonstrativa</span>
-                  <a class="news-read-action" href="#${item.id}" style="font-size: 0.82rem;">Ver detalhes →</a>
+                  <span style="font-size: 0.76rem; color: var(--muted); font-weight: 600;">✦ Fatos Verificados</span>
+                  <a class="news-read-action" href="${item.link}" style="font-size: 0.82rem;">Ler notícia completa →</a>
                 </div>
               </div>
             </article>

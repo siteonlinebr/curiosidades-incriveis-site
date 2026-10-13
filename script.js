@@ -1362,3 +1362,134 @@ if (catParam) {
   requestAnimationFrame(updateCounter);
 })();
 
+// =========================================================
+// SEÇÃO "🧭 CONTINUE EXPLORANDO" NOS ARTIGOS
+// =========================================================
+(function initContinueExplorando() {
+  const bodyContainer = document.querySelector('.article-body-container');
+  if (!bodyContainer) return;
+
+  // Evita duplicidade se a seção já estiver presente
+  if (document.getElementById('continue-explorando')) return;
+
+  const shareFooter = bodyContainer.querySelector('.article-share-footer');
+  if (!shareFooter) return;
+
+  // Identifica o slug do artigo atual a partir do pathname da URL
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const rawFile = pathParts.length > 0 ? pathParts[pathParts.length - 1] : '';
+  const currentSlug = rawFile.replace(/\.html$/, '');
+
+  // Localiza o artigo atual no acervo
+  const currentArticle = typeof articles !== 'undefined'
+    ? articles.find((a) => a.id === currentSlug || a.link.includes(currentSlug))
+    : null;
+
+  if (typeof articles === 'undefined' || !Array.isArray(articles)) return;
+
+  // Pool de candidatos excluindo o artigo atual
+  const candidatePool = articles.filter(
+    (a) => a.id !== currentSlug && !a.link.includes(currentSlug)
+  );
+
+  let selectedRecommendations = [];
+
+  if (currentArticle) {
+    const sameCat = candidatePool.filter(
+      (a) => a.categorySlug === currentArticle.categorySlug
+    );
+    const otherCat = candidatePool.filter(
+      (a) => a.categorySlug !== currentArticle.categorySlug
+    );
+
+    // Prioriza 2 da mesma categoria e 1 de outra categoria para variedade e engajamento
+    if (sameCat.length >= 2) {
+      selectedRecommendations.push(sameCat[0], sameCat[1]);
+      if (otherCat.length > 0) {
+        selectedRecommendations.push(otherCat[0]);
+      } else if (sameCat.length > 2) {
+        selectedRecommendations.push(sameCat[2]);
+      }
+    } else if (sameCat.length === 1) {
+      selectedRecommendations.push(sameCat[0]);
+      if (otherCat.length >= 2) {
+        selectedRecommendations.push(otherCat[0], otherCat[1]);
+      } else {
+        selectedRecommendations.push(...otherCat);
+      }
+    } else {
+      selectedRecommendations.push(...otherCat.slice(0, 3));
+    }
+  }
+
+  // Fallback se necessário para garantir exatamente 3 artigos
+  if (selectedRecommendations.length < 3) {
+    for (const item of candidatePool) {
+      if (selectedRecommendations.length >= 3) break;
+      if (!selectedRecommendations.includes(item)) {
+        selectedRecommendations.push(item);
+      }
+    }
+  }
+
+  if (selectedRecommendations.length === 0) return;
+
+  // Monta os 3 cards
+  const cardsHtml = selectedRecommendations
+    .map((art) => {
+      const linkFilename = art.link.split('/').pop();
+      const articleUrl = linkFilename;
+      const imageFilename = art.image.split('/').pop();
+      const imageUrl = `../images/${imageFilename}`;
+
+      return `
+        <article class="continue-card">
+          <a class="continue-card-image" href="${articleUrl}" title="Ler: ${art.title}">
+            <img src="${imageUrl}" alt="${art.title}" loading="lazy" />
+            <span class="continue-card-badge">${art.category.toUpperCase()}</span>
+          </a>
+          <div class="continue-card-body">
+            <div class="continue-card-meta">
+              <span>${art.readingTime}</span>
+              <span>•</span>
+              <span>${art.category}</span>
+            </div>
+            <h3 class="continue-card-title">
+              <a href="${articleUrl}">${art.title}</a>
+            </h3>
+            <p class="continue-card-excerpt">${art.description}</p>
+            <a class="continue-card-link" href="${articleUrl}">
+              Ler artigo <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      `;
+    })
+    .join('');
+
+  const section = document.createElement('section');
+  section.className = 'continue-explorando-section';
+  section.id = 'continue-explorando';
+  section.setAttribute('aria-labelledby', 'continue-explorando-heading');
+
+  section.innerHTML = `
+    <div class="continue-explorando-header">
+      <div class="continue-explorando-badge">
+        <span class="badge-dot" aria-hidden="true"></span> RECOMENDADOS PARA VOCÊ
+      </div>
+      <h2 class="continue-explorando-title" id="continue-explorando-heading">
+        🧭 Continue Explorando
+      </h2>
+      <p class="continue-explorando-desc">
+        Mais curiosidades fascinantes selecionadas para você continuar descobrindo o extraordinário.
+      </p>
+    </div>
+    <div class="continue-explorando-grid">
+      ${cardsHtml}
+    </div>
+  `;
+
+  // Insere logo acima do article-share-footer
+  bodyContainer.insertBefore(section, shareFooter);
+})();
+

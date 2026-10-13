@@ -205,37 +205,128 @@
       <div class="article-body-container">
         <div class="article-prose">
           <p>
-            Quatro vezes ao ano, um seleto grupo de especialistas se reúne sob vigilância militar para uma cerimônia misteriosa que mantém a espinha dorsal da web protegida.
+            Quatro vezes por ano, em datas rigidamente agendadas, um pequeno grupo de especialistas em segurança cibernética de diferentes continentes viaja sob sigilo até bunkers blindados nos Estados Unidos. Eles não carregam armas nem uniformes militares, mas passam por eclusas de contenção à prova de bombas, scanners de retina e detectores de metal para realizar um ritual que parece saído de um livro de espionagem: a <strong>Cerimônia das Chaves da Internet</strong>.
+          </p>
+          <p>
+            Gerenciado pela ICANN (<em>Internet Corporation for Assigned Names and Numbers</em>) — a entidade internacional sem fins lucrativos que supervisiona a arquitetura de endereçamento da web —, esse procedimento solene é o que garante que, ao digitar o endereço do seu banco ou de um portal de notícias, você seja direcionado para o servidor real e não para um clone malicioso em um ataque hacker invisível.
           </p>
 
-          <h2>O ritual da ICANN e as chaves de segurança do DNS</h2>
+          <h2>A Falha de Kaminsky e o Guardião da Raiz do DNS</h2>
           <p>
-            A internet inteira se apoia no Domain Name System (DNS), que traduz nomes legíveis como google.com em endereços numéricos IP de servidores. Se alguém conseguir corromper a zona raiz desse sistema, seria capaz de redirecionar o tráfego bancário mundial e comunicações governamentais para servidores falsos sem que ninguém percebesse. Para blindar essa chave-mestre, a ICANN escolheu 14 guardiões em continentes diferentes.
+            Para compreender por que essas chaves existem, é preciso olhar para a espinha dorsal da navegação mundial: o <strong>DNS (Domain Name System)</strong>. Os computadores comunicam-se através de endereços numéricos IP (como 142.250.190.46), mas seres humanos usam palavras e nomes de domínio. O DNS funciona como a grande lista telefônica planetária, traduzindo nomes em números em frações de milissegundo.
+          </p>
+          <p>
+            Em 2008, o lendário pesquisador de segurança Dan Kaminsky descobriu uma falha estrutural gravíssima no protocolo DNS original: era possível "envenenar" o cache de servidores provedores e sequestrar o tráfego da internet inteira sem que nenhum usuário ou firewall percebesse.
+          </p>
+          <p>
+            Para solucionar a brecha, a comunidade técnica desenvolveu o <strong>DNSSEC</strong> (extensões de segurança do DNS). Esse sistema utiliza assinaturas criptográficas hierárquicas: cada camada valida a assinatura da camada abaixo, ancorada no ápice da pirâmide em uma única chave-mestre global, a <em>Root Zone KSK</em> (Key Signing Key). Quem controla essa chave, controla a integridade de todas as rotas digitais da civilização.
           </p>
 
           <div class="article-highlight-box">
-            💡 Cada um desses guardiões possui uma chave física de metal que abre caixas-fortes biométricas em bunkers subterrâneos blindados nos Estados Unidos.
+            💡 <strong>14 Guardiões Globais:</strong> Para evitar que qualquer governo, corporação ou espião pudesse assumir o controle totalitário da chave raiz, a ICANN selecionou 14 especialistas internacionais independentes de reputação ilibada — 7 titulares e 7 suplentes —, distribuídos por nações da Europa, Américas, África e Ásia.
           </div>
 
-          <h2>Como funciona a Cerimônia das Chaves</h2>
+          <h2>A Cerimônia das Chaves: O Ritual Passo a Passo</h2>
           <p>
-            A cada trimestre, os guardiões viajam com identidades autenticadas e passam por escaneamentos de retina e portas com eclusas de contenção. Juntos, eles montam uma chave criptográfica digital de 2048 bits dentro de módulos de segurança de hardware desconectados de qualquer rede externa.
+            A cada trimestre, os guardiões reúnem-se alternadamente em duas instalações subterrâneas de segurança máxima: uma em <strong>Culpeper, Virgínia</strong>, e outra em <strong>El Segundo, Califórnia</strong>. O procedimento é tão meticuloso que segue um roteiro auditado linha por linha, com transmissão pública em vídeo ao vivo para a comunidade técnica mundial:
           </p>
+          <ul>
+            <li><strong>Acesso às Caixas-Fortes:</strong> Nenhum guardião possui a chave completa. Cada um deles carrega uma chave física tradicional de latão que destrava um cofre de segurança individual dentro do bunker.</li>
+            <li><strong>Reunião dos Cartões Inteligentes:</strong> Para inicializar o sistema, é necessária a presença física de um quórum mínimo de guardiões, que inserem cartões inteligentes codificados utilizando o algoritmo matemático de compartilhamento de segredos de Shamir.</li>
+            <li><strong>O Módulo HSM Desconectado:</strong> Os cartões ativam um Módulo de Segurança de Hardware (HSM) blindado contra radiação eletromagnética e trancado em uma gaiola de Faraday sem nenhuma conexão de rede externa (air-gapped). O módulo gera um novo par de chaves criptográficas de 2048 bits para autenticar o tráfego dos próximos 90 dias.</li>
+          </ul>
 
           <div class="curiosity-card-callout">
-            <strong>✨ SE O MUNDO COLAPSAR</strong>
+            <strong>✨ O PROTOCOLO DE DESASTRE PLANETÁRIO</strong>
             <p>
-              Se um ataque cibernético em grande escala ou catástrofe global derrubar a autoridade central, os guardiões ativam cartões inteligentes em centros espelhados para reiniciar a internet mundial a partir de uma cópia limpa e confiável.
+              Se um conflito bélico de proporções globais ou um ciberataque catastrófico destruísse os bunkers principais e corrompesse a cadeia de confiança da web, os guardiões reservas espalhados pelo mundo ativariam cópias criptografadas de emergência para reconstruir a raiz do DNS a partir do zero em um ambiente seguro!
             </p>
           </div>
 
-          <h2>Conclusão</h2>
+          <h2>Conclusão: O Toque Humano na Era dos Algoritmos</h2>
           <p>
-            Por trás do mundo invisível de nuvens e bits, a segurança da civilização digital ainda repousa em rituais solenes, cooperação internacional e chaves físicas de aço forjado.
+            Em um mundo hiperconectado dominado por computação em nuvem e inteligência artificial, é reconfortante e fascinante constatar que o elo final de confiança da civilização digital ainda repousa na cooperação internacional, em auditorias presenciais com testemunhas e em velhas chaves de metal forjado guardadas em cofres de aço.
           </p>
         </div>
 
-        <div class="article-share-footer">
+                <!-- SEÇÃO: 🧭 CONTINUE EXPLORANDO -->
+        <section class="continue-explorando-section" id="continue-explorando" aria-labelledby="continue-explorando-heading">
+          <div class="continue-explorando-header">
+            <div class="continue-explorando-badge">
+              <span class="badge-dot" aria-hidden="true"></span> RECOMENDADOS PARA VOCÊ
+            </div>
+            <h2 class="continue-explorando-title" id="continue-explorando-heading">
+              🧭 Continue Explorando
+            </h2>
+            <p class="continue-explorando-desc">
+              Mais curiosidades fascinantes selecionadas para você continuar descobrindo o extraordinário.
+            </p>
+          </div>
+          <div class="continue-explorando-grid">
+            <article class="continue-card">
+              <a class="continue-card-image" href="internet-funciona.html" title="Ler: Como a Internet Realmente Funciona Debaixo dos Oceanos?">
+                <img src="../images/artigo-internet.jpg" alt="Como a Internet Realmente Funciona Debaixo dos Oceanos?" loading="lazy">
+                <span class="continue-card-badge">TECNOLOGIA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>5 min de leitura</span>
+                  <span>•</span>
+                  <span>Tecnologia</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="internet-funciona.html">Como a Internet Realmente Funciona Debaixo dos Oceanos?</a>
+                </h3>
+                <p class="continue-card-excerpt">Quase 99% de todo o tráfego de dados intercontinental atravessa cabos de fibra óptica no fundo do mar.</p>
+                <a class="continue-card-link" href="internet-funciona.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+            <article class="continue-card">
+              <a class="continue-card-image" href="bug-guerra-nuclear-1983.html" title="Ler: O Homem que Salvou o Mundo de um Bug de Computador em 1983">
+                <img src="../images/artigo-stanislav-bug.jpg" alt="O Homem que Salvou o Mundo de um Bug de Computador em 1983" loading="lazy">
+                <span class="continue-card-badge">TECNOLOGIA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>4 min de leitura</span>
+                  <span>•</span>
+                  <span>Tecnologia</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="bug-guerra-nuclear-1983.html">O Homem que Salvou o Mundo de um Bug de Computador em 1983</a>
+                </h3>
+                <p class="continue-card-excerpt">Stanislav Petrov confiou em sua intuição quando o sistema soviético apontou ataque de mísseis americanos que na verdade eram reflexos do Sol.</p>
+                <a class="continue-card-link" href="bug-guerra-nuclear-1983.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+            <article class="continue-card">
+              <a class="continue-card-image" href="rodovia-36-faixas-china.html" title="Ler: A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade">
+                <img src="../images/artigo-rodovia-36-faixas.jpg" alt="A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade" loading="lazy">
+                <span class="continue-card-badge">MUNDO</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>5 min de leitura</span>
+                  <span>•</span>
+                  <span>Mundo</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="rodovia-36-faixas-china.html">A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade</a>
+                </h3>
+                <p class="continue-card-excerpt">Entenda o que realmente aconteceu no famoso congestionamento das 36 faixas na China: a praça de pedágio de Wuzhuang, a Golden Week e a física real do tráfego.</p>
+                <a class="continue-card-link" href="rodovia-36-faixas-china.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+<div class="article-share-footer">
           <a class="button button-light" href="../artigos.html">← Voltar para todos os artigos</a>
           <a class="button button-primary" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
             Seguir no Instagram →
