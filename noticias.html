@@ -65,47 +65,6 @@
 
         <!-- AÇÕES DO TOPO -->
         <div class="header-actions">
-          <!-- BOTÃO EXPLORAR (ESTRELA) COM MENU FLUTUANTE -->
-          <div class="nav-explore-wrapper">
-            <button
-              class="icon-button nav-explore-trigger"
-              id="nav-explore-trigger"
-              type="button"
-              aria-label="Explorar seções"
-              aria-expanded="false"
-              aria-haspopup="true"
-              title="Explorar (Em alta, Recentes, Categorias)"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-            </button>
-            <div class="nav-explore-menu" id="nav-explore-menu" role="menu" aria-label="Menu de exploração">
-              <a class="nav-explore-item" href="index.html#em-alta" role="menuitem">
-                <span class="explore-item-icon">🔥</span>
-                <span class="explore-item-content">
-                  <span class="explore-item-title">Em alta</span>
-                  <span class="explore-item-sub">Destaques e tendências</span>
-                </span>
-              </a>
-              <a class="nav-explore-item" href="index.html#recentes" role="menuitem">
-                <span class="explore-item-icon">⏱️</span>
-                <span class="explore-item-content">
-                  <span class="explore-item-title">Recentes</span>
-                  <span class="explore-item-sub">Últimas publicações</span>
-                </span>
-              </a>
-              <a class="nav-explore-item" href="index.html#categorias" role="menuitem">
-                <span class="explore-item-icon">🗂️</span>
-                <span class="explore-item-content">
-                  <span class="explore-item-title">Categorias</span>
-                  <span class="explore-item-sub">Explore por assunto</span>
-                </span>
-              </a>
-            </div>
-          </div>
 
           <button
             class="icon-button search-trigger"
@@ -238,7 +197,7 @@
           <input
             id="search-input"
             type="search"
-            placeholder="Ex.: telescópio, inteligência artificial, espaço..."
+            placeholder="Pesquisar artigos e notícias (ex: inteligência artificial, espaço, animais...)"
             autocomplete="off"
           />
           <button class="search-close" type="button">Fechar</button>
@@ -249,9 +208,9 @@
           <button type="button" class="search-chip" data-query="tecnologia">💻 Tecnologia</button>
           <button type="button" class="search-chip" data-query="games">🎮 Games</button>
           <button type="button" class="search-chip" data-query="animais">🐾 Animais</button>
-          <button type="button" class="search-chip" data-query="universo">🪐 Universo</button>
+          <button type="button" class="search-chip" data-query="inteligência artificial">🤖 Inteligência Artificial</button>
         </div>
-        <p class="search-message" aria-live="polite">Pesquise entre os artigos ou escolha um tema sugerido acima.</p>
+        <p class="search-message" aria-live="polite">Pesquise entre artigos e notícias ou escolha um tema sugerido acima.</p>
         <div class="search-live-results" id="search-live-results"></div>
       </div>
     </div>

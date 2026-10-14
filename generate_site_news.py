@@ -34,7 +34,7 @@ news_data_js_content = f"""// ==================================================
 
 function calculateRelativeTime(dateInput) {{
   const date = new Date(dateInput);
-  const now = new Date("2026-10-13T16:00:00Z"); // Data de referência da publicação
+  const now = new Date(); // Dinâmico e automático em tempo real no navegador
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
 
   if (isNaN(diffInSeconds) || diffInSeconds < 0) {{
@@ -254,39 +254,7 @@ for item in news_list:
 
       <!-- AÇÕES DO TOPO -->
       <div class="header-actions">
-        <!-- BOTÃO EXPLORAR (ESTRELA) COM MENU FLUTUANTE -->
-        <div class="nav-explore-wrapper">
-          <button class="icon-button nav-explore-trigger" id="nav-explore-trigger" type="button" aria-label="Explorar seções" aria-expanded="false" aria-haspopup="true" title="Explorar (Em alta, Recentes, Categorias)">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-          </button>
-          <div class="nav-explore-menu" id="nav-explore-menu" role="menu" aria-label="Menu de exploração">
-            <a class="nav-explore-item" href="../index.html#em-alta" role="menuitem">
-              <span class="explore-item-icon">🔥</span>
-              <span class="explore-item-content">
-                <span class="explore-item-title">Em alta</span>
-                <span class="explore-item-sub">Destaques e tendências</span>
-              </span>
-            </a>
-            <a class="nav-explore-item" href="../index.html#recentes" role="menuitem">
-              <span class="explore-item-icon">⏱️</span>
-              <span class="explore-item-content">
-                <span class="explore-item-title">Recentes</span>
-                <span class="explore-item-sub">Últimas publicações</span>
-              </span>
-            </a>
-            <a class="nav-explore-item" href="../index.html#categorias" role="menuitem">
-              <span class="explore-item-icon">🗂️</span>
-              <span class="explore-item-content">
-                <span class="explore-item-title">Categorias</span>
-                <span class="explore-item-sub">Explore por assunto</span>
-              </span>
-            </a>
-          </div>
-        </div>
-
-        <button class="icon-button search-trigger" type="button" aria-label="Abrir pesquisa" aria-expanded="false">
+        <button class="icon-button search-trigger" type="button" aria-label="Abrir pesquisa" aria-expanded="false" title="Pesquisar artigos e notícias">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"></path></svg>
         </button>
 
@@ -360,6 +328,35 @@ for item in news_list:
       <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer" style="justify-content: center;">
         Seguir no Instagram ↗
       </a>
+    </div>
+  </div>
+
+  <!-- PAINEL DE PESQUISA UNIFICADO (ARTIGOS + NOTÍCIAS) -->
+  <div class="search-panel" aria-hidden="true">
+    <div class="search-box container">
+      <label for="search-input">O que você quer descobrir?</label>
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+        </svg>
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Pesquisar artigos e notícias (ex: inteligência artificial, espaço, animais...)"
+          autocomplete="off"
+        />
+        <button class="search-close" type="button">Fechar</button>
+      </div>
+      <div class="search-suggestions" id="search-suggestions">
+        <span class="search-suggestions-label">💡 Sugestões:</span>
+        <button type="button" class="search-chip" data-query="ciência">🔬 Ciência</button>
+        <button type="button" class="search-chip" data-query="tecnologia">💻 Tecnologia</button>
+        <button type="button" class="search-chip" data-query="games">🎮 Games</button>
+        <button type="button" class="search-chip" data-query="animais">🐾 Animais</button>
+        <button type="button" class="search-chip" data-query="inteligência artificial">🤖 Inteligência Artificial</button>
+      </div>
+      <p class="search-message" aria-live="polite">Pesquise entre artigos e notícias ou escolha um tema sugerido acima.</p>
+      <div class="search-live-results" id="search-live-results"></div>
     </div>
   </div>
 

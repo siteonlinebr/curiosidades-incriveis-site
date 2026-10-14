@@ -8,7 +8,7 @@
 
 function calculateRelativeTime(dateInput) {
   const date = new Date(dateInput);
-  const now = new Date("2026-10-13T16:00:00Z"); // Data de referência da publicação
+  const now = new Date(); // Dinâmico e automático em tempo real no navegador
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
 
   if (isNaN(diffInSeconds) || diffInSeconds < 0) {

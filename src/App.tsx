@@ -122,19 +122,19 @@ export default function App() {
   const popularArticles = useMemo(() => ARTICLES_DATA.filter((a) => a.popular).slice(0, 3), []);
 
   // Contador de seguidores animado com efeito "Ao Vivo" (Instagram @curiosidades.incriveis6)
-  const [followerCount, setFollowerCount] = useState<number>(56200);
+  const [followerCount, setFollowerCount] = useState<number>(61000);
   const [isCounterHighlighted, setIsCounterHighlighted] = useState<boolean>(false);
 
   useEffect(() => {
-    const baseFollowers = 56200;
+    const baseFollowers = 61000;
     const now = new Date();
     const dayMinutes = now.getHours() * 60 + now.getMinutes();
     // Variação orgânica acompanhando o crescimento ao longo do dia
-    const organicVariation = Math.floor(dayMinutes / 8);
+    const organicVariation = Math.floor(dayMinutes / 5);
     const target = baseFollowers + organicVariation;
 
     const startVal = Math.max(0, target - 100);
-    const duration = 1200; // animação inicial mais dinâmica
+    const duration = 800; // animação inicial mais dinâmica
     const startTime = performance.now();
 
     let animationFrameId: number;
@@ -155,14 +155,15 @@ export default function App() {
 
     animationFrameId = requestAnimationFrame(update);
 
-    // Micro-incrementos mais rápidos (a cada 12 a 20 segundos) simulando novos seguidores reais
+    // Micro-incrementos mais rápidos (a cada 1.5 a 3.5 segundos) simulando novos seguidores reais
     let timeoutId: number;
     const scheduleNextTick = () => {
-      const randomInterval = Math.floor(Math.random() * (20000 - 12000)) + 12000; // 12s a 20s
+      const randomInterval = Math.floor(Math.random() * (3500 - 1500)) + 1500;
       timeoutId = window.setTimeout(() => {
-        setFollowerCount((prev) => prev + 1);
+        const inc = Math.random() > 0.65 ? 2 : 1;
+        setFollowerCount((prev) => prev + inc);
         setIsCounterHighlighted(true);
-        setTimeout(() => setIsCounterHighlighted(false), 700);
+        setTimeout(() => setIsCounterHighlighted(false), 600);
         scheduleNextTick();
       }, randomInterval);
     };
@@ -750,7 +751,7 @@ export default function App() {
                   </p>
                   <h2>Siga a Curiosidades Incríveis no Instagram.</h2>
                   <p className="text-white/80 mt-2 text-base">
-                    Descubra fatos rápidos, carrosséis explicativos e vídeos diários com mais de 55 mil seguidores.
+                    Descubra fatos rápidos, carrosséis explicativos e vídeos diários com mais de 61 mil seguidores.
                   </p>
                 </div>
                 <a

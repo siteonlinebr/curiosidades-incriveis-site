@@ -976,9 +976,259 @@ if (navExploreTrigger && navExploreMenu) {
 
 // =========================================================
 // =========================================================
-// PAINEL DE PESQUISA RÁPIDA COM RESULTADOS AO VIVO
 // =========================================================
-const searchTrigger = document.querySelector('.search-trigger') || document.querySelector('.icon-button[aria-label="Pesquisar"]');
+// PAINEL DE PESQUISA RÁPIDA UNIFICADA (ARTIGOS + NOTÍCIAS)
+// =========================================================
+const CI_OFFICIAL_NEWS_CATALOG = [
+  {
+    "id": "microsoft-chip-maia-300-ia",
+    "slug": "microsoft-chip-maia-300-ia",
+    "title": "Microsoft apresenta o chip de IA Maia 300 e planeja expansão em escala para 2027",
+    "summary": "O Maia 300 foi projetado para executar tarefas pesadas de inteligência artificial e auxiliar a Microsoft a ampliar sua eficiência em data centers.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-microsoft-chip-maia-300-ia.jpg",
+    "link": "noticias/microsoft-chip-maia-300-ia.html"
+  },
+  {
+    "id": "reguladores-fiscalizam-ia-bancos",
+    "slug": "reguladores-fiscalizam-ia-bancos",
+    "title": "Reguladores intensificam fiscalização sobre o uso de inteligência artificial no setor bancário",
+    "summary": "Autoridades financeiras nos Estados Unidos e Europa investigam governança de modelos autônomos, auditoria de decisões e resposta a incidentes cibernéticos.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-reguladores-fiscalizam-ia-bancos.jpg",
+    "link": "noticias/reguladores-fiscalizam-ia-bancos.html"
+  },
+  {
+    "id": "volantis-laser-conexao-chips-ia",
+    "slug": "volantis-laser-conexao-chips-ia",
+    "title": "Startup capta US$ 88 milhões para acelerar conexão entre chips de IA usando luz laser",
+    "summary": "A Volantis desenvolve interconexões ópticas com lasers VCSEL para conectar processadores a dezenas de chips de memória, superando gargalos elétricos tradicionais.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-volantis-laser-conexao-chips-ia.jpg",
+    "link": "noticias/volantis-laser-conexao-chips-ia.html"
+  },
+  {
+    "id": "gears-of-war-e-day-lancamento",
+    "slug": "gears-of-war-e-day-lancamento",
+    "title": "Gears of War: E-Day retorna às origens da saga e chega aos jogadores de Xbox e PC",
+    "summary": "Novo capítulo revive o Dia da Emergência sob a perspectiva de Marcus Fenix e Dominic Santiago, marcando o retorno às raízes do combate tático.",
+    "category": "Games",
+    "categorySlug": "games",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-gears-of-war-e-day-lancamento.jpg",
+    "link": "noticias/gears-of-war-e-day-lancamento.html"
+  },
+  {
+    "id": "star-wars-galactic-racer-lancamento",
+    "slug": "star-wars-galactic-racer-lancamento",
+    "title": "Star Wars: Galactic Racer leva disputas de alta velocidade e podracers aos consoles e PC",
+    "summary": "Aventura de corrida coloca os jogadores no circuito clandestino da Liga Galáctica, com pilotagem de speeders, landspeeders e podracers no universo Star Wars.",
+    "category": "Games",
+    "categorySlug": "games",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-star-wars-galactic-racer-lancamento.jpg",
+    "link": "noticias/star-wars-galactic-racer-lancamento.html"
+  },
+  {
+    "id": "castlevania-belmonts-curse-lancamento",
+    "slug": "castlevania-belmonts-curse-lancamento",
+    "title": "Novo Castlevania coloca Rose Belmont em uma Paris medieval tomada por monstros",
+    "summary": "Belmont’s Curse traz aventura 2D de exploração desenvolvida em colaboração com os estúdios de Dead Cells para PlayStation, Xbox, Switch e PC.",
+    "category": "Games",
+    "categorySlug": "games",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-castlevania-belmonts-curse-lancamento.jpg",
+    "link": "noticias/castlevania-belmonts-curse-lancamento.html"
+  },
+  {
+    "id": "brasil-eleicao-segundo-turno-campanhas",
+    "slug": "brasil-eleicao-segundo-turno-campanhas",
+    "title": "Lula e Flávio Bolsonaro intensificam agendas em São Paulo antes do segundo turno",
+    "summary": "Candidatos concentram esforços na capital paulista em busca de apoios municipais e eleitores indecisos para a votação marcada para 25 de outubro.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-brasil-eleicao-segundo-turno-campanhas.jpg",
+    "link": "noticias/brasil-eleicao-segundo-turno-campanhas.html"
+  },
+  {
+    "id": "reino-unido-uniao-europeia-reaproximacao",
+    "slug": "reino-unido-uniao-europeia-reaproximacao",
+    "title": "Reino Unido propõe cúpula em Bruxelas para aprofundar cooperação com a União Europeia",
+    "summary": "Governo britânico busca pactos práticos em comércio agroalimentar, energia e mobilidade de jovens; debates sobre interferências externas repercutem politicamente.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-reino-unido-uniao-europeia-reaproximacao.jpg",
+    "link": "noticias/reino-unido-uniao-europeia-reaproximacao.html"
+  },
+  {
+    "id": "cerebro-humano-novos-neuronios-adultos",
+    "slug": "cerebro-humano-novos-neuronios-adultos",
+    "title": "Neurociência debate se o cérebro humano continua gerando novos neurônios na vida adulta",
+    "summary": "Revisão publicada na Nature examina estudos divergentes sobre neurogênese adulta e os desafios técnicos para identificar células jovens no hipocampo maduro.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-cerebro-humano-novos-neuronios-adultos.jpg",
+    "link": "noticias/cerebro-humano-novos-neuronios-adultos.html"
+  },
+  {
+    "id": "nobel-quimica-moleculas-imagens-espelhadas",
+    "slug": "nobel-quimica-moleculas-imagens-espelhadas",
+    "title": "Nobel de Química premia pesquisas pioneiras sobre quiralidade e moléculas espelhadas",
+    "summary": "Henri Kagan e Kenso Soai são laureados por desvendar como reações químicas podem favorecer uma entre duas formas simétricas de uma mesma molécula.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-nobel-quimica-moleculas-imagens-espelhadas.jpg",
+    "link": "noticias/nobel-quimica-moleculas-imagens-espelhadas.html"
+  },
+  {
+    "id": "nobel-fisica-neutrinos-icecube-antartida",
+    "slug": "nobel-fisica-neutrinos-icecube-antartida",
+    "title": "Detector no gelo da Antártida revela partículas cósmicas e rende Nobel de Física a Francis Halzen",
+    "summary": "O observatório IceCube, com sensores a 2.500 metros sob a calota polar do Polo Sul, captura neutrinos de alta energia de regiões extremas do Universo.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-nobel-fisica-neutrinos-icecube-antartida.jpg",
+    "link": "noticias/nobel-fisica-neutrinos-icecube-antartida.html"
+  },
+  {
+    "id": "tartaruga-jonathan-194-anos-genetica",
+    "slug": "tartaruga-jonathan-194-anos-genetica",
+    "title": "Tartaruga Jonathan, estimada em 194 anos, oferece pistas biológicas sobre a longevidade",
+    "summary": "Sequenciamento genético do animal terrestre mais velho do mundo revela variantes em vias de reparo de DNA e proteção contra o envelhecimento celular.",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-tartaruga-jonathan-194-anos-genetica.jpg",
+    "link": "noticias/tartaruga-jonathan-194-anos-genetica.html"
+  },
+  {
+    "id": "carcacas-elefantes-ecossistema-savana",
+    "slug": "carcacas-elefantes-ecossistema-savana",
+    "title": "Carcaças de elefantes alteram nutrientes e vegetação da savana por quase uma década",
+    "summary": "Estudo no Parque Nacional Kruger comprova que a decomposição de grandes animais cria pontos de enriquecimento de fósforo e pastagem duradoura no solo.",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-carcacas-elefantes-ecossistema-savana.jpg",
+    "link": "noticias/carcacas-elefantes-ecossistema-savana.html"
+  },
+  {
+    "id": "fossil-egito-nova-especie-crocodiliano",
+    "slug": "fossil-egito-nova-especie-crocodiliano",
+    "title": "Fóssil egípcio de 50 milhões de anos é reclassificado como nova espécie de crocodiliano",
+    "summary": "Tomografia computadorizada do crânio encontrado perto do Cairo revela características anatômicas únicas e batiza o predador pré-histórico Herugavialis cairensis.",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-fossil-egito-nova-especie-crocodiliano.jpg",
+    "link": "noticias/fossil-egito-nova-especie-crocodiliano.html"
+  },
+  {
+    "id": "expedicao-pista-aviao-amelia-earhart",
+    "slug": "expedicao-pista-aviao-amelia-earhart",
+    "title": "Expedição investiga possível pista sobre o avião desaparecido de Amelia Earhart no Pacífico",
+    "summary": "Arqueólogos marinhos viajam ao atol de Nikumaroro para checar anomalia submersa em lagoa que pode corresponder a destroços do Lockheed Electra de 1937.",
+    "category": "Mundo",
+    "categorySlug": "mundo",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-expedicao-pista-aviao-amelia-earhart.jpg",
+    "link": "noticias/expedicao-pista-aviao-amelia-earhart.html"
+  },
+  {
+    "id": "fmi-riscos-economia-global-ia-divida-conflitos",
+    "slug": "fmi-riscos-economia-global-ia-divida-conflitos",
+    "title": "FMI alerta para riscos globais ligados a eventual correção em IA, dívida e conflitos",
+    "summary": "Fundo Monetário Internacional projeta crescimento global de 3,1% em 2026, mas adverte que choque em investimentos tecnológicos poderia subtrair 1,1% do PIB até 2028.",
+    "category": "Mundo",
+    "categorySlug": "mundo",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-fmi-riscos-economia-global-ia-divida-conflitos.jpg",
+    "link": "noticias/fmi-riscos-economia-global-ia-divida-conflitos.html"
+  },
+  {
+    "id": "cyberpunk-2077-filme-live-action-paramount",
+    "slug": "cyberpunk-2077-filme-live-action-paramount",
+    "title": "Filme live-action de Cyberpunk 2077 entra em desenvolvimento inicial com a Paramount",
+    "summary": "Adaptação cinematográfica do universo de Night City é desenvolvida em parceria com a CD Projekt RED e o produtor Lorenzo di Bonaventura.",
+    "category": "Entretenimento",
+    "categorySlug": "entretenimento",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-cyberpunk-2077-filme-live-action-paramount.jpg",
+    "link": "noticias/cyberpunk-2077-filme-live-action-paramount.html"
+  },
+  {
+    "id": "novidades-streaming-musica-filmes-outubro-2026",
+    "slug": "novidades-streaming-musica-filmes-outubro-2026",
+    "title": "Guia da semana reúne documentário sobre Norm Macdonald, Tenzing e estreias do streaming",
+    "summary": "Semana traz documentário de Judd Apatow na Netflix, a biografia épica Tenzing no Apple TV, produções da Marvel e novos lançamentos musicais.",
+    "category": "Entretenimento",
+    "categorySlug": "entretenimento",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-novidades-streaming-musica-filmes-outubro-2026.jpg",
+    "link": "noticias/novidades-streaming-musica-filmes-outubro-2026.html"
+  }
+];
+
+function getUnifiedSearchCatalog() {
+  const items = [];
+  
+  // 1. Artigos Oficiais
+  if (typeof articles !== 'undefined' && Array.isArray(articles)) {
+    articles.forEach(a => {
+      items.push({
+        type: 'artigo',
+        typeLabel: 'Artigo',
+        typeBadgeClass: 'article',
+        id: a.id,
+        title: a.title,
+        category: a.category,
+        categorySlug: a.categorySlug || 'geral',
+        description: a.description || '',
+        readingTime: a.readingTime || '4 min',
+        image: a.image,
+        link: a.link,
+        slug: a.id
+      });
+    });
+  }
+
+  // 2. Notícias Oficiais (usa window.CI_NEWS se disponível, senão catálogo embutido)
+  const sourceNews = (window.CI_NEWS && Array.isArray(window.CI_NEWS.items) && window.CI_NEWS.items.length > 0)
+    ? window.CI_NEWS.items
+    : CI_OFFICIAL_NEWS_CATALOG;
+
+  sourceNews.forEach(n => {
+    items.push({
+      type: 'noticia',
+      typeLabel: 'Notícia',
+      typeBadgeClass: 'news',
+      id: n.id,
+      title: n.title,
+      category: n.category,
+      categorySlug: n.categorySlug || 'noticias',
+      description: n.summary || '',
+      readingTime: n.readingTime || '3 min',
+      image: n.image,
+      link: n.link || `noticias/${n.slug}.html`,
+      slug: n.slug
+    });
+  });
+
+  return items;
+}
+
+const searchTriggers = document.querySelectorAll('.search-trigger, .icon-button[aria-label="Pesquisar"], .icon-button[title*="Pesquisar"]');
 const searchPanel = document.querySelector('.search-panel');
 const searchInput = document.querySelector('#search-input');
 const searchClose = document.querySelector('.search-close');
@@ -990,12 +1240,12 @@ function closeSearch() {
   if (!searchPanel) return;
   searchPanel.classList.remove('is-open');
   searchPanel.setAttribute('aria-hidden', 'true');
-  if (searchTrigger) searchTrigger.setAttribute('aria-expanded', 'false');
+  searchTriggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
   document.body.classList.remove('search-open');
   if (searchInput) searchInput.value = '';
   if (searchLiveResults) searchLiveResults.innerHTML = '';
   if (searchSuggestions) searchSuggestions.style.display = '';
-  if (searchMessage) searchMessage.textContent = 'Pesquise entre os artigos ou escolha um tema sugerido acima.';
+  if (searchMessage) searchMessage.textContent = 'Pesquise entre artigos e notícias ou escolha um tema sugerido acima.';
   document.querySelectorAll('.searchable').forEach((item) => (item.hidden = false));
 }
 
@@ -1004,51 +1254,79 @@ function executeLiveSearch(query) {
   if (!term) {
     if (searchLiveResults) searchLiveResults.innerHTML = '';
     if (searchSuggestions) searchSuggestions.style.display = '';
-    if (searchMessage) searchMessage.textContent = 'Pesquise entre os artigos ou escolha um tema sugerido acima.';
+    if (searchMessage) searchMessage.textContent = 'Pesquise entre artigos e notícias ou escolha um tema sugerido acima.';
     return;
   }
 
   if (searchSuggestions) searchSuggestions.style.display = 'none';
 
-  const matches = articles.filter((a) =>
-    `${a.title} ${a.category} ${a.description}`.toLowerCase().includes(term)
+  const allItems = getUnifiedSearchCatalog();
+
+  // Busca em título, categoria, descrição/resumo e tipo (ex: 'noticia' ou 'artigo')
+  const matches = allItems.filter((item) =>
+    `${item.title} ${item.category} ${item.description} ${item.typeLabel}`.toLowerCase().includes(term)
   );
+
+  const isInNoticiasDir = window.location.pathname.includes('/noticias/');
 
   if (searchMessage) {
     searchMessage.textContent = matches.length > 0
-      ? `${matches.length} artigo(s) encontrado(s):`
-      : `Nenhum artigo encontrado para "${query}". Tente termos como 'polvo', 'universo' ou 'ciência'.`;
+      ? `${matches.length} resultado(s) encontrado(s) entre artigos e notícias:`
+      : `Nenhum resultado encontrado para "${query}". Tente termos como 'inteligência artificial', 'polvo', 'games' ou 'ciência'.`;
   }
 
   if (searchLiveResults) {
     if (matches.length > 0) {
-      searchLiveResults.innerHTML = matches.slice(0, 6).map((a) => `
-        <a class="search-result-card" href="${a.link}">
-          <img src="${a.image}" alt="${a.title}" loading="lazy" />
-          <div class="search-result-info">
-            <span class="search-result-category">${a.category} • ${a.readingTime}</span>
-            <div class="search-result-title">${a.title}</div>
-          </div>
-          <span class="search-result-arrow">→</span>
-        </a>
-      `).join('');
+      searchLiveResults.innerHTML = matches.slice(0, 8).map((item) => {
+        let finalLink = item.link;
+        let finalImg = item.image;
+
+        if (isInNoticiasDir) {
+          if (item.type === 'noticia') {
+            finalLink = `${item.slug}.html`;
+          } else {
+            finalLink = item.link.startsWith('../') ? item.link : `../${item.link}`;
+          }
+          finalImg = finalImg.startsWith('../') ? finalImg : `../${finalImg}`;
+        }
+
+        const badgeIcon = item.type === 'noticia' ? '📰' : '📖';
+
+        return `
+          <a class="search-result-card" href="${finalLink}">
+            <img src="${finalImg}" alt="${item.title}" loading="lazy" />
+            <div class="search-result-info">
+              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
+                <span class="search-badge ${item.typeBadgeClass}">${badgeIcon} ${item.typeLabel}</span>
+                <span class="search-result-category">${item.category} • ${item.readingTime}</span>
+              </div>
+              <div class="search-result-title">${item.title}</div>
+            </div>
+            <span class="search-result-arrow">→</span>
+          </a>
+        `;
+      }).join('');
     } else {
       searchLiveResults.innerHTML = '';
     }
   }
 }
 
-if (searchTrigger && searchPanel) {
-  searchTrigger.addEventListener('click', () => {
-    closeNavExplore();
-    searchPanel.classList.add('is-open');
-    searchPanel.setAttribute('aria-hidden', 'false');
-    searchTrigger.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('search-open');
-    if (searchInput) {
-      searchInput.focus();
-      if (!searchInput.value.trim() && searchLiveResults) searchLiveResults.innerHTML = '';
-    }
+// Vincula todos os botões de pesquisa (desktop e mobile)
+if (searchTriggers.length > 0 && searchPanel) {
+  searchTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (typeof closeNavExplore === 'function') closeNavExplore();
+      searchPanel.classList.add('is-open');
+      searchPanel.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('search-open');
+      if (searchInput) {
+        searchInput.focus();
+        if (!searchInput.value.trim() && searchLiveResults) searchLiveResults.innerHTML = '';
+      }
+    });
   });
 }
 
@@ -1073,6 +1351,22 @@ if (searchInput) {
     executeLiveSearch(searchInput.value);
   });
 }
+
+// Fecha ao clicar fora da caixa de busca
+if (searchPanel) {
+  searchPanel.addEventListener('click', (e) => {
+    if (e.target === searchPanel) {
+      closeSearch();
+    }
+  });
+}
+
+// Fecha ao apertar a tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && searchPanel && searchPanel.classList.contains('is-open')) {
+    closeSearch();
+  }
+});
 
 // Modais de Rodapé (Contato e Privacidade)
 const contactBtn = document.querySelector('#footer-contact-btn');
@@ -1301,17 +1595,17 @@ if (catParam) {
   const counterEl = document.getElementById('live-follower-counter');
   if (!counterEl) return;
 
-  // Número base atual de seguidores (fácil de editar quando a página atingir novas marcas!)
-  const BASE_FOLLOWERS = 59000;
+  // Número base atual de seguidores (atualizado para 61.000!)
+  const BASE_FOLLOWERS = 61000;
   
   // Variação orgânica sutil baseada no tempo do dia (simulação de pulso contínuo)
   const now = new Date();
   const dayMinutes = now.getHours() * 60 + now.getMinutes();
-  const organicVariation = Math.floor(dayMinutes / 6); // ritmo de crescimento mais dinâmico
+  const organicVariation = Math.floor(dayMinutes / 5); // ritmo de crescimento ativo
   const targetCount = BASE_FOLLOWERS + organicVariation;
 
   let currentCount = Math.max(0, targetCount - 80); // começa ligeiramente abaixo para a animação
-  const duration = 900; // animação inicial mais ágil
+  const duration = 750; // animação inicial ágil
   const startTime = performance.now();
 
   function formatNumber(num) {
@@ -1334,7 +1628,7 @@ if (catParam) {
       requestAnimationFrame(updateCounter);
     } else {
       counterEl.textContent = formatNumber(targetCount);
-      // Pulso orgânico mais frequente (a cada 4 a 9 segundos) acompanhando o ritmo do Instagram
+      // Pulso orgânico mais rápido (a cada 1.5 a 3.5 segundos) com micro-incrementos
       setupOrganicTick(targetCount);
     }
   }
@@ -1342,16 +1636,18 @@ if (catParam) {
   function setupOrganicTick(count) {
     let runningCount = count;
     function scheduleNext() {
-      const delay = Math.floor(Math.random() * (9000 - 4000)) + 4000;
+      // Intervalo mais dinâmico para contabilizar mais seguidores ao passar do tempo
+      const delay = Math.floor(Math.random() * (3500 - 1500)) + 1500;
       setTimeout(() => {
-        runningCount += 1;
+        const increment = Math.random() > 0.65 ? 2 : 1;
+        runningCount += increment;
         if (counterEl) {
           counterEl.textContent = formatNumber(runningCount);
-          // Efeito de flash suave verde/dourado ao subir
+          // Efeito de flash suave verde ao subir
           counterEl.style.color = '#4ade80';
           setTimeout(() => {
             if (counterEl) counterEl.style.color = '#ffffff';
-          }, 700);
+          }, 600);
         }
         scheduleNext();
       }, delay);
