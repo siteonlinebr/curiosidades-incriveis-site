@@ -1081,6 +1081,17 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "morre-ator-rj-mitte-breaking-bad",
+    "slug": "morre-ator-rj-mitte-breaking-bad",
+    "title": "Morre aos 34 anos o ator RJ Mitte, astro de Breaking Bad e ativista pela inclusão",
+    "summary": "O ator norte-americano Roy Frank 'RJ' Mitte III, consagrado mundialmente pelo papel de Walter White Jr. (Flynn) na série Breaking Bad, faleceu aos 34 anos no Texas. Colegas de elenco como Bryan Cranston e Aaron Paul prestaram homenagens emocionadas ao artista e defensor dos direitos de pessoas com deficiência.",
+    "category": "Entretenimento",
+    "categorySlug": "entretenimento",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-morre-ator-rj-mitte-breaking-bad.jpg",
+    "link": "noticias/morre-ator-rj-mitte-breaking-bad.html"
+  },
+  {
     "id": "caes-grandes-envelhecimento-molecular-dna",
     "slug": "caes-grandes-envelhecimento-molecular-dna",
     "title": "Estudo encontra pistas no DNA para explicar por que cães grandes envelhecem mais rápido",

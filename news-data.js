@@ -1,9 +1,9 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 21 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// 22 Notícias Reais devidamente checadas e validadas jornalisticamente.
 // Distribuição: Tecnologia (4), Games (3), Política (2), Ciência (4),
-// Animais (4), Mundo (2), Entretenimento (2).
+// Animais (4), Mundo (2), Entretenimento (3).
 // =========================================================
 
 function calculateRelativeTime(dateInput) {
@@ -43,6 +43,22 @@ function calculateRelativeTime(dateInput) {
 }
 
 const officialNews = [
+  {
+    "id": "morre-ator-rj-mitte-breaking-bad",
+    "slug": "morre-ator-rj-mitte-breaking-bad",
+    "title": "Morre aos 34 anos o ator RJ Mitte, astro de Breaking Bad e ativista pela inclusão",
+    "summary": "O ator norte-americano Roy Frank 'RJ' Mitte III, consagrado mundialmente pelo papel de Walter White Jr. (Flynn) na série Breaking Bad, faleceu aos 34 anos no Texas. Colegas de elenco como Bryan Cranston e Aaron Paul prestaram homenagens emocionadas ao artista e defensor dos direitos de pessoas com deficiência.",
+    "category": "Entretenimento",
+    "categorySlug": "entretenimento",
+    "publishedAt": "2026-10-15T12:00:00Z",
+    "sourceDate": "15/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-morre-ator-rj-mitte-breaking-bad.jpg",
+    "imageCredit": "Foto: Gage Skidmore / Wikimedia Commons (CC BY-SA 3.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/morre-ator-rj-mitte-breaking-bad.html"
+  },
   {
     "id": "caes-grandes-envelhecimento-molecular-dna",
     "slug": "caes-grandes-envelhecimento-molecular-dna",

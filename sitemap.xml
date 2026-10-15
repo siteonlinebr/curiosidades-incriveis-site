@@ -285,4 +285,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://siteonlinebr.github.io/curiosidades-incriveis-site/noticias/morre-ator-rj-mitte-breaking-bad.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

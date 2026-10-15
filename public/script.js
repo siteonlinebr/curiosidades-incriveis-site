@@ -1081,6 +1081,50 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "morre-ator-rj-mitte-breaking-bad",
+    "slug": "morre-ator-rj-mitte-breaking-bad",
+    "title": "Morre aos 34 anos o ator RJ Mitte, astro de Breaking Bad e ativista pela inclusão",
+    "summary": "O ator norte-americano Roy Frank 'RJ' Mitte III, consagrado mundialmente pelo papel de Walter White Jr. (Flynn) na série Breaking Bad, faleceu aos 34 anos no Texas. Colegas de elenco como Bryan Cranston e Aaron Paul prestaram homenagens emocionadas ao artista e defensor dos direitos de pessoas com deficiência.",
+    "category": "Entretenimento",
+    "categorySlug": "entretenimento",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-morre-ator-rj-mitte-breaking-bad.jpg",
+    "link": "noticias/morre-ator-rj-mitte-breaking-bad.html"
+  },
+  {
+    "id": "caes-grandes-envelhecimento-molecular-dna",
+    "slug": "caes-grandes-envelhecimento-molecular-dna",
+    "title": "Estudo encontra pistas no DNA para explicar por que cães grandes envelhecem mais rápido",
+    "summary": "Uma análise de amostras de 894 cães encontrou sinais de envelhecimento molecular acelerado nos animais maiores. O resultado ajuda a investigar a diferença de longevidade entre portes, mas não explica sozinho todos os fatores envolvidos.",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-caes-grandes-envelhecimento-molecular-dna.jpg",
+    "link": "noticias/caes-grandes-envelhecimento-molecular-dna.html"
+  },
+  {
+    "id": "tecnologia-registra-historia-celulas-dna-embriao",
+    "slug": "tecnologia-registra-historia-celulas-dna-embriao",
+    "title": "Tecnologia registra no DNA a história das células durante o desenvolvimento de um embrião",
+    "summary": "Uma técnica chamada DNA Typewriter registrou a linhagem de células durante o desenvolvimento de um embrião de camundongo, ajudando pesquisadores a reconstruir como diferentes tecidos se formam ao longo do tempo.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-dna-typewriter-linhagem-celular.jpg",
+    "link": "noticias/tecnologia-registra-historia-celulas-dna-embriao.html"
+  },
+  {
+    "id": "rover-perseverance-recorde-distancia-marte",
+    "slug": "rover-perseverance-recorde-distancia-marte",
+    "title": "Rover da NASA bate recorde ao percorrer mais de 45 quilômetros em Marte",
+    "summary": "O Perseverance percorreu 45,22 quilômetros na superfície marciana e superou o recorde anterior do rover Opportunity. A navegação autônoma ajudou o veículo a atravessar terrenos difíceis sem depender de comandos detalhados a cada movimento.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-rover-perseverance-recorde-distancia-marte.jpg",
+    "link": "noticias/rover-perseverance-recorde-distancia-marte.html"
+  },
+  {
     "id": "microsoft-chip-maia-300-ia",
     "slug": "microsoft-chip-maia-300-ia",
     "title": "Microsoft apresenta o chip de IA Maia 300 e planeja expansão em escala para 2027",
