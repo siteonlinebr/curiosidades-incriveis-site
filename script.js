@@ -5,6 +5,76 @@
 // 7 Artigos Oficiais existentes no portal
 const articles = [
   {
+    "id": "como-golfinhos-dormem-sono-uni-hemisferico",
+    "title": "Como os Golfinhos Dormem Sem Se Afogar? O Mistério do Sono de Meio Cérebro",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "5 min de leitura",
+    "description": "Descubra como golfinhos e baleias dormem no mar sem se afogar: o sono uni-hemisférico de ondas lentas, a respiração voluntária e os segredos da neurobiologia marinha.",
+    "image": "images/artigo-golfinhos-sono.jpg",
+    "link": "artigos/como-golfinhos-dormem-sono-uni-hemisferico.html",
+    "featured": true,
+    "recent": true,
+    "popular": false,
+    "quickFact": false
+  },
+  {
+    "id": "o-que-acontece-ao-cair-buraco-negro-espaguetificacao",
+    "title": "O Que Aconteceria se Você Caísse em um Buraco Negro? A Física da Espaguetificação",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "6 min de leitura",
+    "description": "O que a relatividade geral e a astrofísica revelam sobre cair em um buraco negro: horizonte de eventos, forças de maré gravitacionais, dilatação temporal e espaguetificação.",
+    "image": "images/artigo-buraco-negro.jpg",
+    "link": "artigos/o-que-acontece-ao-cair-buraco-negro-espaguetificacao.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
+    "id": "computador-quantico-como-funciona-qubits-criptografia",
+    "title": "Como Funciona um Computador Quântico? O Que São Qubits e o Fim das Senhas",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "5 min de leitura",
+    "description": "Entenda como funcionam os computadores quânticos: superposição, emaranhamento, qubits, temperaturas quase no zero absoluto e o impacto na criptografia global.",
+    "image": "images/artigo-computador-quantico.jpg",
+    "link": "artigos/computador-quantico-como-funciona-qubits-criptografia.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
+    "id": "incidente-passagem-dyatlov-misterio-resolvido",
+    "title": "O Incidente da Passagem Dyatlov: A Ciência Finalmente Explicou a Tragédia?",
+    "category": "História",
+    "categorySlug": "historia",
+    "readingTime": "6 min de leitura",
+    "description": "Em 1959, 9 esquiadores soviéticos morreram misteriosamente nos Montes Urais. Entenda as pistas, os mitos e como a física moderna finalmente explicou a tragédia.",
+    "image": "images/artigo-passagem-dyatlov.jpg",
+    "link": "artigos/incidente-passagem-dyatlov-misterio-resolvido.html",
+    "featured": true,
+    "recent": true,
+    "popular": false,
+    "quickFact": false
+  },
+  {
+    "id": "ilha-das-cobras-queimada-grande-perigosa-brasil",
+    "title": "Ilha da Queimada Grande: Por Que a 'Ilha das Cobras' É Proibida pela Marinha?",
+    "category": "Mundo",
+    "categorySlug": "mundo",
+    "readingTime": "5 min de leitura",
+    "description": "A 35 km do litoral de SP, a Ilha da Queimada Grande abriga milhares de jararacas-ilhoas com veneno 5x mais potente. Descubra a história e a ciência da Ilha das Cobras.",
+    "image": "images/artigo-ilha-queimada-grande.jpg",
+    "link": "artigos/ilha-das-cobras-queimada-grande-perigosa-brasil.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
     "id": "rodovia-36-faixas-china",
     "title": "A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade",
     "category": "Mundo",
@@ -400,6 +470,36 @@ const articles = [
 
 // Fatos rápidos para o "Você Sabia?" e "Curiosidade Aleatória" (Restritos às 5 categorias oficiais)
 const curiosities = [
+  {
+    "category": "Animais",
+    "icon": "🐬",
+    "fact": "Golfinhos dormem desligando apenas um lado do cérebro por vez: enquanto um hemisfério descansa, o olho oposto vigia predadores e o corpo continua subindo à tona para respirar.",
+    "articleLink": "artigos/como-golfinhos-dormem-sono-uni-hemisferico.html"
+  },
+  {
+    "category": "Ciência",
+    "icon": "🕳️",
+    "fact": "Ao cair em um buraco negro, a diferença extrema de gravidade entre seus pés e sua cabeça esticaria seu corpo em um filamento contínuo de átomos no processo chamado espaguetificação.",
+    "articleLink": "artigos/o-que-acontece-ao-cair-buraco-negro-espaguetificacao.html"
+  },
+  {
+    "category": "Tecnologia",
+    "icon": "⚛️",
+    "fact": "O processador de um computador quântico opera a 15 millikelvin (-273,135°C), uma temperatura centenas de vezes mais fria do que o vácuo gelado do espaço interestelar.",
+    "articleLink": "artigos/computador-quantico-como-funciona-qubits-criptografia.html"
+  },
+  {
+    "category": "História",
+    "icon": "🏔️",
+    "fact": "Cientistas suíços resolveram o mistério de 60 anos do Incidente da Passagem Dyatlov usando modelos de física da neve adaptados do filme de animação Frozen da Disney.",
+    "articleLink": "artigos/incidente-passagem-dyatlov-misterio-resolvido.html"
+  },
+  {
+    "category": "Mundo",
+    "icon": "🐍",
+    "fact": "Isolada há 11 mil anos no litoral de São Paulo, a jararaca-ilhoa da Ilha da Queimada Grande desenvolveu um veneno até 5 vezes mais letal para paralisar aves no ar antes que caiam no mar.",
+    "articleLink": "artigos/ilha-das-cobras-queimada-grande-perigosa-brasil.html"
+  },
   {
     "category": "Animais",
     "icon": "🐙",
@@ -980,6 +1080,39 @@ if (navExploreTrigger && navExploreMenu) {
 // PAINEL DE PESQUISA RÁPIDA UNIFICADA (ARTIGOS + NOTÍCIAS)
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
+  {
+    "id": "caes-grandes-envelhecimento-molecular-dna",
+    "slug": "caes-grandes-envelhecimento-molecular-dna",
+    "title": "Estudo encontra pistas no DNA para explicar por que cães grandes envelhecem mais rápido",
+    "summary": "Uma análise de amostras de 894 cães encontrou sinais de envelhecimento molecular acelerado nos animais maiores. O resultado ajuda a investigar a diferença de longevidade entre portes, mas não explica sozinho todos os fatores envolvidos.",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-caes-grandes-envelhecimento-molecular-dna.jpg",
+    "link": "noticias/caes-grandes-envelhecimento-molecular-dna.html"
+  },
+  {
+    "id": "tecnologia-registra-historia-celulas-dna-embriao",
+    "slug": "tecnologia-registra-historia-celulas-dna-embriao",
+    "title": "Tecnologia registra no DNA a história das células durante o desenvolvimento de um embrião",
+    "summary": "Uma técnica chamada DNA Typewriter registrou a linhagem de células durante o desenvolvimento de um embrião de camundongo, ajudando pesquisadores a reconstruir como diferentes tecidos se formam ao longo do tempo.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-dna-typewriter-linhagem-celular.jpg",
+    "link": "noticias/tecnologia-registra-historia-celulas-dna-embriao.html"
+  },
+  {
+    "id": "rover-perseverance-recorde-distancia-marte",
+    "slug": "rover-perseverance-recorde-distancia-marte",
+    "title": "Rover da NASA bate recorde ao percorrer mais de 45 quilômetros em Marte",
+    "summary": "O Perseverance percorreu 45,22 quilômetros na superfície marciana e superou o recorde anterior do rover Opportunity. A navegação autônoma ajudou o veículo a atravessar terrenos difíceis sem depender de comandos detalhados a cada movimento.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-rover-perseverance-recorde-distancia-marte.jpg",
+    "link": "noticias/rover-perseverance-recorde-distancia-marte.html"
+  },
   {
     "id": "microsoft-chip-maia-300-ia",
     "slug": "microsoft-chip-maia-300-ia",
@@ -1787,5 +1920,51 @@ if (catParam) {
 
   // Insere logo acima do article-share-footer
   bodyContainer.insertBefore(section, shareFooter);
+})();
+
+// =========================================================
+// ANIMAÇÃO DE REVEAL NOS CARDS (AO ENTRAR NO VIEWPORT)
+// =========================================================
+(function initCardRevealObserver() {
+  // 1. Respeita preferência por movimento reduzido (acessibilidade)
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  // 2. Garante degradação graciosa: sem IntersectionObserver, cards continuam normais
+  if (!('IntersectionObserver' in window)) {
+    return;
+  }
+
+  // 3. Seleciona os cards-alvo
+  const cards = document.querySelectorAll(
+    '.feature-card, .recent-card, .popular-card, .article-card, .news-feed-card, .news-featured-card, .continue-card'
+  );
+  if (!cards.length) return;
+
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target); // Anima apenas UMA vez por card
+      }
+    });
+  }, {
+    rootMargin: '0px 0px -20px 0px',
+    threshold: 0.05
+  });
+
+  cards.forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    // Cards inicialmente visíveis no topo da página aparecem imediatamente sem atraso
+    if (rect.top < windowHeight * 0.92 && rect.bottom > 0) {
+      return;
+    }
+    // Cards abaixo da dobra recebem a classe de animação suave
+    card.classList.add('card-reveal');
+    observer.observe(card);
+  });
 })();
 

@@ -1,9 +1,9 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 18 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (3), Games (3), Política (2), Ciência (3),
-// Animais (3), Mundo (2), Entretenimento (2).
+// 21 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (4), Games (3), Política (2), Ciência (4),
+// Animais (4), Mundo (2), Entretenimento (2).
 // =========================================================
 
 function calculateRelativeTime(dateInput) {
@@ -43,6 +43,54 @@ function calculateRelativeTime(dateInput) {
 }
 
 const officialNews = [
+  {
+    "id": "caes-grandes-envelhecimento-molecular-dna",
+    "slug": "caes-grandes-envelhecimento-molecular-dna",
+    "title": "Estudo encontra pistas no DNA para explicar por que cães grandes envelhecem mais rápido",
+    "summary": "Uma análise de amostras de 894 cães encontrou sinais de envelhecimento molecular acelerado nos animais maiores. O resultado ajuda a investigar a diferença de longevidade entre portes, mas não explica sozinho todos os fatores envolvidos.",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "publishedAt": "2026-10-14T17:30:00Z",
+    "sourceDate": "14/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-caes-grandes-envelhecimento-molecular-dna.jpg",
+    "imageCredit": "Imagem ilustrativa: Ellen Levy Finch / Wikimedia Commons (CC BY-SA 3.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/caes-grandes-envelhecimento-molecular-dna.html"
+  },
+  {
+    "id": "tecnologia-registra-historia-celulas-dna-embriao",
+    "slug": "tecnologia-registra-historia-celulas-dna-embriao",
+    "title": "Tecnologia registra no DNA a história das células durante o desenvolvimento de um embrião",
+    "summary": "Uma técnica chamada DNA Typewriter registrou a linhagem de células durante o desenvolvimento de um embrião de camundongo, ajudando pesquisadores a reconstruir como diferentes tecidos se formam ao longo do tempo.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "publishedAt": "2026-10-14T17:15:00Z",
+    "sourceDate": "08/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-dna-typewriter-linhagem-celular.jpg",
+    "imageCredit": "Ilustração gerada por IA",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/tecnologia-registra-historia-celulas-dna-embriao.html"
+  },
+  {
+    "id": "rover-perseverance-recorde-distancia-marte",
+    "slug": "rover-perseverance-recorde-distancia-marte",
+    "title": "Rover da NASA bate recorde ao percorrer mais de 45 quilômetros em Marte",
+    "summary": "O Perseverance percorreu 45,22 quilômetros na superfície marciana e superou o recorde anterior do rover Opportunity. A navegação autônoma ajudou o veículo a atravessar terrenos difíceis sem depender de comandos detalhados a cada movimento.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "publishedAt": "2026-10-14T17:00:00Z",
+    "sourceDate": "12/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-rover-perseverance-recorde-distancia-marte.jpg",
+    "imageCredit": "Foto: NASA/JPL-Caltech",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/rover-perseverance-recorde-distancia-marte.html"
+  },
   {
     "id": "microsoft-chip-maia-300-ia",
     "slug": "microsoft-chip-maia-300-ia",

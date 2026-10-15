@@ -1440,41 +1440,140 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 16px;
+  padding: 18px 16px;
   border: 1px solid var(--line);
-  border-radius: 9px;
+  border-radius: 12px;
   background: var(--surface);
   overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .category-card:hover {
   transform: translateY(-5px);
-  border-color: var(--blue);
 }
 
 .category-card span {
   margin-bottom: auto;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.category-card:hover span {
+  transform: scale(1.15) translateY(-2px);
 }
 
 .category-card strong {
   margin-bottom: 5px;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 .category-card small {
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
 }
 
-.science, .world {
-  background: linear-gradient(145deg, color-mix(in srgb, var(--blue) 15%, var(--surface)), var(--surface));
+/* 🐾 1. Animais: Gradiente Esmeralda Selvagem */
+.category-card.animals {
+  background: linear-gradient(155deg, rgba(16, 185, 129, 0.16) 0%, rgba(5, 150, 105, 0.05) 55%, var(--surface) 100%);
+  border-color: rgba(16, 185, 129, 0.26);
+}
+.category-card.animals:hover {
+  border-color: #10b981;
+  box-shadow: 0 12px 28px -6px rgba(16, 185, 129, 0.22), 0 0 15px rgba(16, 185, 129, 0.12);
 }
 
-.history {
-  background: linear-gradient(145deg, color-mix(in srgb, var(--yellow) 13%, var(--surface)), var(--surface));
+/* 🔬 2. Ciência: Gradiente Violeta / Púrpura Cósmica */
+.category-card.science {
+  background: linear-gradient(155deg, rgba(139, 92, 246, 0.18) 0%, rgba(124, 58, 237, 0.06) 55%, var(--surface) 100%);
+  border-color: rgba(139, 92, 246, 0.26);
+}
+.category-card.science:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 12px 28px -6px rgba(139, 92, 246, 0.22), 0 0 15px rgba(139, 92, 246, 0.12);
+}
+
+/* 💻 3. Tecnologia: Gradiente Ciano / Azul Elétrico */
+.category-card.tech {
+  background: linear-gradient(155deg, rgba(6, 182, 212, 0.18) 0%, rgba(14, 165, 233, 0.06) 55%, var(--surface) 100%);
+  border-color: rgba(6, 182, 212, 0.26);
+}
+.category-card.tech:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 12px 28px -6px rgba(6, 182, 212, 0.22), 0 0 15px rgba(6, 182, 212, 0.12);
+}
+
+/* 📜 4. História: Gradiente Âmbar / Ouro Antigo */
+.category-card.history {
+  background: linear-gradient(155deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.06) 55%, var(--surface) 100%);
+  border-color: rgba(245, 158, 11, 0.26);
+}
+.category-card.history:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.22), 0 0 15px rgba(245, 158, 11, 0.12);
+}
+
+/* 🌍 5. Mundo: Gradiente Safira / Oceano Profundo */
+.category-card.world {
+  background: linear-gradient(155deg, rgba(59, 130, 246, 0.18) 0%, rgba(37, 99, 235, 0.06) 55%, var(--surface) 100%);
+  border-color: rgba(59, 130, 246, 0.26);
+}
+.category-card.world:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 12px 28px -6px rgba(59, 130, 246, 0.22), 0 0 15px rgba(59, 130, 246, 0.12);
+}
+
+/* Modo Claro (Light Mode) */
+[data-theme="light"] .category-card.animals {
+  background: linear-gradient(155deg, #ecfdf5 0%, #f0fdf4 65%, var(--surface) 100%);
+  border-color: #a7f3d0;
+}
+[data-theme="light"] .category-card.animals:hover {
+  border-color: #10b981;
+  box-shadow: 0 10px 24px -5px rgba(16, 185, 129, 0.18);
+}
+
+[data-theme="light"] .category-card.science {
+  background: linear-gradient(155deg, #f5f3ff 0%, #ede9fe 65%, var(--surface) 100%);
+  border-color: #ddd6fe;
+}
+[data-theme="light"] .category-card.science:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 10px 24px -5px rgba(139, 92, 246, 0.18);
+}
+
+[data-theme="light"] .category-card.tech {
+  background: linear-gradient(155deg, #ecfeff 0%, #e0f2fe 65%, var(--surface) 100%);
+  border-color: #bae6fd;
+}
+[data-theme="light"] .category-card.tech:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 10px 24px -5px rgba(6, 182, 212, 0.18);
+}
+
+[data-theme="light"] .category-card.history {
+  background: linear-gradient(155deg, #fffbeb 0%, #fef3c7 65%, var(--surface) 100%);
+  border-color: #fde68a;
+}
+[data-theme="light"] .category-card.history:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 10px 24px -5px rgba(245, 158, 11, 0.18);
+}
+
+[data-theme="light"] .category-card.world {
+  background: linear-gradient(155deg, #eff6ff 0%, #dbeafe 65%, var(--surface) 100%);
+  border-color: #bfdbfe;
+}
+[data-theme="light"] .category-card.world:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 10px 24px -5px rgba(59, 130, 246, 0.18);
 }
 
 /* Popular Grid */
@@ -2031,6 +2130,26 @@ h1 {
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--blue);
+}
+
+.article-meta-right {
+  display: flex;
+  align-items: center;
+}
+
+.article-publish-date {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+  .article-header-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
 
 .article-banner-hero {
@@ -4495,6 +4614,29 @@ body.drawer-open {
   .news-feed-grid {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+}
+
+/* =========================================================
+   ANIMAÇÃO REVEAL SUAVE NOS CARDS (300ms, fade-in + 14px)
+   ========================================================= */
+.card-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.card-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 

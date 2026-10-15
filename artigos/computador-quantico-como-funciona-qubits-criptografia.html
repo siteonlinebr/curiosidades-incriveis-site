@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Funciona um Computador Quântico? O Que São Qubits e o Fim das Senhas — Curiosidades Incríveis</title>
+  <meta name="description" content="Entenda como funcionam os computadores quânticos: superposição, emaranhamento, qubits, temperaturas quase no zero absoluto e o impacto na criptografia global.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="Curiosidades Incríveis">
+  <link rel="canonical" href="https://siteonlinebr.github.io/curiosidades-incriveis-site/artigos/computador-quantico-como-funciona-qubits-criptografia.html">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QEP986Z15Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-QEP986Z15Q");
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Como Funciona um Computador Quântico? O Que São Qubits e o Fim das Senhas — Curiosidades Incríveis">
+  <meta property="og:description" content="Entenda como funcionam os computadores quânticos: superposição, emaranhamento, qubits, temperaturas quase no zero absoluto e o impacto na criptografia global.">
+  <meta property="og:url" content="https://siteonlinebr.github.io/curiosidades-incriveis-site/artigos/computador-quantico-como-funciona-qubits-criptografia.html">
+  <meta property="og:site_name" content="Curiosidades Incríveis">
+  <meta property="og:image" content="../images/artigo-computador-quantico.jpg">
+  <meta property="article:section" content="Tecnologia">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Como Funciona um Computador Quântico? O Que São Qubits e o Fim das Senhas — Curiosidades Incríveis">
+  <meta name="twitter:description" content="Entenda como funcionam os computadores quânticos: superposição, emaranhamento, qubits, temperaturas quase no zero absoluto e o impacto na criptografia global.">
+  <meta name="twitter:image" content="../images/artigo-computador-quantico.jpg">
+
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Schema.org JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como Funciona um Computador Quântico? O Que São Qubits e Por Que Suas Senhas Podem Deixar de Ser Seguras",
+    "description": "Entenda como funcionam os computadores quânticos: superposição, emaranhamento, qubits, temperaturas quase no zero absoluto e o impacto na criptografia global.",
+    "image": "https://siteonlinebr.github.io/curiosidades-incriveis-site/images/artigo-computador-quantico.jpg",
+    "inLanguage": "pt-BR",
+    "datePublished": "2026-10-14",
+    "articleSection": "Tecnologia",
+    "author": {
+      "@type": "Organization",
+      "name": "Curiosidades Incríveis",
+      "url": "https://siteonlinebr.github.io/curiosidades-incriveis-site/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Curiosidades Incríveis",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://siteonlinebr.github.io/curiosidades-incriveis-site/favicon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://siteonlinebr.github.io/curiosidades-incriveis-site/artigos/computador-quantico-como-funciona-qubits-criptografia.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Curiosidades Incríveis - início">
+        <img src="../favicon.png" alt="" class="brand-icon">
+        <span>Curiosidades <strong>Incríveis</strong></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../artigos.html">Artigos</a>
+        <a href="../noticias.html">Notícias</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false">
+            Categorias
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=animais"><span class="item-icon">🐾</span> Animais</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=ciencia"><span class="item-icon">🔬</span> Ciência</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=tecnologia"><span class="item-icon">💻</span> Tecnologia</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=historia"><span class="item-icon">📜</span> História</a>
+            <a class="nav-dropdown-item" href="../artigos.html?categoria=mundo"><span class="item-icon">🌍</span> Mundo</a>
+          </div>
+        </div>
+        <a class="nav-surprise-btn" href="../index.html#curiosidade-aleatoria"><span>🎲</span> Surpreenda-me</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="theme-switch" role="group" aria-label="Controle de tema">
+          <span class="theme-switch-indicator" aria-hidden="true"></span>
+          <button class="theme-switch-btn" type="button" data-theme-choice="light" aria-label="Ativar modo claro">
+            <span class="theme-switch-text">CLARO</span>
+            <span class="theme-switch-icon" aria-hidden="true">☀️</span>
+          </button>
+          <button class="theme-switch-btn" type="button" data-theme-choice="dark" aria-label="Ativar modo escuro">
+            <span class="theme-switch-text">ESCURO</span>
+            <span class="theme-switch-icon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
+        <a class="instagram-link" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
+          Instagram <span aria-hidden="true">↗</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- GAVETA LATERAL MOBILE -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Menu móvel">
+    <div class="drawer-header">
+      <a class="brand" href="../index.html">
+        <img class="brand-logo" src="../favicon.png" alt="" />
+        <span>Curiosidades <strong>Incríveis</strong></span>
+      </a>
+      <button class="drawer-close" id="drawer-close" type="button" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../index.html">🏠 Início</a>
+      <a href="../artigos.html">📚 Todos os Artigos</a>
+      <a href="../noticias.html">📰 Notícias</a>
+      <a class="nav-surprise-btn drawer-surprise-btn" href="../index.html#curiosidade-aleatoria" style="margin: 8px 0; justify-content: center;">
+        <span>🎲</span> Curiosidade Aleatória
+      </a>
+      <div class="drawer-section-title">Categorias</div>
+      <div class="drawer-categories">
+        <a href="../artigos.html?categoria=animais">🐾 Animais</a>
+        <a href="../artigos.html?categoria=ciencia">🔬 Ciência</a>
+        <a href="../artigos.html?categoria=tecnologia">💻 Tecnologia</a>
+        <a href="../artigos.html?categoria=historia">📜 História</a>
+        <a href="../artigos.html?categoria=mundo">🌍 Mundo</a>
+      </div>
+    </nav>
+    <div class="drawer-theme-section">
+      <div class="drawer-section-title">Tema do site</div>
+      <div class="theme-switch drawer-theme-switch" role="group" aria-label="Controle de tema">
+        <span class="theme-switch-indicator" aria-hidden="true"></span>
+        <button class="theme-switch-btn" type="button" data-theme-choice="light" aria-label="Ativar modo claro">
+          <span class="theme-switch-text">CLARO</span>
+          <span class="theme-switch-icon" aria-hidden="true">☀️</span>
+        </button>
+        <button class="theme-switch-btn" type="button" data-theme-choice="dark" aria-label="Ativar modo escuro">
+          <span class="theme-switch-text">ESCURO</span>
+          <span class="theme-switch-icon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer" style="justify-content: center;">
+        Seguir no Instagram ↗
+      </a>
+    </div>
+  </div>
+
+  <main id="conteudo">
+    <article class="article-page container">
+      <div class="breadcrumb">
+        <a href="../index.html">Início</a>
+        <span>/</span>
+        <a href="../artigos.html">Artigos</a>
+        <span>/</span>
+        <a href="../artigos.html?categoria=tecnologia">Tecnologia</a>
+      </div>
+
+      <div class="article-header">
+        <span class="eyebrow accent"><span></span> Tecnologia</span>
+        <h1>Como Funciona um Computador Quântico? O Que São Qubits e Por Que Suas Senhas Podem Deixar de Ser Seguras</h1>
+        <p class="article-header-lead">
+          Eles operam a temperaturas mais frias que o espaço sideral e utilizam leis do mundo subatômico que parecem pura magia. Entenda a revolução que promete curar doenças, criar novos materiais e reescrever a segurança de toda a internet.
+        </p>
+
+        <div class="article-header-meta">
+          <div class="article-meta-left">
+            <img src="../favicon.png" alt="Curiosidades Incríveis" class="author-avatar">
+            <div>
+              <strong>Curiosidades Incríveis</strong>
+              <div class="card-meta">5 min de leitura • Tecnologia • Computação Quântica & Segurança</div>
+            </div>
+          </div>
+          <div class="article-meta-right">
+            <time datetime="2026-10-14" class="article-publish-date">Publicado em 14 de outubro de 2026</time>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-banner-hero">
+        <img src="../images/artigo-computador-quantico.jpg" alt="Lustre criogênico dourado de um processador quântico de ponta em laboratório de alta tecnologia">
+      </div>
+
+      <div class="article-body-container">
+        <div class="article-prose">
+          <p>
+            Tudo o que você faz hoje em um computador, tablet ou smartphone — desde assistir a um vídeo em alta definição até autenticar uma transferência bancária via Pix — baseia-se em um princípio binário elementar concebido há mais de um século: interruptores que estão ligados ou desligados. Zeros e uns.
+          </p>
+          <p>
+            Por mais potentes que sejam os supercomputadores modernos com milhões de núcleos de processamento, eles ainda jogam dentro das regras da física clássica. Existem problemas matemáticos tão colossalmente complexos — como simular a estrutura exata de uma proteína para criar um remédio ou fatorar números primos gigantescos — que o computador mais rápido do mundo levaria mais tempo do que a idade inteira do universo para resolver.
+          </p>
+          <p>
+            É nesse abismo que entram os <strong>computadores quânticos</strong>. Em vez de simplesmente fazer cálculos mais rápidos, eles calculam de uma forma totalmente diferente, explorando os fenômenos mais bizarros da mecânica quântica.
+          </p>
+
+          <h2>Do Bit ao Qubit: O Segredo da Superposição</h2>
+          <p>
+            Na computação convencional, o tijolo fundamental da informação é o <strong>bit</strong> clássico. Um bit é rigorosamente binário: ou ele é 0 (circuito aberto, sem corrente) ou é 1 (circuito fechado, com corrente).
+          </p>
+          <p>
+            Já em um computador quântico, a unidade é o <strong>qubit</strong> (bit quântico). Um qubit pode ser um elétron individual cujo spin aponta para cima ou para baixo, ou um fóton de luz, ou um circuito supercondutor microscópico. Graças ao princípio da <strong>superposição quântica</strong>, um qubit não é obrigado a escolher entre 0 ou 1: ele existe em uma combinação linear e probabilística de 0 e 1 simultaneamente até o exato momento em que é medido.
+          </p>
+          <p>
+            Uma analogia clássica ajuda a visualizar: pense em uma moeda apoiada sobre uma mesa. Ela mostra cara (1) ou coroa (0). Mas quando você gira a moeda no ar em alta velocidade, ela é cara e coroa ao mesmo tempo enquanto gira. Somente quando você para a moeda e olha para ela é que a superposição colapsa em um resultado definido.
+          </p>
+
+          <h2>Emaranhamento: O Poder Multiplicador Exponencial</h2>
+          <p>
+            Se a superposição já é surpreendente, o verdadeiro motor dos computadores quânticos é o <strong>emaranhamento quântico</strong> — apelidado por Albert Einstein de <em>"ação fantasmagórica à distância"</em>.
+          </p>
+          <p>
+            Quando dois ou mais qubits são emaranhados, seus estados físicos ficam intrinsecamente entrelaçados. O que acontece com um qubit determina instantaneamente o estado do outro, não importa a distância entre eles.
+          </p>
+          <p>
+            Essa ligação gera uma capacidade de processamento exponencial estarrecedora:
+          </p>
+          <ul>
+            <li><strong>2 bits clássicos</strong> podem representar apenas 1 dos 4 estados possíveis por vez (00, 01, 10 ou 11).</li>
+            <li><strong>2 qubits emaranhados</strong> contêm todos os 4 estados ao mesmo tempo.</li>
+            <li><strong>3 qubits</strong> contêm 8 estados simultaneamente.</li>
+            <li><strong>50 qubits</strong> contêm mais de 1 quatrilhão de estados ao mesmo tempo.</li>
+            <li><strong>300 qubits perfeitos</strong> poderiam processar mais valores simultaneamente do que o número total de átomos em todo o universo observável.</li>
+          </ul>
+
+          <div class="article-highlight-box">
+            💡 <strong>O Labirinto Quântico:</strong> Enquanto um computador clássico tenta achar a saída de um labirinto testando cada caminho, um por um, voltando quando dá de cara com uma parede, um computador quântico explora <em>todos os caminhos possíveis simultaneamente</em> como uma onda de água que se espalha por todas as curvas ao mesmo tempo.
+          </div>
+
+          <h2>Por Que Eles Parecem Lustres de Ouro? O Frio Extremo</h2>
+          <p>
+            Se você já viu uma foto de um computador quântico da IBM, Google ou Rigetti, provavelmente reparou na impressionante estrutura dourada em formato de lustre suspenso. Aquele não é o chip em si, mas sim um <strong>refrigerador de diluição</strong> criogênico de hélio em vários estágios.
+          </p>
+          <p>
+            Os qubits em estado de superposição são criaturas incrivelmente frágeis. Qualquer vibração mecânica, ruído eletromagnético ou minúscula flutuação térmica faz com que eles percam suas propriedades quânticas e cometam erros — um fenômeno catastrófico chamado <strong>decoerência quântica</strong>.
+          </p>
+          <p>
+            Para proteger os qubits, a placa no fundo do lustre onde o processador quântico é instalado é resfriada a cerca de <strong>15 millikelvin</strong> (-273,135°C). Isso é centenas de vezes mais frio do que o vácuo gelado do espaço interestelar (-270,4°C), transformando o interior dessas máquinas nos lugares mais frios de todo o universo conhecido.
+          </p>
+
+          <h2>A Ameaça do 'Q-Day': Suas Senhas Estão em Risco?</h2>
+          <p>
+            Hoje, quase toda a segurança da economia global — cartões de crédito, contas bancárias, mensagens no WhatsApp, assinaturas digitais governamentais e chaves de criptomoedas — baseia-se em algoritmos de chave pública como o <strong>RSA</strong> e criptografia de curvas elípticas.
+          </p>
+          <p>
+            A segurança do RSA baseia-se no fato de que multiplicar dois números primos gigantescos de centenas de dígitos é fácil, mas fazer o caminho inverso — pegar o número gigantesco e descobrir quais dois primos o formaram (fatoração de inteiros) — levaria milhares de anos para qualquer supercomputador convencional.
+          </p>
+          <p>
+            Em 1994, o matemático Peter Shor formulou o <strong>Algoritmo de Shor</strong>: uma fórmula quântica que consegue fatorar esses números primos em questão de minutos. O dia em que um computador quântico com correção de erros suficiente rodar esse algoritmo é chamado pelos especialistas de <strong>Q-Day</strong>. Quando esse dia chegar, todo o sistema de criptografia tradicional que protege a internet moderna poderá ser quebrado instantaneamente.
+          </p>
+
+          <div class="curiosity-card-callout">
+            <strong>✨ A CORRIDA PELA CRIPTOGRAFIA PÓS-QUÂNTICA (PQC)</strong>
+            <p>
+              O mundo não está esperando de braços cruzados. Órgãos internacionais como o NIST (Instituto Nacional de Padrões e Tecnologia dos EUA) já padronizaram os primeiros algoritmos de <strong>Criptografia Pós-Quântica</strong> (baseados em reticulados matemáticos multidimensionais que nem computadores quânticos conseguem quebrar). Bancos, sistemas operacionais e navegadores já começaram a migrar suas camadas de segurança para estarem protegidos antes do Q-Day.
+            </p>
+          </div>
+
+          <h2>As Revoluções Reais que Estão Por Vir</h2>
+          <p>
+            Longe de ser apenas uma ameaça à cibersegurança, o impacto positivo da computação quântica promete transformar a civilização em áreas que hoje parecem intransponíveis:
+          </p>
+          <ul>
+            <li><strong>Design de Fármacos em Escala Atômica:</strong> A biologia é fundamentalmente quântica. Hoje, remédios são testados por tentativa e erro durante anos. Computadores quânticos permitirão simular reações químicas complexas em minutos, acelerando a descoberta de vacinas, antibióticos e tratamentos contra o câncer.</li>
+            <li><strong>Baterias e Energia Limpa:</strong> O aperfeiçoamento da química de baterias de estado sólido e a síntese de novos catalisadores para capturar dióxido de carbono da atmosfera de forma eficiente.</li>
+            <li><strong>Otimização Logística Global:</strong> Reduzir o consumo mundial de combustível de frotas aéreas e marítimas resolvendo o clássico problema do caixeiro-viajante em escala planetária.</li>
+          </ul>
+          <p>
+            A computação quântica ainda está em sua fase pioneira — comparável aos computadores de válvulas da década de 1950 que ocupavam salas inteiras. Mas cada avanço na estabilidade dos qubits nos aproxima de uma nova era onde o impossível se torna computável.
+          </p>
+        </div>
+
+        <!-- SEÇÃO: 🧭 CONTINUE EXPLORANDO -->
+        <section class="continue-explorando-section" id="continue-explorando" aria-labelledby="continue-explorando-heading">
+          <div class="continue-explorando-header">
+            <div class="continue-explorando-badge">
+              <span class="badge-dot" aria-hidden="true"></span> RECOMENDADOS PARA VOCÊ
+            </div>
+            <h2 class="continue-explorando-title" id="continue-explorando-heading">
+              🧭 Continue Explorando
+            </h2>
+            <p class="continue-explorando-desc">
+              Mais curiosidades fascinantes selecionadas para você continuar descobrindo o extraordinário.
+            </p>
+          </div>
+          <div class="continue-explorando-grid">
+            <article class="continue-card">
+              <a class="continue-card-image" href="sete-chaves-internet.html" title="Ler: Os 14 Guardiões e as 7 Chaves Físicas que Protegem a Internet Mundial">
+                <img src="../images/artigo-chaves-internet.jpg" alt="Os 14 Guardiões e as 7 Chaves Físicas que Protegem a Internet Mundial" loading="lazy">
+                <span class="continue-card-badge">TECNOLOGIA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>4 min de leitura</span>
+                  <span>•</span>
+                  <span>Tecnologia</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="sete-chaves-internet.html">Os 14 Guardiões e as 7 Chaves Físicas que Protegem a Internet Mundial</a>
+                </h3>
+                <p class="continue-card-excerpt">A segurança do DNS mundial depende de cerimônias secretas com chaves de metal em cofres subterrâneos.</p>
+                <a class="continue-card-link" href="sete-chaves-internet.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+            <article class="continue-card">
+              <a class="continue-card-image" href="virus-stuxnet-arma-digital.html" title="Ler: Stuxnet: O Primeiro Vírus Militar da História que Destruiu Centrífugas Nucleares">
+                <img src="../images/artigo-stuxnet.jpg" alt="Stuxnet: O Primeiro Vírus Militar da História que Destruiu Centrífugas Nucleares" loading="lazy">
+                <span class="continue-card-badge">TECNOLOGIA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>5 min de leitura</span>
+                  <span>•</span>
+                  <span>Tecnologia</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="virus-stuxnet-arma-digital.html">Stuxnet: O Primeiro Vírus Militar da História que Destruiu Centrífugas Nucleares</a>
+                </h3>
+                <p class="continue-card-excerpt">A arma cibernética invisível que invadiu uma usina nuclear secreta no Irã sem usar internet.</p>
+                <a class="continue-card-link" href="virus-stuxnet-arma-digital.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+            <article class="continue-card">
+              <a class="continue-card-image" href="internet-funciona.html" title="Ler: Como a Internet Realmente Funciona: Os Cabos Submarinos no Fundo do Oceano">
+                <img src="../images/artigo-internet.jpg" alt="Como a Internet Realmente Funciona: Os Cabos Submarinos no Fundo do Oceano" loading="lazy">
+                <span class="continue-card-badge">TECNOLOGIA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>4 min de leitura</span>
+                  <span>•</span>
+                  <span>Tecnologia</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="internet-funciona.html">Como a Internet Realmente Funciona: Os Cabos Submarinos no Fundo do Oceano</a>
+                </h3>
+                <p class="continue-card-excerpt">Quase 99% do tráfego mundial viaja por mais de 1,4 milhão de quilômetros de cabos submarinos.</p>
+                <a class="continue-card-link" href="internet-funciona.html">
+                  Ler artigo <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="article-share-footer">
+          <a class="button button-light" href="../artigos.html">← Voltar para todos os artigos</a>
+          <a class="button button-primary" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
+            Seguir no Instagram →
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../favicon.png" alt="" class="brand-icon">
+          <span>Curiosidades Incríveis</span>
+        </a>
+        <p>Um lugar para descobrir algo novo todos os dias.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="../index.html">Início</a>
+        <a href="../index.html#em-alta">Em alta</a>
+        <a href="../artigos.html">Artigos</a>
+        <a href="../noticias.html">Notícias</a>
+        <a href="../index.html#categorias">Categorias</a>
+      </div>
+      <div>
+        <h3>Categorias</h3>
+        <a href="../artigos.html?categoria=animais">Animais</a>
+        <a href="../artigos.html?categoria=ciencia">Ciência</a>
+        <a href="../artigos.html?categoria=tecnologia">Tecnologia</a>
+        <a href="../artigos.html?categoria=historia">História</a>
+        <a href="../artigos.html?categoria=mundo">Mundo</a>
+      </div>
+      <div>
+        <h3>Conecte-se</h3>
+        <a href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <button type="button" class="footer-link-btn" id="footer-contact-btn">Contato</button>
+        <button type="button" class="footer-link-btn" id="footer-privacy-btn">Política de privacidade</button>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Curiosidades Incríveis • ✦ Fatos Verificados</span>
+      <span>Feito para quem gosta de descobrir.</span>
+    </div>
+  </footer>
+
+  <!-- MODAL DE CONTATO -->
+  <div class="modal-overlay" id="contact-modal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>📬 Entre em Contato</h3>
+        <button type="button" class="modal-close-btn" data-close-modal="contact-modal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Tem uma sugestão de pauta intrigante, dúvida, feedback ou proposta de parceria? Adoramos conversar com mentes curiosas!</p>
+        <div class="contact-card-box">
+          <div>
+            <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; font-weight: 700; display: block;">E-mail oficial</span>
+            <strong id="contact-email-text" style="font-size: 0.92rem;">contatocuriosidadesincriveis6@gmail.com</strong>
+          </div>
+          <button type="button" class="copy-email-btn" id="copy-email-action">📋 Copiar e-mail</button>
+        </div>
+        <div style="margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <a class="button button-primary" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer" style="flex: 1; min-width: 200px; text-decoration: none;">
+            Falar no Instagram Direct ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE POLÍTICA DE PRIVACIDADE -->
+  <div class="modal-overlay" id="privacy-modal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>🔒 Política de Privacidade</h3>
+        <button type="button" class="modal-close-btn" data-close-modal="privacy-modal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>A sua privacidade é prioridade absoluta no <strong>Curiosidades Incríveis</strong>. Nosso compromisso é com o conhecimento transparente e seguro:</p>
+        <ul style="padding-left: 20px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px;">
+          <li><strong>Zero venda de dados:</strong> Nunca comercializamos, alugamos ou compartilhamos dados pessoais com terceiros.</li>
+          <li><strong>Google Analytics:</strong> Utilizamos o Google Analytics (G-QEP986Z15Q) de forma agregada e anônima apenas para entender quais temas despertam mais interesse.</li>
+          <li><strong>Cookies técnicos:</strong> Armazenamos apenas preferências essenciais no seu navegador (como a escolha de tema Claro/Escuro via localStorage).</li>
+          <li><strong>LGPD / GDPR:</strong> Respeitamos integralmente os seus direitos de titular de dados conforme a legislação vigente.</li>
+        </ul>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 0;">Dúvidas sobre privacidade? Escreva para <a href="mailto:contatocuriosidadesincriveis6@gmail.com" style="color: var(--blue);">contatocuriosidadesincriveis6@gmail.com</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
