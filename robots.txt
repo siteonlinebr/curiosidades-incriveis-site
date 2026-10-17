@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://siteonlinebr.github.io/curiosidades-incriveis-site/sitemap.xml
+Sitemap: https://curiosidadesincriveis.online/sitemap.xml

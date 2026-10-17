@@ -161,26 +161,26 @@ for item in news_list:
         "@type": "NewsArticle",
         "headline": title,
         "description": summary,
-        "image": [f"https://curiosidadesincriveis.com/{image}"],
+        "image": [f"https://curiosidadesincriveis.online/{image}"],
         "datePublished": item["publishedAt"],
         "dateModified": item["publishedAt"],
         "articleSection": cat,
         "author": {
             "@type": "Organization",
             "name": "Curiosidades Incríveis",
-            "url": "https://curiosidadesincriveis.com"
+            "url": "https://curiosidadesincriveis.online"
         },
         "publisher": {
             "@type": "Organization",
             "name": "Curiosidades Incríveis",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://curiosidadesincriveis.com/favicon.png"
+                "url": "https://curiosidadesincriveis.online/favicon.png"
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": f"https://curiosidadesincriveis.com/noticias/{slug}.html"
+            "@id": f"https://curiosidadesincriveis.online/noticias/{slug}.html"
         }
     }, ensure_ascii=False, indent=2)
 
@@ -191,15 +191,15 @@ for item in news_list:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} • Notícias • Curiosidades Incríveis</title>
   <meta name="description" content="{summary}">
-  <link rel="canonical" href="https://curiosidadesincriveis.com/noticias/{slug}.html">
+  <link rel="canonical" href="https://curiosidadesincriveis.online/noticias/{slug}.html">
   <link rel="icon" type="image/png" href="../favicon.png">
 
   <!-- Open Graph / Meta Compartilhamento -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{summary}">
-  <meta property="og:image" content="https://curiosidadesincriveis.com/{image}">
-  <meta property="og:url" content="https://curiosidadesincriveis.com/noticias/{slug}.html">
+  <meta property="og:image" content="https://curiosidadesincriveis.online/{image}">
+  <meta property="og:url" content="https://curiosidadesincriveis.online/noticias/{slug}.html">
   <meta property="article:section" content="{cat}">
   <meta property="article:published_time" content="{item['publishedAt']}">
 
@@ -207,7 +207,7 @@ for item in news_list:
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{title}">
   <meta name="twitter:description" content="{summary}">
-  <meta name="twitter:image" content="https://curiosidadesincriveis.com/{image}">
+  <meta name="twitter:image" content="https://curiosidadesincriveis.online/{image}">
 
   <!-- Schema.org NewsArticle (JSON-LD) -->
   <script type="application/ld+json">
@@ -461,7 +461,6 @@ for item in news_list:
         <a href="../index.html">Início</a>
         <a href="../artigos.html">Artigos</a>
         <a href="../noticias.html">Notícias</a>
-        <a href="../index.html#em-alta">Em alta</a>
       </div>
       <div>
         <h3>Categorias</h3>

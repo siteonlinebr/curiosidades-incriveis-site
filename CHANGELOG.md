@@ -4,8 +4,26 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.6.0] - 2026-10-13 (Versão Atual)
-### 📰 Publicação Oficial da Editoria de Notícias (18 Matérias Verificadas):
+## [v3.7.0] - 2026-10-16 (Versão Atual)
+### 📰 Integração do Lote 02 de Notícias (Total: 25 Matérias Verificadas):
+- **Adição de 3 Novas Reportagens Reais & Fatos Verificados:**
+  - 🐾 **Animais:** *Fóssil raro de dinossauro parente do T. rex será leiloado por até US$ 9 milhões* (`noticias/fossil-nanotyrannus-jodi-leilao-2026.html`). Apuração minuciosa sobre o espécime Jodi (*Nanotyrannus cf. lancensis*), a estimativa da Sotheby's, o estudo da revista *Nature* e o debate científico sobre coleções privadas vs. públicas.
+  - 💻 **Tecnologia:** *China propõe controles para exportação de 23 tecnologias de inteligência artificial* (`noticias/china-propoe-controles-exportacao-tecnologias-ia.html`). Contexto das 40 áreas em consulta pública até 15/11/2026, com distinção clara entre acesso a serviços via APIs/SaaS e transferência formal de tecnologia/código.
+  - 🔬 **Ciência:** *Sonda europeia Hera observa pela primeira vez o sistema de asteroides que vai investigar* (`noticias/sonda-hera-detecta-asteroide-didymos-2026.html`). Detecção de Didymos e Dimorphos a 236.500 km pela missão da ESA, esclarecendo o papel de estudo pós-impacto da missão DART da NASA sem conotação alarmista.
+- **Páginas e Imagens 100% Padronizadas:**
+  - 3 novas páginas completas criadas com Schema.org `NewsArticle`, OpenGraph, Twitter Cards, fontes primárias e links externos seguros.
+  - Imagens 16:9 de 1200x675 com crédito transparente e legalmente correto: *"Ilustração gerada por IA para o Curiosidades Incríveis."*
+- **Sincronização de Dados e Infraestrutura:**
+  - `news-data.js` e `public/news-data.js` atualizados com as 25 reportagens ativas.
+  - Catálogo de pesquisa rápida em `script.js` e `public/script.js` atualizado.
+  - Selo oficial em `noticias.html` atualizado para *25 Reportagens com Fontes Verificadas*.
+  - `sitemap.xml` atualizado com as 3 novas URLs (totalizando 56 URLs).
+  - Remoção global dos links `Em alta` nos rodapés dos artigos e notícias para evitar redirecionamentos indesejados ao index.
+
+---
+
+## [v3.6.0] - 2026-10-13
+### 📰 Publicação Oficial da Editoria de Notícias:
 - **Lançamento das 18 Notícias Reais & Fatos Verificados:** A área visual demonstrativa de Notícias foi convertida em uma editoria funcional com apuração rigorosa, fontes primárias e ressalvas transparentes.
 - **Distribuição Editorial Cumprida com Precisão:**
   - 💻 **Tecnologia (3):** Microsoft Maia 300 chip de IA, Fiscalização de IA no setor bancário e Volantis laser interconexão óptica.

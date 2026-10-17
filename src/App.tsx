@@ -1177,8 +1177,8 @@ export default function App() {
             >
               Instagram ↗
             </a>
-            <a href="mailto:contato@curiosidadesincriveis.com">
-              contato@curiosidadesincriveis.com
+            <a href="mailto:contatocuriosidadesincriveis6@gmail.com">
+              contatocuriosidadesincriveis6@gmail.com
             </a>
             <button
               type="button"

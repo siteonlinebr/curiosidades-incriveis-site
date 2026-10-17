@@ -1081,6 +1081,39 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "fossil-nanotyrannus-jodi-leilao-2026",
+    "slug": "fossil-nanotyrannus-jodi-leilao-2026",
+    "title": "Fóssil raro de dinossauro parente do T. rex será leiloado por até US$ 9 milhões",
+    "summary": "Um esqueleto de Nanotyrannus, com crânio quase completo e cerca de 70% do esqueleto preservado, está em exposição antes de um leilão estimado entre US$ 6 milhões e US$ 9 milhões. A venda também levanta uma questão: fósseis raros devem ficar em coleções privadas ou em instituições públicas?",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "4 min de leitura",
+    "image": "images/noticia-fossil-nanotyrannus-jodi-leilao-2026.jpg",
+    "link": "noticias/fossil-nanotyrannus-jodi-leilao-2026.html"
+  },
+  {
+    "id": "china-propoe-controles-exportacao-tecnologias-ia",
+    "slug": "china-propoe-controles-exportacao-tecnologias-ia",
+    "title": "China propõe controles para exportação de 23 tecnologias de inteligência artificial",
+    "summary": "A China propôs incluir 23 tecnologias ligadas à inteligência artificial em uma lista de exportações controladas, dentro de uma revisão mais ampla que envolve 40 tecnologias. A proposta ainda está em consulta pública, e o acesso a serviços por aplicativos, sites e APIs foi tratado de forma diferente da transferência da tecnologia.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "4 min de leitura",
+    "image": "images/noticia-china-controles-exportacao-tecnologias-ia.jpg",
+    "link": "noticias/china-propoe-controles-exportacao-tecnologias-ia.html"
+  },
+  {
+    "id": "sonda-hera-detecta-asteroide-didymos-2026",
+    "slug": "sonda-hera-detecta-asteroide-didymos-2026",
+    "title": "Sonda europeia Hera observa pela primeira vez o sistema de asteroides que vai investigar",
+    "summary": "A missão Hera, da Agência Espacial Europeia, identificou seu destino como um pequeno ponto de luz a cerca de 236.500 km. A sonda vai investigar Didymos e sua pequena lua Dimorphos, atingida pela missão DART em um teste de defesa planetária.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "4 min de leitura",
+    "image": "images/noticia-sonda-hera-detecta-asteroide-didymos-2026.jpg",
+    "link": "noticias/sonda-hera-detecta-asteroide-didymos-2026.html"
+  },
+  {
     "id": "morre-ator-rj-mitte-breaking-bad",
     "slug": "morre-ator-rj-mitte-breaking-bad",
     "title": "Morre aos 34 anos o ator RJ Mitte, astro de Breaking Bad e ativista pela inclusão",
