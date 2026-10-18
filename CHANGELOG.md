@@ -4,7 +4,40 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.7.0] - 2026-10-16 (Versão Atual)
+## [v3.9.0] - 2026-10-18 (Versão Atual)
+### 📤 Nova Funcionalidade Oficial de Compartilhamento (Artigos e Notícias):
+- **Implementação em 100% das Páginas Individuais (33 Artigos + 26 Notícias):**
+  - Adicionada a seção semântica `<section class="share-page-section">` logo após o texto e fontes da matéria e antes das seções de recomendação (*Continue Explorando* ou *Outras Notícias Recentes*).
+- **Três Opções de Compartilhamento Nativas e Acessíveis:**
+  - 💬 **WhatsApp:** Compartilha o título real higienizado e a URL canônica exata da página com codificação segura de URI (`encodeURIComponent`).
+  - 📋 **Copiar Link:** Copia a URL canônica oficial para a área de transferência usando `navigator.clipboard` (com fallback robusto para `execCommand`), exibindo estado visual discreto de confirmação (*Link copiado!*) por 2,5 segundos e suporte a leitores de tela via `aria-live`.
+  - 🔗 **Compartilhar (Web Share API):** Aciona a gaveta de compartilhamento nativa do sistema operacional/dispositivo móvel (`navigator.share`). Caso o navegador de desktop não suporte ou ocorra falha não cancelada pelo usuário, executa fallback automático para a cópia do link com toast informativo.
+- **Detecção Rigorosa da URL Canônica:**
+  - O script extrai a URL canônica única definida na tag `<link rel="canonical">` de cada página, garantindo que nunca compartilhe páginas genéricas ou parâmetros indesejados.
+- **Componentização e Auto-Resiliência:**
+  - O script em `script.js` possui lógica de auto-injeção e auto-inicialização para que qualquer futura matéria receba a funcionalidade automaticamente.
+- **Design e Responsividade:**
+  - Estilos em `style.css` totalmente compatíveis com os modos claro e escuro, alinhados com a paleta cósmica e adaptados para toques em telas touch (grid mobile com altura mínima de 44px).
+
+---
+
+## [v3.8.0] - 2026-10-18
+### 📰 Integração da Matéria sobre a PEC do Fim da Escala 6x1 (Total: 26 Notícias):
+- **Adição da 26ª Reportagem Oficial Verificada:**
+  - 🏛️ **Política:** *Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas* (`noticias/fim-escala-6x1-duas-folgas-40-horas.html`).
+  - Análise detalhada da Emenda Constitucional nº 141 (promulgada em 16/10/2026), com o cronograma em duas etapas (42h em dez/2026 e 40h em dez/2027), impactos específicos nas jornadas 5x2, 36h e 12x36, preservação salarial e links diretos para a Presidência da República e Câmara dos Deputados.
+  - Imagem documental real de trabalhadores no Rio de Janeiro (Wilfredor / Wikimedia Commons CC0 1.0) adaptada para 1200x675.
+- **Destaque do Hero da Home (`index.html`):**
+  - Atualizado para o artigo *O que aconteceria se você caísse em um buraco negro? A Física da Espaguetificação*.
+- **Sincronização de Dados e Infraestrutura:**
+  - `news-data.js` e `public/news-data.js` atualizados para 26 reportagens ativas.
+  - Catálogo de busca rápida em `script.js` e `public/script.js` atualizado.
+  - Selo oficial em `noticias.html` atualizado para *Cobertura Oficial • 26 Reportagens com Fontes Verificadas*.
+  - `sitemap.xml` atualizado com a 26ª notícia (total de 62 URLs no sitemap).
+
+---
+
+## [v3.7.0] - 2026-10-16
 ### 📰 Integração do Lote 02 de Notícias (Total: 25 Matérias Verificadas):
 - **Adição de 3 Novas Reportagens Reais & Fatos Verificados:**
   - 🐾 **Animais:** *Fóssil raro de dinossauro parente do T. rex será leiloado por até US$ 9 milhões* (`noticias/fossil-nanotyrannus-jodi-leilao-2026.html`). Apuração minuciosa sobre o espécime Jodi (*Nanotyrannus cf. lancensis*), a estimativa da Sotheby's, o estudo da revista *Nature* e o debate científico sobre coleções privadas vs. públicas.

@@ -1081,6 +1081,17 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "fim-escala-6x1-duas-folgas-40-horas",
+    "slug": "fim-escala-6x1-duas-folgas-40-horas",
+    "title": "Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas",
+    "summary": "A emenda constitucional prevê dois dias de descanso remunerado por semana e reduz a jornada máxima em etapas: 42 horas a partir de dezembro de 2026 e 40 horas a partir de dezembro de 2027.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "5 min de leitura",
+    "image": "images/noticia-fim-escala-6x1-duas-folgas-40-horas.jpg",
+    "link": "noticias/fim-escala-6x1-duas-folgas-40-horas.html"
+  },
+  {
     "id": "fossil-nanotyrannus-jodi-leilao-2026",
     "slug": "fossil-nanotyrannus-jodi-leilao-2026",
     "title": "Fóssil raro de dinossauro parente do T. rex será leiloado por até US$ 9 milhões",
@@ -2011,4 +2022,230 @@ if (catParam) {
     observer.observe(card);
   });
 })();
+
+// =========================================================
+// FUNCIONALIDADE OFICIAL DE COMPARTILHAMENTO (ARTIGOS E NOTÍCIAS)
+// =========================================================
+(function initShareButtons() {
+  function getShareData() {
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    let url = canonicalLink ? canonicalLink.getAttribute('href') : '';
+
+    if (!url || !url.startsWith('http')) {
+      // Constrói a URL absoluta baseada no host oficial
+      const path = window.location.pathname;
+      url = 'https://curiosidadesincriveis.online' + (path.startsWith('/') ? path : '/' + path);
+    }
+
+    // Limpa fragmentos e parâmetros residuais
+    url = url.split('#')[0].split('?')[0];
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const h1 = document.querySelector('h1');
+    let rawTitle = ogTitle ? ogTitle.getAttribute('content') : (h1 ? h1.textContent : document.title);
+    
+    // Remove sufixos editoriais para deixar a mensagem limpa
+    const cleanTitle = (rawTitle || 'Curiosidades Incríveis')
+      .replace(/\s*[•—–-]\s*Notícias\s*[•—–-]\s*Curiosidades Incríveis.*/i, '')
+      .replace(/\s*[•—–-]\s*Curiosidades Incríveis.*/i, '')
+      .trim();
+
+    const ogDesc = document.querySelector('meta[property="og:description"]') || document.querySelector('meta[name="description"]');
+    const desc = ogDesc ? ogDesc.getAttribute('content') : '';
+
+    return { url, title: cleanTitle, desc };
+  }
+
+  function fallbackCopyText(text, onSuccess, onError) {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      ta.style.top = '0';
+      ta.setAttribute('readonly', '');
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(ta);
+      if (successful && onSuccess) onSuccess();
+      else if (!successful && onError) onError();
+    } catch (e) {
+      if (onError) onError();
+    }
+  }
+
+  function setupShareSection(section) {
+    if (!section || section.dataset.shareInitialized === 'true') return;
+    section.dataset.shareInitialized = 'true';
+
+    const { url, title, desc } = getShareData();
+    const btnWhatsApp = section.querySelector('.share-btn-whatsapp');
+    const btnCopy = section.querySelector('.share-btn-copy');
+    const btnNative = section.querySelector('.share-btn-native');
+    const copyTextSpan = section.querySelector('.share-copy-text');
+    const toast = section.querySelector('.share-feedback-toast');
+
+    function notifyCopySuccess(customMsg) {
+      if (btnCopy) {
+        btnCopy.classList.add('is-copied');
+        if (copyTextSpan) copyTextSpan.textContent = 'Link copiado!';
+      }
+      if (toast) {
+        toast.textContent = customMsg || 'Link copiado para a área de transferência!';
+        toast.classList.add('is-visible');
+        toast.setAttribute('aria-hidden', 'false');
+      }
+      setTimeout(() => {
+        if (btnCopy) {
+          btnCopy.classList.remove('is-copied');
+          if (copyTextSpan) copyTextSpan.textContent = 'Copiar link';
+        }
+        if (toast) {
+          toast.classList.remove('is-visible');
+          toast.setAttribute('aria-hidden', 'true');
+        }
+      }, 2500);
+    }
+
+    function notifyCopyError() {
+      if (toast) {
+        toast.textContent = 'Não foi possível copiar. Selecione a barra de endereços do navegador.';
+        toast.classList.add('is-visible');
+        toast.setAttribute('aria-hidden', 'false');
+        setTimeout(() => {
+          toast.classList.remove('is-visible');
+          toast.setAttribute('aria-hidden', 'true');
+        }, 4000);
+      }
+    }
+
+    function doCopy(customMsg) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url)
+          .then(() => notifyCopySuccess(customMsg))
+          .catch(() => fallbackCopyText(url, () => notifyCopySuccess(customMsg), notifyCopyError));
+      } else {
+        fallbackCopyText(url, () => notifyCopySuccess(customMsg), notifyCopyError);
+      }
+    }
+
+    // A. WhatsApp
+    if (btnWhatsApp) {
+      btnWhatsApp.addEventListener('click', (e) => {
+        e.preventDefault();
+        const textMsg = encodeURIComponent(`${title}\n\n${url}`);
+        const waUrl = `https://api.whatsapp.com/send?text=${textMsg}`;
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+      });
+    }
+
+    // B. Copiar Link
+    if (btnCopy) {
+      btnCopy.addEventListener('click', (e) => {
+        e.preventDefault();
+        doCopy();
+      });
+    }
+
+    // C. Compartilhar (Web Share API com fallback gracioso)
+    if (btnNative) {
+      btnNative.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (navigator.share) {
+          navigator.share({
+            title: title,
+            text: desc ? (desc.length > 130 ? desc.slice(0, 127) + '...' : desc) : title,
+            url: url
+          }).catch((err) => {
+            // Cancelamento pelo usuário é normal; só aciona cópia se foi erro de suporte
+            if (err && err.name !== 'AbortError') {
+              doCopy('Link copiado!');
+            }
+          });
+        } else {
+          doCopy('Link copiado!');
+        }
+      });
+    }
+  }
+
+  function createShareMarkup() {
+    const section = document.createElement('section');
+    section.className = 'share-page-section';
+    section.setAttribute('aria-label', 'Compartilhar esta matéria');
+    section.innerHTML = `
+      <div class="share-page-header">
+        <span class="share-page-icon" aria-hidden="true">📤</span>
+        <h3 class="share-page-title">Compartilhe esta página</h3>
+      </div>
+      <div class="share-buttons-group">
+        <button class="share-btn share-btn-whatsapp" type="button" aria-label="Compartilhar no WhatsApp">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413Z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </button>
+        <button class="share-btn share-btn-copy" type="button" aria-label="Copiar link da página">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="share-copy-text">Copiar link</span>
+        </button>
+        <button class="share-btn share-btn-native" type="button" aria-label="Mais opções de compartilhamento">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span>Compartilhar</span>
+        </button>
+      </div>
+      <div class="share-feedback-toast" aria-live="polite" aria-hidden="true"></div>
+    `;
+    return section;
+  }
+
+  function init() {
+    // 1. Inicializa seções existentes no DOM
+    const existingSections = document.querySelectorAll('.share-page-section');
+    if (existingSections.length > 0) {
+      existingSections.forEach(setupShareSection);
+      return;
+    }
+
+    // 2. Se não existir no HTML estático, injeta automaticamente em páginas de leitura
+    const isArticleOrNews = document.querySelector('.article-page, .article-page-layout, .article-prose');
+    if (!isArticleOrNews) return;
+
+    // Alvo de inserção: antes das recomendações ou footer da matéria
+    const insertionTarget = document.querySelector(
+      '.article-share-footer, .continue-explorando-section, .article-recommendations, .article-footer'
+    );
+
+    const newSection = createShareMarkup();
+
+    if (insertionTarget && insertionTarget.parentNode) {
+      insertionTarget.parentNode.insertBefore(newSection, insertionTarget);
+    } else {
+      const container = document.querySelector('.article-body-container') || document.querySelector('.article-prose') || document.querySelector('article');
+      if (container) {
+        container.appendChild(newSection);
+      }
+    }
+
+    setupShareSection(newSection);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
 

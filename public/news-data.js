@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 25 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (3), Política (2), Ciência (5),
+// 26 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (3), Política (3), Ciência (5),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -44,6 +44,22 @@ function calculateRelativeTime(dateInput) {
 
 const officialNews = [
   {
+    "id": "fim-escala-6x1-duas-folgas-40-horas",
+    "slug": "fim-escala-6x1-duas-folgas-40-horas",
+    "title": "Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas",
+    "summary": "A emenda constitucional prevê dois dias de descanso remunerado por semana e reduz a jornada máxima em etapas: 42 horas a partir de dezembro de 2026 e 40 horas a partir de dezembro de 2027.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-18T10:00:00Z",
+    "sourceDate": "18/10/2026",
+    "readingTime": "5 min de leitura",
+    "image": "images/noticia-fim-escala-6x1-duas-folgas-40-horas.jpg",
+    "imageCredit": "Foto: Wilfredor / Wikimedia Commons (CC0 1.0)",
+    "isFeaturedHero": true,
+    "isLatest": true,
+    "link": "noticias/fim-escala-6x1-duas-folgas-40-horas.html"
+  },
+  {
     "id": "fossil-nanotyrannus-jodi-leilao-2026",
     "slug": "fossil-nanotyrannus-jodi-leilao-2026",
     "title": "Fóssil raro de dinossauro parente do T. rex será leiloado por até US$ 9 milhões",
@@ -55,7 +71,7 @@ const officialNews = [
     "readingTime": "4 min de leitura",
     "image": "images/noticia-fossil-nanotyrannus-jodi-leilao-2026.jpg",
     "imageCredit": "Ilustração gerada por IA para o Curiosidades Incríveis",
-    "isFeaturedHero": true,
+    "isFeaturedHero": false,
     "isLatest": true,
     "link": "noticias/fossil-nanotyrannus-jodi-leilao-2026.html"
   },
