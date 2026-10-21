@@ -4,7 +4,28 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v3.9.0] - 2026-10-18 (Versão Atual)
+## [v4.0.0] - 2026-10-21 (Versão Atual)
+### 🚀 Publicação Oficial do Lote de Expansão (1 Artigo para Cada Categoria • Total: 39 Artigos):
+- **Adição de 5 Novos Artigos de Alto Impacto e Alto Potencial de Busca (SEO):**
+  - 🐾 **Animais:** *Os Ursos-d'Água Podem Sobreviver ao Fim do Mundo? A Ciência dos Animais Quase Indestrutíveis* (`artigos/tardigrados-animais-quase-indestrutiveis.html`). Investigação sobre a criptobiose (anidrobiose), a proteína Dsup (Damage Suppressor) que protege o DNA contra 1.000x a dose letal de radiação humana, a sobrevivência no vácuo espacial na missão FOTON-M3 da ESA e aplicações em medicina regenerativa e conservação de vacinas.
+  - 🔬 **Ciência:** *O Paradoxo de Fermi: Onde Estão os Extraterrestres e o Que É o 'Grande Filtro'?* (`artigos/paradoxo-de-fermi-grande-filtro.html`). Análise aprofundada da pergunta de Enrico Fermi em 1950, a Equação de Drake com dados dos telescópios Kepler e James Webb, a Escala de Kardashev e a perturbadora hipótese do Grande Filtro de Robin Hanson (o filtro está no passado ou no futuro da humanidade?).
+  - 💻 **Tecnologia:** *O Que Acontece Quando a IA Superar a Mente Humana? A Corrida Rumo à AGI e a Singularidade Tecnológica* (`artigos/singularidade-tecnologica-agi-inteligencia-artificial.html`). Distinção clara entre ANI, AGI e ASI, a previsão de John von Neumann e a explosão de inteligência de I.J. Good, a Lei dos Retornos Acelerados de Ray Kurzweil e os dilemas reais do Problema do Alinhamento e do *paperclip maximizer*.
+  - 📜 **História:** *O Que Realmente Aconteceu com a Biblioteca de Alexandria? A Verdade Histórica por Trás do Mito* (`artigos/verdade-biblioteca-alexandria-destruicao.html`). Desmistificação rigorosa do clichê do incêndio único de Júlio César (48 a.C.), detalhando a destruição do bairro nobre de Bruchion no cerco do imperador Aureliano (270-272 d.C.), o decreto de Teodósio I no Serapeu (391 d.C.), os cortes orçamentários do Baixo Império Romano e a lenda da queima de 642 forjada séculos depois.
+  - 🌍 **Mundo:** *O Que Existe no Fundo da Fossa das Marianas? Os Segredos do Ponto Mais Profundo do Planeta* (`artigos/fossa-das-marianas-abismo-challenger-profundeza.html`). Oceanografia extrema no Abismo Challenger (10.994 metros de profundidade, 1.086 bar de pressão hidrostática), a adaptação do peixe-caracol-das-marianas com cartilagem flexível e soluto TMAO, xenofióforos gigantes, os mergulhos históricos (batiscafo Trieste em 1960, James Cameron em 2012, Victor Vescovo em 2019) e o alerta ambiental dos microplásticos no leito abissal.
+- **Páginas HTML 100% Padronizadas & Espelhadas (`/artigos/` e `/public/artigos/`):**
+  - Cada matéria conta com Schema.org `Article` estruturado em JSON-LD, tags OpenGraph completas, Twitter Cards, fontes de leitura, cabeçalho responsivo com gaveta mobile, pílulas temáticas, caixa de destaque (*curiosity-card-callout*), funcionalidade nativa de compartilhamento (WhatsApp, Copiar Link, Web Share) e seção contextual *Continue Explorando* com 3 matérias recomendadas.
+- **Acervo Visual Padronizado:**
+  - Imagens 16:9 em resolução 1200x675 com tratamento fotográfico otimizado salvas em `images/` e `public/images/`.
+- **Sincronização de Infraestrutura e Catálogos:**
+  - `script.js` e `public/script.js` atualizados com os 5 novos artigos e 5 novos fatos rápidos no ticker "Você Sabia?" e "Curiosidade Aleatória".
+  - `artigos.html` e `public/artigos.html` atualizados com os 5 novos cards interativos e indexáveis com tags `data-category` e `data-search`.
+  - `sitemap.xml` e `public/sitemap.xml` atualizados com as 5 novas URLs oficiais.
+  - `FLUXO_EDITORIAL.md` atualizado com a LISTA 3.
+  - Área de Notícias (`noticias/`, `noticias.html`, `news-data.js`) rigorosamente mantida e preservada sem qualquer alteração.
+
+---
+
+## [v3.9.0] - 2026-10-18
 ### 📤 Nova Funcionalidade Oficial de Compartilhamento (Artigos e Notícias):
 - **Implementação em 100% das Páginas Individuais (33 Artigos + 26 Notícias):**
   - Adicionada a seção semântica `<section class="share-page-section">` logo após o texto e fontes da matéria e antes das seções de recomendação (*Continue Explorando* ou *Outras Notícias Recentes*).

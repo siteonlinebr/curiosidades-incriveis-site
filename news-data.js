@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 26 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (3), Política (3), Ciência (5),
+// 27 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (3), Política (3), Ciência (6),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -44,6 +44,22 @@ function calculateRelativeTime(dateInput) {
 
 const officialNews = [
   {
+    "id": "james-webb-detecta-atmosfera-vapor-agua-exoplaneta",
+    "slug": "james-webb-detecta-atmosfera-vapor-agua-exoplaneta",
+    "title": "Telescópio James Webb detecta atmosfera espessa com vapor de água em exoplaneta a 48 anos-luz",
+    "summary": "Dados do Telescópio Espacial James Webb confirmam atmosfera densa com vapor de água e dióxido de carbono em super-Terra rochosa na zona temperada de uma anã vermelha, abrindo nova fase na busca por habitabilidade.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "publishedAt": "2026-10-20T18:00:00Z",
+    "sourceDate": "20/10/2026",
+    "readingTime": "4 min de leitura",
+    "image": "images/noticia-james-webb-exoplaneta-agua.jpg",
+    "imageCredit": "Ilustração: NASA, ESA, CSA, Joseph Olmsted / STScI",
+    "isFeaturedHero": true,
+    "isLatest": true,
+    "link": "noticias/james-webb-detecta-atmosfera-vapor-agua-exoplaneta.html"
+  },
+  {
     "id": "fim-escala-6x1-duas-folgas-40-horas",
     "slug": "fim-escala-6x1-duas-folgas-40-horas",
     "title": "Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas",
@@ -55,7 +71,7 @@ const officialNews = [
     "readingTime": "5 min de leitura",
     "image": "images/noticia-fim-escala-6x1-duas-folgas-40-horas.jpg",
     "imageCredit": "Foto: Wilfredor / Wikimedia Commons (CC0 1.0)",
-    "isFeaturedHero": true,
+    "isFeaturedHero": false,
     "isLatest": true,
     "link": "noticias/fim-escala-6x1-duas-folgas-40-horas.html"
   },

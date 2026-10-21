@@ -2,8 +2,92 @@
 // CURIOSIDADES INCRÍVEIS - SCRIPT OFICIAL
 // =========================================================
 
-// 7 Artigos Oficiais existentes no portal
+// Artigos Oficiais existentes no portal
 const articles = [
+  {
+    "id": "tardigrados-animais-quase-indestrutiveis",
+    "title": "Os Ursos-d'Água Podem Sobreviver ao Fim do Mundo? A Ciência dos Animais Quase Indestrutíveis",
+    "category": "Animais",
+    "categorySlug": "animais",
+    "readingTime": "5 min de leitura",
+    "description": "Descubra como os tardígrados sobrevivem ao vácuo do espaço, radiação cósmica mortal, temperaturas de -272°C a 150°C e pressões extremas através da criptobiose.",
+    "image": "images/artigo-tardigrados.jpg",
+    "link": "artigos/tardigrados-animais-quase-indestrutiveis.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
+    "id": "paradoxo-de-fermi-grande-filtro",
+    "title": "O Paradoxo de Fermi: Onde Estão os Extraterrestres e o Que É o 'Grande Filtro'?",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "6 min de leitura",
+    "description": "Se o universo possui bilhões de anos e trilhões de planetas, onde estão todos? Entenda o Paradoxo de Fermi, a Equação de Drake e a teoria do Grande Filtro.",
+    "image": "images/artigo-paradoxo-fermi.jpg",
+    "link": "artigos/paradoxo-de-fermi-grande-filtro.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
+    "id": "singularidade-tecnologica-agi-inteligencia-artificial",
+    "title": "O Que Acontece Quando a IA Superar a Mente Humana? A Corrida Rumo à AGI e a Singularidade Tecnológica",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "5 min de leitura",
+    "description": "O que é Inteligência Artificial Geral (AGI), como funciona a Singularidade Tecnológica e o que a ciência da computação diz sobre o futuro da inteligência.",
+    "image": "images/artigo-singularidade-ia.jpg",
+    "link": "artigos/singularidade-tecnologica-agi-inteligencia-artificial.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
+    "id": "verdade-biblioteca-alexandria-destruicao",
+    "title": "O Que Realmente Aconteceu com a Biblioteca de Alexandria? A Verdade Histórica por Trás do Mito",
+    "category": "História",
+    "categorySlug": "historia",
+    "readingTime": "5 min de leitura",
+    "description": "A Biblioteca de Alexandria não foi destruída em uma única noite de chamas. Descubra a história real, os mitos de Júlio César e os séculos de lento declínio.",
+    "image": "images/artigo-biblioteca-alexandria.jpg",
+    "link": "artigos/verdade-biblioteca-alexandria-destruicao.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
+    "id": "fossa-das-marianas-abismo-challenger-profundeza",
+    "title": "O Que Existe no Fundo da Fossa das Marianas? Os Segredos do Ponto Mais Profundo do Planeta",
+    "category": "Mundo",
+    "categorySlug": "mundo",
+    "readingTime": "5 min de leitura",
+    "description": "A quase 11.000 metros de profundidade, a pressão esmagaria um tanque. Conheça a física, a vida alienígena e as explorações no Abismo Challenger.",
+    "image": "images/artigo-fossa-marianas.jpg",
+    "link": "artigos/fossa-das-marianas-abismo-challenger-profundeza.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
+  {
+    "id": "terra-parar-de-girar-5-segundos",
+    "title": "O Que Aconteceria se a Terra Parasse de Girar por Apenas 5 Segundos?",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "5 min de leitura",
+    "description": "Descubra o que a física e a inércia planetária revelam se a rotação da Terra travasse por 5 segundos: ventos supersônicos de 1.670 km/h, megatsunamis e o destino da civilização.",
+    "image": "images/artigo-terra-parar.jpg",
+    "link": "artigos/terra-parar-de-girar-5-segundos.html",
+    "featured": true,
+    "recent": true,
+    "popular": true,
+    "quickFact": false
+  },
   {
     "id": "como-golfinhos-dormem-sono-uni-hemisferico",
     "title": "Como os Golfinhos Dormem Sem Se Afogar? O Mistério do Sono de Meio Cérebro",
@@ -470,6 +554,42 @@ const articles = [
 
 // Fatos rápidos para o "Você Sabia?" e "Curiosidade Aleatória" (Restritos às 5 categorias oficiais)
 const curiosities = [
+  {
+    "category": "Animais",
+    "icon": "🐻",
+    "fact": "Os tardígrados (ursos-d'água) conseguem expelir 97% da água do corpo e entrar em animação suspensa, sobrevivendo ao vácuo espacial e a temperaturas de -272°C.",
+    "articleLink": "artigos/tardigrados-animais-quase-indestrutiveis.html"
+  },
+  {
+    "category": "Ciência",
+    "icon": "🪐",
+    "fact": "A teoria do Grande Filtro sugere que o silêncio extraterrestre pode significar que toda civilização tecnológica se autodestrói antes de conseguir colonizar a galáxia.",
+    "articleLink": "artigos/paradoxo-de-fermi-grande-filtro.html"
+  },
+  {
+    "category": "Tecnologia",
+    "icon": "🤖",
+    "fact": "O conceito de Singularidade Tecnológica prevê o momento em que uma inteligência artificial será capaz de reprogramar e melhorar a si mesma em ciclos exponenciais.",
+    "articleLink": "artigos/singularidade-tecnologica-agi-inteligencia-artificial.html"
+  },
+  {
+    "category": "História",
+    "icon": "📜",
+    "fact": "Ao contrário da lenda popular, a Biblioteca de Alexandria não foi destruída em um incêndio de Júlio César, mas sim ao longo de mais de 400 anos de guerras e cortes de orçamento.",
+    "articleLink": "artigos/verdade-biblioteca-alexandria-destruicao.html"
+  },
+  {
+    "category": "Mundo",
+    "icon": "🌊",
+    "fact": "No fundo da Fossa das Marianas, a quase 11 km de profundidade, a pressão d'água ultrapassa 1.000 atmosferas — equivalente a um elefante equilibrado na ponta do seu polegar.",
+    "articleLink": "artigos/fossa-das-marianas-abismo-challenger-profundeza.html"
+  },
+  {
+    "category": "Ciência",
+    "icon": "🌍",
+    "fact": "Se a Terra parasse de girar por 5 segundos, a inércia arremessaria tudo que não está ancorado à rocha para o leste a 1.670 km/h, gerando ventos quatro vezes mais velozes que o maior furacão da história.",
+    "articleLink": "artigos/terra-parar-de-girar-5-segundos.html"
+  },
   {
     "category": "Animais",
     "icon": "🐬",

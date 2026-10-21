@@ -87,12 +87,13 @@ O portal **Curiosidades Incríveis** opera em dois fluxos complementares de prod
 4. `animal-imortal-agua-viva.html` — *O Animal Imortal: A Água-Viva Turritopsis dohrnii* (4 min)
 5. `camarao-mantis-soco.html` — *O Soco Supersônico do Camarão Mantis* (3 min)
 
-#### 🔬 Ciência (5 artigos)
+#### 🔬 Ciência
 6. `exemplo-artigo.html` — *O Que Havia Antes do Big Bang?* (5 min)
 7. `por-que-ceu-azul.html` — *Por que o Céu é Azul? A Física da Dispersão de Rayleigh* (4 min)
 8. `som-mais-alto-krakatoa.html` — *O Som Mais Alto Já Registrado na Terra: O Rugido do Krakatoa* (4 min)
 9. `gelo-quente-estados-materia.html` — *Gelo Quente e Novos Estados da Matéria* (4 min)
 10. `tempo-topo-montanha.html` — *O Tempo Passa Mais Rápido no Topo de uma Montanha?* (3 min)
+11. `terra-parar-de-girar-5-segundos.html` — *O Que Aconteceria se a Terra Parasse de Girar por Apenas 5 Segundos?* (5 min)
 
 #### 💻 Tecnologia (5 artigos)
 11. `internet-funciona.html` — *Como a Internet Realmente Funciona Sob os Oceanos* (5 min)
@@ -128,3 +129,18 @@ O portal **Curiosidades Incríveis** opera em dois fluxos complementares de prod
 3. `rodovia-36-faixas-china.html` — *A Verdade por Trás da “Rodovia de 36 Faixas” que Parou a China: Mito Viral vs. Realidade* (5 min • Mundo)
    - *Origem:* Vídeo viral sobre suposta rodovia chinesa de 36 faixas que estreita para 4.
    - *Foco:* Engenharia de tráfego, praça de pedágio de Wuzhuang, Golden Week e dinâmica de ondas de trânsito fantasma.
+
+---
+
+### 🚀 LISTA 3: Expansão Editorial Premium (5 Artigos • 1 de Cada Categoria — v4.0.0)
+
+1. `tardigrados-animais-quase-indestrutiveis.html` — *Os Ursos-d'Água Podem Sobreviver ao Fim do Mundo? A Ciência dos Animais Quase Indestrutíveis* (5 min • 🐾 Animais)
+   - *Foco:* Criptobiose, anidrobiose, proteína Dsup protetora de DNA, sobrevivência no vácuo espacial na missão FOTON-M3 e aplicações biotecnológicas.
+2. `paradoxo-de-fermi-grande-filtro.html` — *O Paradoxo de Fermi: Onde Estão os Extraterrestres e o Que É o 'Grande Filtro'?* (6 min • 🔬 Ciência)
+   - *Foco:* Equação de Drake, Escala de Kardashev, teoria do Grande Filtro de Robin Hanson, hipótese da Floresta Negra e James Webb.
+3. `singularidade-tecnologica-agi-inteligencia-artificial.html` — *O Que Acontece Quando a IA Superar a Mente Humana? A Corrida Rumo à AGI e a Singularidade Tecnológica* (5 min • 💻 Tecnologia)
+   - *Foco:* Diferenças entre ANI, AGI e ASI, Lei dos Retornos Acelerados de Kurzweil, explosão de inteligência de I.J. Good e o problema do alinhamento.
+4. `verdade-biblioteca-alexandria-destruicao.html` — *O Que Realmente Aconteceu com a Biblioteca de Alexandria? A Verdade Histórica por Trás do Mito* (5 min • 📜 História)
+   - *Foco:* Desmistificação do incêndio de Júlio César, cerco de Aureliano, queda do Serapeu com Teodósio, mito da queima em 642 e preservação do saber antigo.
+5. `fossa-das-marianas-abismo-challenger-profundeza.html` — *O Que Existe no Fundo da Fossa das Marianas? Os Segredos do Ponto Mais Profundo do Planeta* (5 min • 🌍 Mundo)
+   - *Foco:* Abismo Challenger, 1.086 bar de pressão, peixe-caracol-das-marianas, xenofióforos gigantes, batiscafo Trieste (1960), James Cameron (2012) e impacto de microplásticos.
