@@ -4,7 +4,25 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v4.2.0] - 2026-10-21 (Versão Atual)
+## [v4.3.0] - 2026-10-22 (Versão Atual)
+### 🏛️ Notícia Urgente / Perfil Político (Total: 34 Notícias):
+- **Adição da 34ª Reportagem Verificada na Categoria Política:**
+  - 🏛️ **Leandra Guedes / André Janones:** *Quem é Leandra Guedes: trajetória da prefeita de Ituiutaba e o caso envolvendo André Janones* (`noticias/quem-e-leandra-guedes-prefeita-ituiutaba-janones.html`).
+    - Esclarecimento detalhado do nome de batismo (Leandra Guedes Ferreira) em relação ao termo frequentemente buscado pelo público ("Quem é Leandra Janones").
+    - Trajetória biográfica: naturalidade (Cachoeira Alta-GO), formação em Administração, assessoria parlamentar na Câmara dos Deputados em Brasília e relacionamento estável (2014-2018).
+    - Histórico eleitoral: eleição em 2020 como primeira prefeita mulher da história de Ituiutaba (46,67% dos votos válidos) e reeleição em 2024.
+    - Divergências administrativas e subsequente rompimento político.
+    - Cobertura rigorosa das denúncias noticiadas por *O Antagonista* e *CNN Brasil*, concessão de medidas protetivas sob a Lei Maria da Penha pela Justiça (segredo de justiça) e veemente negativa de André Janones, apontando perseguição política e resguardo da presunção de inocência.
+    - Imagem institucional: Fotografia do Congresso Nacional e Esplanada dos Ministérios por Eurico Zimbres via Wikimedia Commons (CC BY-SA 2.5).
+- **Infraestrutura e Sincronização Integral:**
+  - `news-data.js` e `public/news-data.js` atualizados para 34 reportagens ativas (distribuição: Tecnologia 5, Games 6, Política 7, Ciência 6, Animais 5, Mundo 2, Entretenimento 3).
+  - `script.js` e `public/script.js` sincronizados no catálogo unificado `CI_OFFICIAL_NEWS_CATALOG`.
+  - `noticias.html` e `public/noticias.html` atualizados para *34 Reportagens com Fontes Verificadas* e versionamento de scripts `v=4.3.0`.
+  - `sitemap.xml` e `public/sitemap.xml` atualizados com a URL canônica da matéria (total: 76 URLs).
+
+---
+
+## [v4.2.0] - 2026-10-21
 ### 🏛️ Publicação do Lote 04 de Notícias (Categoria Política • Total: 33 Notícias):
 - **Adição de 3 Novas Reportagens Verificadas na Categoria Política:**
   - 🏛️ **Belo Sun / Rio Xingu:** *Por que o STF suspendeu a licença de uma mina no Xingu?* (`noticias/stf-suspende-licenca-mina-ouro-xingu.html`).

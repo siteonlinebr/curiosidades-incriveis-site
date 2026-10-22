@@ -1201,6 +1201,17 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",
+    "slug": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",
+    "title": "Quem é Leandra Guedes: trajetória da prefeita de Ituiutaba e o caso envolvendo André Janones",
+    "summary": "Frequentemente pesquisada como 'Leandra Janones', a administradora foi assessora e companheira do deputado federal antes de se eleger prefeita; caso recente envolve medidas protetivas e veementes negativas.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "4 min de leitura",
+    "image": "images/noticia-quem-e-leandra-guedes-janones.jpg",
+    "link": "noticias/quem-e-leandra-guedes-prefeita-ituiutaba-janones.html"
+  },
+  {
     "id": "stf-suspende-licenca-mina-ouro-xingu",
     "slug": "stf-suspende-licenca-mina-ouro-xingu",
     "title": "Por que o STF suspendeu a licença de uma mina no Xingu?",

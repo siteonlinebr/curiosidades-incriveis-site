@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 33 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (6), Política (6), Ciência (6),
+// 34 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (6), Política (7), Ciência (6),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -43,6 +43,22 @@ function calculateRelativeTime(dateInput) {
 }
 
 const officialNews = [
+  {
+    "id": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",
+    "slug": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",
+    "title": "Quem é Leandra Guedes: trajetória da prefeita de Ituiutaba e o caso envolvendo André Janones",
+    "summary": "Frequentemente pesquisada como 'Leandra Janones', a administradora foi assessora e companheira do deputado federal antes de se eleger prefeita; caso recente envolve medidas protetivas e veementes negativas.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-22T20:00:00Z",
+    "sourceDate": "22/10/2026",
+    "readingTime": "4 min de leitura",
+    "image": "images/noticia-quem-e-leandra-guedes-janones.jpg",
+    "imageCredit": "Foto: Eurico Zimbres / Wikimedia Commons (CC BY-SA 2.5)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/quem-e-leandra-guedes-prefeita-ituiutaba-janones.html"
+  },
   {
     "id": "stf-suspende-licenca-mina-ouro-xingu",
     "slug": "stf-suspende-licenca-mina-ouro-xingu",
