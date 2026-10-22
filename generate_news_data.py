@@ -260,7 +260,7 @@ news_list = [
     {
         "id": "nobel-fisica-neutrinos-icecube-antartida",
         "slug": "nobel-fisica-neutrinos-icecube-antartida",
-        "title": "Detector no gelo da Antártida revela partículas cósmicas e rende Nobel de Física a Francis Halzen",
+        "title": "Por que cientistas enterraram um telescópio a 2,5 km sob o gelo do Polo Sul? O mistério do IceCube",
         "category": "Ciência",
         "categorySlug": "ciencia",
         "readingTime": "3 min de leitura",

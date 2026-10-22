@@ -4,7 +4,29 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v4.0.0] - 2026-10-21 (Versão Atual)
+## [v4.1.0] - 2026-10-21 (Versão Atual)
+### 🎮 Publicação do Lote 03 de Notícias (Categoria Games • Total: 30 Notícias):
+- **Adição de 3 Novas Reportagens Verificadas na Categoria Games:**
+  - 🎮 **BioWare / Mass Effect:** *EA anuncia fechamento da BioWare e cancela o desenvolvimento do próximo Mass Effect* (`noticias/ea-fecha-bioware-cancela-proximo-mass-effect.html`).
+    - Análise da reestruturação corporativa anunciada pela Electronic Arts em 21/10/2026, encerramento do desenvolvimento inicial do novo Mass Effect e encerramento do estúdio em Edmonton (Canadá). Fontes oficiais da EA, The Verge e BioWare.
+    - Imagem: Logotipo oficial da BioWare via Wikimedia Commons (Domínio Público).
+  - 🎮 **Google Playground:** *Google apresenta Playground, plataforma para criar jogos por texto sem programar* (`noticias/google-playground-criar-jogos-por-texto-sem-programar.html`).
+    - Cobertura da plataforma experimental do Google para criação de jogos por linguagem natural, futuros planos de conexão ao Unity Spark e regras de acesso inicial (EUA, +18). Fonte oficial: Google Blog.
+    - Imagem ilustrativa: Fotografia de notebook e jogos via Wikimedia Commons (CC BY-SA 4.0).
+  - 🎮 **Steam Next Fest Outubro 2026:** *Steam Next Fest oferece milhares de demos gratuitas até 26 de outubro* (`noticias/steam-next-fest-demos-gratuitas-outubro-2026.html`).
+    - Cobertura do festival da Valve com milhares de demonstrações gratuitas jogáveis, navegação por subcategorias e prazo até 26/10 às 10h PT. Fontes oficiais: Steam Store e Steam News.
+    - Imagem ilustrativa: Fotografia de notebook gamer por P1898 via Wikimedia Commons (CC BY 4.0).
+- **Ajuste Editorial de CTR na Matéria do IceCube:**
+  - Título otimizado para atração e curiosidade: *"Por que cientistas enterraram um telescópio a 2,5 km sob o gelo do Polo Sul? O mistério do IceCube"*.
+- **Infraestrutura e Sincronização Integral:**
+  - `news-data.js` e `public/news-data.js` atualizados para 30 reportagens ativas (distribuição: Tecnologia 5, Games 6, Política 3, Ciência 6, Animais 5, Mundo 2, Entretenimento 3).
+  - `script.js` e `public/script.js` sincronizados com o catálogo de busca rápida unificada.
+  - `noticias.html` e `public/noticias.html` atualizados para *30 Reportagens com Fontes Verificadas* e cache busting `v=4.1.0`.
+  - `sitemap.xml` e `public/sitemap.xml` atualizados com as 3 novas URLs canônicas.
+
+---
+
+## [v4.0.0] - 2026-10-21
 ### 🚀 Publicação Oficial do Lote de Expansão (1 Artigo para Cada Categoria • Total: 39 Artigos):
 - **Adição de 5 Novos Artigos de Alto Impacto e Alto Potencial de Busca (SEO):**
   - 🐾 **Animais:** *Os Ursos-d'Água Podem Sobreviver ao Fim do Mundo? A Ciência dos Animais Quase Indestrutíveis* (`artigos/tardigrados-animais-quase-indestrutiveis.html`). Investigação sobre a criptobiose (anidrobiose), a proteína Dsup (Damage Suppressor) que protege o DNA contra 1.000x a dose letal de radiação humana, a sobrevivência no vácuo espacial na missão FOTON-M3 da ESA e aplicações em medicina regenerativa e conservação de vacinas.

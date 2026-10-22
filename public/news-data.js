@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 26 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (3), Política (3), Ciência (5),
+// 30 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (6), Política (3), Ciência (6),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -44,6 +44,70 @@ function calculateRelativeTime(dateInput) {
 
 const officialNews = [
   {
+    "id": "ea-fecha-bioware-cancela-proximo-mass-effect",
+    "slug": "ea-fecha-bioware-cancela-proximo-mass-effect",
+    "title": "EA anuncia fechamento da BioWare e cancela o desenvolvimento do próximo Mass Effect",
+    "summary": "A Electronic Arts anunciou o fechamento da BioWare e o encerramento do desenvolvimento inicial de um novo Mass Effect, em uma reestruturação que prioriza menos projetos de grande escala.",
+    "category": "Games",
+    "categorySlug": "games",
+    "publishedAt": "2026-10-21T18:00:00Z",
+    "sourceDate": "21/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-bioware-fechamento-mass-effect.jpg",
+    "imageCredit": "Logotipo oficial: BioWare / Wikimedia Commons (Domínio Público)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/ea-fecha-bioware-cancela-proximo-mass-effect.html"
+  },
+  {
+    "id": "google-playground-criar-jogos-por-texto-sem-programar",
+    "slug": "google-playground-criar-jogos-por-texto-sem-programar",
+    "title": "Google apresenta Playground, plataforma para criar jogos por texto sem programar",
+    "summary": "A plataforma experimental do Google permite descrever uma ideia em texto, criar um jogo, testá-lo e compartilhá-lo. O acesso inicial é limitado aos Estados Unidos e a maiores de 18 anos.",
+    "category": "Games",
+    "categorySlug": "games",
+    "publishedAt": "2026-10-21T18:00:00Z",
+    "sourceDate": "07/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-google-playground-criar-jogos-por-texto.jpg",
+    "imageCredit": "Foto ilustrativa: Wikimedia Commons (CC BY-SA 4.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/google-playground-criar-jogos-por-texto-sem-programar.html"
+  },
+  {
+    "id": "steam-next-fest-demos-gratuitas-outubro-2026",
+    "slug": "steam-next-fest-demos-gratuitas-outubro-2026",
+    "title": "Steam Next Fest oferece milhares de demos gratuitas até 26 de outubro",
+    "summary": "A edição de outubro do Steam Next Fest reúne demonstrações gratuitas de jogos ainda em desenvolvimento e traz filtros para facilitar a descoberta de títulos por gênero, tema e recursos.",
+    "category": "Games",
+    "categorySlug": "games",
+    "publishedAt": "2026-10-21T18:00:00Z",
+    "sourceDate": "19/10/2026",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-steam-next-fest-demos-gratuitas-outubro-2026.jpg",
+    "imageCredit": "Foto ilustrativa: P1898 / Wikimedia Commons (CC BY 4.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/steam-next-fest-demos-gratuitas-outubro-2026.html"
+  },
+  {
+    "id": "james-webb-detecta-atmosfera-vapor-agua-exoplaneta",
+    "slug": "james-webb-detecta-atmosfera-vapor-agua-exoplaneta",
+    "title": "Telescópio James Webb detecta atmosfera espessa com vapor de água em exoplaneta a 48 anos-luz",
+    "summary": "Dados do Telescópio Espacial James Webb confirmam atmosfera densa com vapor de água e dióxido de carbono em super-Terra rochosa na zona temperada de uma anã vermelha, abrindo nova fase na busca por habitabilidade.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "publishedAt": "2026-10-20T18:00:00Z",
+    "sourceDate": "20/10/2026",
+    "readingTime": "4 min de leitura",
+    "image": "images/noticia-james-webb-exoplaneta-agua.jpg",
+    "imageCredit": "Ilustração: NASA, ESA, CSA, Joseph Olmsted / STScI",
+    "isFeaturedHero": true,
+    "isLatest": true,
+    "link": "noticias/james-webb-detecta-atmosfera-vapor-agua-exoplaneta.html"
+  },
+  {
     "id": "fim-escala-6x1-duas-folgas-40-horas",
     "slug": "fim-escala-6x1-duas-folgas-40-horas",
     "title": "Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas",
@@ -55,7 +119,7 @@ const officialNews = [
     "readingTime": "5 min de leitura",
     "image": "images/noticia-fim-escala-6x1-duas-folgas-40-horas.jpg",
     "imageCredit": "Foto: Wilfredor / Wikimedia Commons (CC0 1.0)",
-    "isFeaturedHero": true,
+    "isFeaturedHero": false,
     "isLatest": true,
     "link": "noticias/fim-escala-6x1-duas-folgas-40-horas.html"
   },
@@ -334,7 +398,7 @@ const officialNews = [
   {
     "id": "nobel-fisica-neutrinos-icecube-antartida",
     "slug": "nobel-fisica-neutrinos-icecube-antartida",
-    "title": "Detector no gelo da Antártida revela partículas cósmicas e rende Nobel de Física a Francis Halzen",
+    "title": "Por que cientistas enterraram um telescópio a 2,5 km sob o gelo do Polo Sul? O mistério do IceCube",
     "summary": "O observatório IceCube, com sensores a 2.500 metros sob a calota polar do Polo Sul, captura neutrinos de alta energia de regiões extremas do Universo.",
     "category": "Ciência",
     "categorySlug": "ciencia",

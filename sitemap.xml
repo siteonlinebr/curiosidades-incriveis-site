@@ -345,4 +345,19 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://curiosidadesincriveis.online/noticias/ea-fecha-bioware-cancela-proximo-mass-effect.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiosidadesincriveis.online/noticias/google-playground-criar-jogos-por-texto-sem-programar.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiosidadesincriveis.online/noticias/steam-next-fest-demos-gratuitas-outubro-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
