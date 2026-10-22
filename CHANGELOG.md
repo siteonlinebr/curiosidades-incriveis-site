@@ -4,7 +4,27 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v4.1.0] - 2026-10-21 (Versão Atual)
+## [v4.2.0] - 2026-10-21 (Versão Atual)
+### 🏛️ Publicação do Lote 04 de Notícias (Categoria Política • Total: 33 Notícias):
+- **Adição de 3 Novas Reportagens Verificadas na Categoria Política:**
+  - 🏛️ **Belo Sun / Rio Xingu:** *Por que o STF suspendeu a licença de uma mina no Xingu?* (`noticias/stf-suspende-licenca-mina-ouro-xingu.html`).
+    - Análise da decisão liminar do ministro Edson Fachin (STF, processo STP 1156) suspendendo a licença de instalação da mineradora canadense Belo Sun Mining no Pará, avaliando impactos cumulativos com Belo Monte e direito de consulta prévia aos povos indígenas. Fontes: STF e Associated Press.
+    - Imagem de satélite da região do Xingu e Belo Monte: INPE via Wikimedia Commons (CC BY-SA 2.0).
+  - 🏛️ **TSE / Meta:** *Por que o TSE cobrou igualdade da Meta nas eleições?* (`noticias/tse-cobra-igualdade-meta-eleicoes-2026.html`).
+    - Audiência oficial conduzida pelo ministro Marco Aurélio Bellizze no TSE com representantes da Meta e das campanhas presidenciais a respeito do tratamento algorítmico, distribuição de publicações e anúncios. Fontes: TSE e Associated Press.
+    - Fotografia oficial da audiência: Luiz Roberto/TSE (Domínio Público).
+  - 🏛️ **Vale do Javari / Eleições 2026:** *Por que aldeias do Vale do Javari enfrentam barreiras para votar?* (`noticias/vale-javari-transporte-eleitores-segundo-turno.html`).
+    - Cobertura dos desafios logísticos fluviais no segundo turno de 2026 para 44 aldeias indígenas na Amazônia e manifestação do TRE-AM sobre prazos e planejamento orçamentário. Fontes: TRE-AM e Associated Press.
+    - Fotografia ilustrativa de urna eletrônica: Alejandro Zambrana/Secom/TSE via Wikimedia Commons (Domínio Público).
+- **Infraestrutura e Sincronização Integral:**
+  - `news-data.js` e `public/news-data.js` atualizados para 33 reportagens ativas (distribuição: Tecnologia 5, Games 6, Política 6, Ciência 6, Animais 5, Mundo 2, Entretenimento 3).
+  - `script.js` e `public/script.js` sincronizados no catálogo unificado de busca rápida.
+  - `noticias.html` e `public/noticias.html` atualizados para *33 Reportagens com Fontes Verificadas* e versionamento de scripts `v=4.2.0`.
+  - `sitemap.xml` e `public/sitemap.xml` atualizados com as 3 novas URLs canônicas.
+
+---
+
+## [v4.1.0] - 2026-10-21
 ### 🎮 Publicação do Lote 03 de Notícias (Categoria Games • Total: 30 Notícias):
 - **Adição de 3 Novas Reportagens Verificadas na Categoria Games:**
   - 🎮 **BioWare / Mass Effect:** *EA anuncia fechamento da BioWare e cancela o desenvolvimento do próximo Mass Effect* (`noticias/ea-fecha-bioware-cancela-proximo-mass-effect.html`).

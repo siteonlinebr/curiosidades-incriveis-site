@@ -1201,6 +1201,39 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "stf-suspende-licenca-mina-ouro-xingu",
+    "slug": "stf-suspende-licenca-mina-ouro-xingu",
+    "title": "Por que o STF suspendeu a licença de uma mina no Xingu?",
+    "summary": "O STF suspendeu provisoriamente a licença de instalação do projeto da Belo Sun, no Pará, após questionamentos sobre estudos ambientais e consulta a povos indígenas.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-stf-suspende-licenca-mina-ouro-xingu.png",
+    "link": "noticias/stf-suspende-licenca-mina-ouro-xingu.html"
+  },
+  {
+    "id": "tse-cobra-igualdade-meta-eleicoes-2026",
+    "slug": "tse-cobra-igualdade-meta-eleicoes-2026",
+    "title": "Por que o TSE cobrou igualdade da Meta nas eleições?",
+    "summary": "O TSE ouviu a Meta após questionamentos sobre distribuição de conteúdo político e anúncios; a empresa diz ter cumprido a determinação e nega favorecimento.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-tse-meta-igualdade-eleicoes-2026.jpg",
+    "link": "noticias/tse-cobra-igualdade-meta-eleicoes-2026.html"
+  },
+  {
+    "id": "vale-javari-transporte-eleitores-segundo-turno",
+    "slug": "vale-javari-transporte-eleitores-segundo-turno",
+    "title": "Por que aldeias do Vale do Javari enfrentam barreiras para votar?",
+    "summary": "A Justiça Eleitoral negou um pedido de transporte para eleitores de 44 aldeias do Vale do Javari; o tribunal citou prazos e desafios logísticos.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-vale-javari-transporte-eleitores.jpg",
+    "link": "noticias/vale-javari-transporte-eleitores-segundo-turno.html"
+  },
+  {
     "id": "ea-fecha-bioware-cancela-proximo-mass-effect",
     "slug": "ea-fecha-bioware-cancela-proximo-mass-effect",
     "title": "EA anuncia fechamento da BioWare e cancela o desenvolvimento do próximo Mass Effect",

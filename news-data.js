@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 30 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (6), Política (3), Ciência (6),
+// 33 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (6), Política (6), Ciência (6),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -43,6 +43,54 @@ function calculateRelativeTime(dateInput) {
 }
 
 const officialNews = [
+  {
+    "id": "stf-suspende-licenca-mina-ouro-xingu",
+    "slug": "stf-suspende-licenca-mina-ouro-xingu",
+    "title": "Por que o STF suspendeu a licença de uma mina no Xingu?",
+    "summary": "O STF suspendeu provisoriamente a licença de instalação do projeto da Belo Sun, no Pará, após questionamentos sobre estudos ambientais e consulta a povos indígenas.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-21T18:00:00Z",
+    "sourceDate": "21/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-stf-suspende-licenca-mina-ouro-xingu.png",
+    "imageCredit": "Satélite: INPE / Wikimedia Commons (CC BY-SA 2.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/stf-suspende-licenca-mina-ouro-xingu.html"
+  },
+  {
+    "id": "tse-cobra-igualdade-meta-eleicoes-2026",
+    "slug": "tse-cobra-igualdade-meta-eleicoes-2026",
+    "title": "Por que o TSE cobrou igualdade da Meta nas eleições?",
+    "summary": "O TSE ouviu a Meta após questionamentos sobre distribuição de conteúdo político e anúncios; a empresa diz ter cumprido a determinação e nega favorecimento.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-21T18:00:00Z",
+    "sourceDate": "20/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-tse-meta-igualdade-eleicoes-2026.jpg",
+    "imageCredit": "Foto: Luiz Roberto / TSE (Domínio Público)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/tse-cobra-igualdade-meta-eleicoes-2026.html"
+  },
+  {
+    "id": "vale-javari-transporte-eleitores-segundo-turno",
+    "slug": "vale-javari-transporte-eleitores-segundo-turno",
+    "title": "Por que aldeias do Vale do Javari enfrentam barreiras para votar?",
+    "summary": "A Justiça Eleitoral negou um pedido de transporte para eleitores de 44 aldeias do Vale do Javari; o tribunal citou prazos e desafios logísticos.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-21T18:00:00Z",
+    "sourceDate": "21/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-vale-javari-transporte-eleitores.jpg",
+    "imageCredit": "Foto ilustrativa: Alejandro Zambrana / TSE / Wikimedia (Domínio Público)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/vale-javari-transporte-eleitores-segundo-turno.html"
+  },
   {
     "id": "ea-fecha-bioware-cancela-proximo-mass-effect",
     "slug": "ea-fecha-bioware-cancela-proximo-mass-effect",

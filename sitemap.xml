@@ -360,4 +360,19 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://curiosidadesincriveis.online/noticias/stf-suspende-licenca-mina-ouro-xingu.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiosidadesincriveis.online/noticias/tse-cobra-igualdade-meta-eleicoes-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://curiosidadesincriveis.online/noticias/vale-javari-transporte-eleitores-segundo-turno.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
