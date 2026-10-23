@@ -60,7 +60,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=3.7.0">
+  <link rel="stylesheet" href="../style.css">
 
   <script>
     (function () {
@@ -111,7 +111,9 @@
           </button>
         </div>
 
-        <a class="instagram-button" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a class="instagram-link" href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">
+          Instagram <span aria-hidden="true">↗</span>
+        </a>
 
         <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -120,7 +122,7 @@
     </div>
   </header>
 
-  <!-- GAVETA LATERAL MOBILE (DRAWER) -->
+  <!-- GAVETA LATERAL MOBILE -->
   <div class="drawer-overlay" id="drawer-overlay"></div>
   <div class="mobile-drawer" id="mobile-drawer" aria-label="Menu móvel">
     <div class="drawer-header">
@@ -130,54 +132,75 @@
       </a>
       <button class="drawer-close" id="drawer-close" type="button" aria-label="Fechar menu">✕</button>
     </div>
-
     <nav class="drawer-nav">
       <a href="../index.html">🏠 Início</a>
       <a href="../artigos.html">📚 Todos os Artigos</a>
       <a class="active" href="../noticias.html">📰 Notícias</a>
-      <div class="drawer-categories">
-        <span class="drawer-section-label">Categorias</span>
-        <a href="../artigos.html?categoria=animais">🐾 Animais</a>
-        <a href="../artigos.html?categoria=ciencia">🔬 Ciência</a>
-        <a href="../artigos.html?categoria=tecnologia">💻 Tecnologia</a>
-        <a href="../artigos.html?categoria=historia">📜 História</a>
-        <a href="../artigos.html?categoria=mundo">🌍 Mundo</a>
-      </div>
+      <a class="nav-surprise-btn drawer-surprise-btn" href="../index.html#curiosidade-aleatoria" style="margin: 8px 0; justify-content: center;">
+        <span>🎲</span> Curiosidade Aleatória
+      </a>
     </nav>
   </div>
 
-  <main id="conteudo" class="article-page-layout">
-    <article class="news-article-container container" itemscope itemtype="https://schema.org/NewsArticle">
+  <!-- PAINEL DE PESQUISA -->
+  <div class="search-panel" aria-hidden="true">
+    <div class="search-box container">
+      <label for="search-input">O que você quer descobrir?</label>
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"></path></svg>
+        <input id="search-input" type="search" placeholder="Pesquisar artigos e notícias (ex: inteligência artificial, espaço, animais...)" autocomplete="off">
+        <button class="search-close" type="button">Fechar</button>
+      </div>
+      <div class="search-suggestions" id="search-suggestions">
+        <span class="search-suggestions-label">💡 Sugestões:</span>
+        <button type="button" class="search-chip" data-query="espaço">🚀 Espaço</button>
+        <button type="button" class="search-chip" data-query="james webb">🔭 James Webb</button>
+        <button type="button" class="search-chip" data-query="ciência">🔬 Ciência</button>
+        <button type="button" class="search-chip" data-query="notícia">📰 Notícias</button>
+      </div>
+      <p class="search-message" aria-live="polite">Pesquise entre artigos e notícias ou escolha um tema sugerido acima.</p>
+      <div class="search-live-results" id="search-live-results"></div>
+    </div>
+  </div>
+
+  <main id="conteudo" class="article-page">
+    <article class="article-page-inner container">
+      <!-- BREADCRUMB -->
+      <div class="article-breadcrumb">
+        <a href="../index.html">Início</a> <span aria-hidden="true">›</span>
+        <a href="../noticias.html">Notícias</a> <span aria-hidden="true">›</span>
+        <span>Ciência</span>
+      </div>
+
       <!-- CABEÇALHO DA MATÉRIA -->
-      <header class="news-article-header">
-        <div class="news-meta-top">
-          <span class="news-category-pill" style="background: rgba(56, 189, 248, 0.15); color: var(--blue); border: 1px solid rgba(56, 189, 248, 0.3); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; padding: 4px 10px; border-radius: 9999px;">
-            🔬 Ciência & Espaço
-          </span>
-          <span class="news-published-date" style="color: var(--muted); font-size: 0.85rem;">
-            Publicado em 20 de outubro de 2026 • 4 min de leitura
-          </span>
-        </div>
-
-        <h1 class="news-title" itemprop="headline" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.15; margin: 16px 0 20px; color: var(--text);">
-          Telescópio James Webb detecta atmosfera espessa com vapor de água em exoplaneta a 48 anos-luz
-        </h1>
-
-        <p class="news-standfirst" itemprop="description" style="font-size: 1.15rem; line-height: 1.6; color: var(--muted); margin-bottom: 28px; font-weight: 400;">
+      <header class="article-header">
+        <span class="eyebrow accent"><span></span> NOTÍCIAS • CIÊNCIA & ESPAÇO</span>
+        <h1>Telescópio James Webb detecta atmosfera espessa com vapor de água em exoplaneta a 48 anos-luz</h1>
+        <p class="article-header-lead">
           Em uma das maiores descobertas da astronomia observacional recente, instrumentos infravermelhos do observatório espacial confirmaram assinaturas químicas de vapor de água e dióxido de carbono em uma super-Terra na zona temperada de sua estrela.
         </p>
 
-        <!-- IMAGEM PRINCIPAL -->
-        <figure class="news-hero-figure" style="margin: 0 0 32px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line);">
-          <img src="../images/noticia-james-webb-exoplaneta-agua.jpg" alt="Concepção artística de um exoplaneta super-Terra com atmosfera azul brilhante na órbita de uma estrela anã vermelha" itemprop="image" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover;">
-          <figcaption style="padding: 10px 16px; font-size: 0.82rem; color: var(--muted); background: var(--surface); border-top: 1px solid var(--line);">
-            Ilustração artística: O Telescópio Espacial James Webb examinou o envelope gasoso de um exoplaneta temperado, revelando a assinatura molecular de vapor de água. (Crédito: NASA, ESA, CSA, Joseph Olmsted / STScI)
-          </figcaption>
-        </figure>
+        <div class="article-header-meta">
+          <div class="article-meta-left">
+            <img src="../favicon.png" alt="Curiosidades Incríveis" class="author-avatar">
+            <div>
+              <strong>Redação Curiosidades Incríveis</strong>
+              <div class="card-meta">Publicado em 20 de outubro de 2026 • 4 min de leitura • Fatos Verificados</div>
+            </div>
+          </div>
+        </div>
       </header>
 
+      <!-- HERO IMAGE COM CRÉDITO -->
+      <figure class="article-hero-figure" style="margin: 28px 0 36px;">
+        <img src="../images/noticia-james-webb-exoplaneta-agua.jpg" alt="Concepção artística de um exoplaneta super-Terra com atmosfera azul brilhante na órbita de uma estrela anã vermelha">
+        <figcaption class="card-meta" style="margin-top: 8px; font-size: 0.82rem; color: var(--muted);">
+          Ilustração artística: O Telescópio Espacial James Webb examinou o envelope gasoso de um exoplaneta temperado, revelando a assinatura molecular de vapor de água. (Crédito: NASA, ESA, CSA, Joseph Olmsted / STScI)
+        </figcaption>
+      </figure>
+
       <!-- CORPO DA MATÉRIA -->
-      <div class="news-prose-body" itemprop="articleBody" style="font-size: 1.05rem; line-height: 1.75; color: var(--text);">
+      <div class="article-body">
         <p>
           Astrônomos que operam o <strong>Telescópio Espacial James Webb (JWST)</strong> confirmaram a detecção de uma atmosfera densa e estável em torno de um exoplaneta localizado a 48 anos-luz do Sistema Solar. A observação, realizada através de espectroscopia de transmissão de alta precisão, revelou claras assinaturas moleculares de <strong>vapor de água (H₂O)</strong> e <strong>dióxido de carbono (CO₂)</strong>, marcando um dos passos mais sólidos da ciência em direção à caracterização de mundos habitáveis fora do nosso sistema planetário.
         </p>
@@ -227,7 +250,7 @@
             🔗 Fontes e Referências Científicas Oficiais
           </h3>
           <ul style="padding-left: 20px; margin-bottom: 0; display: flex; flex-direction: column; gap: 8px;">
-            <li><a href="https://webb.nasa.gov/" target="_blank" rel="noopener noreferrer" style="color: var(--blue); font-weight: 500;">NASA / Goddard Space Flight Center — James Webb Space Telescope Mission Updates (2026) ↗</a></li>
+            <li><a href="https://webb.nasa.gov/" target="_blank" rel="noopener noreferrer" style="color: var(--blue); font-weight: 500;">NASA / Goddard Space Flight Center — James Webb Space Telescope Mission Updates ↗</a></li>
             <li><a href="https://www.esa.int/Science_Exploration/Space_Science/Webb" target="_blank" rel="noopener noreferrer" style="color: var(--blue); font-weight: 500;">European Space Agency (ESA) — Exoplanetary Atmosphere Transmission Spectra Findings ↗</a></li>
             <li><a href="https://www.nature.com/nature/articles" target="_blank" rel="noopener noreferrer" style="color: var(--blue); font-weight: 500;">Nature Astronomy — Atmospheric composition and molecular signatures in temperate exoplanet candidates ↗</a></li>
           </ul>
@@ -303,23 +326,6 @@
             </article>
 
             <article class="continue-card">
-              <a class="continue-card-image" href="fim-escala-6x1-duas-folgas-40-horas.html" title="Ler: Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas">
-                <img src="../images/noticia-fim-escala-6x1-duas-folgas-40-horas.jpg" alt="Trabalhadores e escala de trabalho no Brasil" loading="lazy">
-                <span class="continue-card-badge">POLÍTICA</span>
-              </a>
-              <div class="continue-card-body">
-                <div class="continue-card-meta">
-                  <span>5 min de leitura</span>
-                  <span>•</span>
-                  <span>Política</span>
-                </div>
-                <h3 class="continue-card-title">
-                  <a href="fim-escala-6x1-duas-folgas-40-horas.html">Fim da escala 6x1: cronograma oficial das duas folgas</a>
-                </h3>
-              </div>
-            </article>
-
-            <article class="continue-card">
               <a class="continue-card-image" href="nobel-fisica-neutrinos-icecube-antartida.html" title="Ler: Nobel de Física reconhece telescópio de neutrinos enterrado no gelo da Antártida">
                 <img src="../images/noticia-nobel-fisica-neutrinos-icecube-antartida.jpg" alt="Estação IceCube na Antártida" loading="lazy">
                 <span class="continue-card-badge">CIÊNCIA</span>
@@ -331,7 +337,24 @@
                   <span>Ciência</span>
                 </div>
                 <h3 class="continue-card-title">
-                  <a href="nobel-fisica-neutrinos-icecube-antartida.html">Observatório IceCube e a física dos neutrinos cósmicos</a>
+                  <a href="nobel-fisica-neutrinos-icecube-antartida.html">Por que cientistas enterraram um telescópio a 2,5 km sob o gelo do Polo Sul? O mistério do IceCube</a>
+                </h3>
+              </div>
+            </article>
+
+            <article class="continue-card">
+              <a class="continue-card-image" href="fim-escala-6x1-duas-folgas-40-horas.html" title="Ler: Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas">
+                <img src="../images/noticia-fim-escala-6x1-duas-folgas-40-horas.jpg" alt="Trabalhadores e escala de trabalho no Brasil" loading="lazy">
+                <span class="continue-card-badge">POLÍTICA</span>
+              </a>
+              <div class="continue-card-body">
+                <div class="continue-card-meta">
+                  <span>5 min de leitura</span>
+                  <span>•</span>
+                  <span>Política</span>
+                </div>
+                <h3 class="continue-card-title">
+                  <a href="fim-escala-6x1-duas-folgas-40-horas.html">Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas</a>
                 </h3>
               </div>
             </article>
@@ -341,79 +364,44 @@
     </article>
   </main>
 
-  <!-- RODAPÉ COMPLETO -->
+  <!-- RODAPÉ -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="../index.html">
+    <div class="footer-grid container">
+      <div>
+        <div class="brand">
           <img class="brand-logo" src="../favicon.png" alt="">
           <span>Curiosidades <strong>Incríveis</strong></span>
-        </a>
-        <p>Um portal dedicado a fatos verificados, ciência, história e descobertas surpreendentes.</p>
+        </div>
+        <p class="footer-text">
+          Portal editorial com curiosidades científicas, históricas e notícias apuradas diariamente com responsabilidade jornalística.
+        </p>
       </div>
 
-      <div class="footer-col">
-        <h3>Navegação</h3>
-        <ul>
-          <li><a href="../index.html">Página Inicial</a></li>
-          <li><a href="../artigos.html">Todos os Artigos</a></li>
-          <li><a href="../noticias.html">Portal de Notícias</a></li>
+      <div>
+        <h4>Editorias</h4>
+        <ul class="footer-links">
+          <li><a href="../artigos.html">Artigos em Destaque</a></li>
+          <li><a href="../noticias.html">Plantão de Notícias</a></li>
+          <li><a href="../noticias.html#ciencia">Ciência & Espaço</a></li>
+          <li><a href="../noticias.html#tecnologia">Tecnologia & IA</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h3>Categorias</h3>
-        <ul>
-          <li><a href="../artigos.html?categoria=animais">Animais</a></li>
-          <li><a href="../artigos.html?categoria=ciencia">Ciência</a></li>
-          <li><a href="../artigos.html?categoria=tecnologia">Tecnologia</a></li>
-          <li><a href="../artigos.html?categoria=historia">História</a></li>
-          <li><a href="../artigos.html?categoria=mundo">Mundo</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Transparência</h3>
-        <ul>
-          <li><button class="footer-link-btn" id="footer-contact-btn" type="button">Fale Conosco</button></li>
-          <li><button class="footer-link-btn" id="footer-privacy-btn" type="button">Política de Privacidade</button></li>
+      <div>
+        <h4>Redes & Contato</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/curiosidades.incriveis6" target="_blank" rel="noopener noreferrer">Instagram Oficial ↗</a></li>
+          <li><a href="mailto:contato@curiosidadesincriveis.online">Fale com a Redação</a></li>
+          <li><a href="../sitemap.xml">Mapa do Site (XML)</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom container">
-      <p>© 2026 Curiosidades Incríveis • Informação com rigor e checagem factual.</p>
+      <p>© 2026 Curiosidades Incríveis. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- MODAIS DE CONTATO E PRIVACIDADE -->
-  <div class="modal-overlay" id="contact-modal" aria-hidden="true">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3>📬 Fale com a Redação</h3>
-        <button class="modal-close-btn" type="button" data-close-modal="contact-modal" aria-label="Fechar modal">✕</button>
-      </div>
-      <div class="modal-body">
-        <p>Tem dúvidas, correções ou sugestões de pautas para nossa equipe editorial?</p>
-        <p><strong>E-mail:</strong> contato@curiosidadesincriveis.online</p>
-        <p><strong>Instagram:</strong> @curiosidades.incriveis6</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal-overlay" id="privacy-modal" aria-hidden="true">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3>🔒 Política de Privacidade</h3>
-        <button class="modal-close-btn" type="button" data-close-modal="privacy-modal" aria-label="Fechar modal">✕</button>
-      </div>
-      <div class="modal-body">
-        <p>O portal <strong>Curiosidades Incríveis</strong> preza pela transparência e pelo respeito aos seus dados pessoais de acordo com a LGPD.</p>
-        <p>Não coletamos dados cadastrais sensíveis. Utilizamos métricas agregadas anônimas para avaliar quais matérias geram mais interesse em nossa comunidade.</p>
-      </div>
-    </div>
-  </div>
-
-  <script src="../script.js"></script>
+  <script src="../script.js?v=4.3.0"></script>
 </body>
 </html>
