@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 34 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (6), Política (7), Ciência (6),
+// 35 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (6), Política (8), Ciência (6),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -43,6 +43,22 @@ function calculateRelativeTime(dateInput) {
 }
 
 const officialNews = [
+  {
+    "id": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
+    "slug": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
+    "title": "Até que horas pode votar? Quem está na fila às 17h tem direito",
+    "summary": "A votação vai até as 17h, mas quem já estiver na fila nesse horário pode votar. Entenda a regra oficial do TSE.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-25T13:00:00Z",
+    "sourceDate": "25/10/2026",
+    "readingTime": "1 min de leitura",
+    "image": "images/noticia-fila-votacao-17h-eleicoes-2026.jpg",
+    "imageCredit": "Foto de arquivo: Edilson Rodrigues/Agência Senado (CC BY-SA 4.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/ate-que-horas-pode-votar-eleicoes-2026-fila-17h.html"
+  },
   {
     "id": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",
     "slug": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",

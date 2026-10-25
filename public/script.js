@@ -1201,6 +1201,17 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
+    "slug": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
+    "title": "Até que horas pode votar? Quem está na fila às 17h tem direito",
+    "summary": "A votação vai até as 17h, mas quem já estiver na fila nesse horário pode votar. Entenda a regra oficial do TSE.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "1 min de leitura",
+    "image": "images/noticia-fila-votacao-17h-eleicoes-2026.jpg",
+    "link": "noticias/ate-que-horas-pode-votar-eleicoes-2026-fila-17h.html"
+  },
+  {
     "id": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",
     "slug": "quem-e-leandra-guedes-prefeita-ituiutaba-janones",
     "title": "Quem é Leandra Guedes: trajetória da prefeita de Ituiutaba e o caso envolvendo André Janones",

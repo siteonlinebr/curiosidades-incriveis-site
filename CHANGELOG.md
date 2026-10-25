@@ -4,7 +4,22 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v4.3.0] - 2026-10-22 (Versão Atual)
+## [v4.4.0] - 2026-10-25 (Versão Atual)
+### 🗳️ Notícia de Serviço Público — Eleições 2026 (Total: 35 Notícias):
+- **Adição da 35ª Reportagem Verificada na Categoria Política:**
+  - 🗳️ **Horário de Votação e Regra da Fila:** *Até que horas pode votar? Quem está na fila às 17h tem direito* (`noticias/ate-que-horas-pode-votar-eleicoes-2026-fila-17h.html`).
+    - Aplicação da técnica da Pirâmide Invertida com resposta direta e destaque logo no início para a alta intenção de busca de eleitores no dia da votação.
+    - Esclarecimento detalhado do procedimento oficial do TSE (Resolução nº 23.759/2026, art. 29): encerramento às 17h (horário de Brasília), distribuição de senhas aos eleitores presentes na fila a partir do último da fila e garantia do direito ao voto.
+    - Imagem documental: Fotografia de arquivo de eleitores em fila por Edilson Rodrigues/Agência Senado via Wikimedia Commons (CC BY-SA 4.0).
+- **Infraestrutura e Sincronização Integral:**
+  - `news-data.js` e `public/news-data.js` atualizados para 35 reportagens ativas (distribuição: Tecnologia 5, Games 6, Política 8, Ciência 6, Animais 5, Mundo 2, Entretenimento 3).
+  - `script.js` e `public/script.js` sincronizados no catálogo unificado de busca instantânea `CI_OFFICIAL_NEWS_CATALOG`.
+  - `noticias.html` e `public/noticias.html` atualizados para *35 Reportagens com Fontes Verificadas* e versionamento de scripts `v=4.4.0`.
+  - `sitemap.xml` e `public/sitemap.xml` atualizados com a nova URL canônica (total: 77 URLs).
+
+---
+
+## [v4.3.0] - 2026-10-22
 ### 🏛️ Notícia Urgente / Perfil Político (Total: 34 Notícias):
 - **Adição da 34ª Reportagem Verificada na Categoria Política:**
   - 🏛️ **Leandra Guedes / André Janones:** *Quem é Leandra Guedes: trajetória da prefeita de Ituiutaba e o caso envolvendo André Janones* (`noticias/quem-e-leandra-guedes-prefeita-ituiutaba-janones.html`).
