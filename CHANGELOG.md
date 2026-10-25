@@ -4,7 +4,24 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v4.4.0] - 2026-10-25 (Versão Atual)
+## [v4.5.0] - 2026-10-25 (Versão Atual)
+### 🗳️ Guia de Serviço Eleitoral — Justificativa de Ausência (Total: 36 Notícias):
+- **Adição da 36ª Reportagem Verificada na Categoria Política (Novo Destaque Hero):**
+  - 🗳️ **Justificativa de Ausência Eleitoral:** *Não vai votar hoje? Saiba como justificar a ausência* (`noticias/como-justificar-ausencia-eleicoes-2026-e-titulo.html`).
+    - Destaque principal automático (*Hero Card*) em `noticias.html` com substituição fluida sem exclusão da reportagem anterior (que passa para o feed regular).
+    - Aplicação da Pirâmide Invertida com caixa de resposta rápida e direta nos primeiros segundos de leitura (prazos no dia da eleição via e-Título até as 17h vs. justificativa pós-eleição em até 60 dias).
+    - Instruções passo a passo para justificar no dia via app oficial e-Título (com geolocalização ativa) ou presencialmente em mesas receptoras fora do domicílio eleitoral.
+    - Orientações pós-pleito pelo Sistema Justifica ou cartório eleitoral com documentação comprobatória e detalhamento das penalidades em caso de não justificativa (multa de R$ 3,51 por turno, bloqueio de passaporte, impedimento para concursos públicos e matrículas).
+    - Imagem documental: Fotografia da urna eletrônica brasileira por Vinicius Depizzol via Wikimedia Commons (CC BY-SA 4.0).
+- **Infraestrutura e Sincronização Integral:**
+  - `news-data.js` e `public/news-data.js` atualizados para 36 reportagens ativas (distribuição: Tecnologia 5, Games 6, Política 9, Ciência 6, Animais 5, Mundo 2, Entretenimento 3), definindo o novo hero e preservando o anterior no feed.
+  - `script.js` e `public/script.js` atualizados com o novo item no catálogo unificado `CI_OFFICIAL_NEWS_CATALOG`.
+  - `noticias.html` e `public/noticias.html` atualizados para *36 Reportagens com Fontes Verificadas*, novo card de destaque estático de fallback e cache bumping para `v=4.5.0`.
+  - `sitemap.xml` e `public/sitemap.xml` atualizados com a nova URL canônica (total: 78 URLs indexadas).
+
+---
+
+## [v4.4.0] - 2026-10-25
 ### 🗳️ Notícia de Serviço Público — Eleições 2026 (Total: 35 Notícias):
 - **Adição da 35ª Reportagem Verificada na Categoria Política:**
   - 🗳️ **Horário de Votação e Regra da Fila:** *Até que horas pode votar? Quem está na fila às 17h tem direito* (`noticias/ate-que-horas-pode-votar-eleicoes-2026-fila-17h.html`).

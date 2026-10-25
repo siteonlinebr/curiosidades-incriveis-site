@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 35 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (6), Política (8), Ciência (6),
+// 36 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (6), Política (9), Ciência (6),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -43,6 +43,22 @@ function calculateRelativeTime(dateInput) {
 }
 
 const officialNews = [
+  {
+    "id": "como-justificar-ausencia-eleicoes-2026-e-titulo",
+    "slug": "como-justificar-ausencia-eleicoes-2026-e-titulo",
+    "title": "Não vai votar hoje? Saiba como justificar a ausência",
+    "summary": "Quem está fora do município eleitoral pode justificar pelo e-Título até as 17h. Depois, é possível pedir justificativa em até 60 dias.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-25T14:50:00Z",
+    "sourceDate": "25/10/2026",
+    "readingTime": "1 min de leitura",
+    "image": "images/noticia-justificar-ausencia-eleicoes-2026.jpg",
+    "imageCredit": "Foto: Vinicius Depizzol / Wikimedia Commons (CC BY-SA 4.0)",
+    "isFeaturedHero": true,
+    "isLatest": true,
+    "link": "noticias/como-justificar-ausencia-eleicoes-2026-e-titulo.html"
+  },
   {
     "id": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
     "slug": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
@@ -183,7 +199,7 @@ const officialNews = [
     "readingTime": "4 min de leitura",
     "image": "images/noticia-james-webb-exoplaneta-agua.jpg",
     "imageCredit": "Ilustração: NASA, ESA, CSA, Joseph Olmsted / STScI",
-    "isFeaturedHero": true,
+    "isFeaturedHero": false,
     "isLatest": true,
     "link": "noticias/james-webb-detecta-atmosfera-vapor-agua-exoplaneta.html"
   },

@@ -1201,6 +1201,17 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "como-justificar-ausencia-eleicoes-2026-e-titulo",
+    "slug": "como-justificar-ausencia-eleicoes-2026-e-titulo",
+    "title": "Não vai votar hoje? Saiba como justificar a ausência",
+    "summary": "Quem está fora do município eleitoral pode justificar pelo e-Título até as 17h. Depois, é possível pedir justificativa em até 60 dias.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "1 min de leitura",
+    "image": "images/noticia-justificar-ausencia-eleicoes-2026.jpg",
+    "link": "noticias/como-justificar-ausencia-eleicoes-2026-e-titulo.html"
+  },
+  {
     "id": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
     "slug": "ate-que-horas-pode-votar-eleicoes-2026-fila-17h",
     "title": "Até que horas pode votar? Quem está na fila às 17h tem direito",

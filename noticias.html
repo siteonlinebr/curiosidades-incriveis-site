@@ -228,7 +228,7 @@
         </p>
         <div class="news-verified-badge" role="status" style="margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--blue); font-weight: 600;">
           <span style="width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; box-shadow: 0 0 10px #4ade80;" aria-hidden="true"></span>
-          Cobertura Oficial • 35 Reportagens com Fontes Verificadas
+          Cobertura Oficial • 36 Reportagens com Fontes Verificadas
         </div>
       </section>
 
@@ -269,11 +269,11 @@
           <div class="news-featured-media">
             <img
               id="hero-news-img"
-              src="images/noticia-fim-escala-6x1-duas-folgas-40-horas.jpg"
-              alt="Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas"
+              src="images/noticia-justificar-ausencia-eleicoes-2026.jpg"
+              alt="Não vai votar hoje? Saiba como justificar a ausência"
               loading="eager"
             />
-            <span class="news-credit-tag" id="hero-news-credit">Foto: Wilfredor / Wikimedia Commons (CC0 1.0) • Imagem ilustrativa</span>
+            <span class="news-credit-tag" id="hero-news-credit">Foto: Vinicius Depizzol / Wikimedia Commons (CC BY-SA 4.0)</span>
           </div>
           <div class="news-featured-body">
             <div class="news-meta-row">
@@ -281,16 +281,16 @@
               <span class="news-meta-sep" aria-hidden="true">·</span>
               <span id="hero-news-date">hoje</span>
               <span class="news-meta-sep" aria-hidden="true">·</span>
-              <span id="hero-news-reading">5 min de leitura</span>
+              <span id="hero-news-reading">1 min de leitura</span>
             </div>
             <h2 class="news-featured-title" id="hero-news-title">
-              <a href="noticias/fim-escala-6x1-duas-folgas-40-horas.html">Fim da escala 6x1: quando começam as duas folgas e o limite de 40 horas</a>
+              <a href="noticias/como-justificar-ausencia-eleicoes-2026-e-titulo.html">Não vai votar hoje? Saiba como justificar a ausência</a>
             </h2>
             <p class="news-featured-summary" id="hero-news-summary">
-              A emenda constitucional prevê dois dias de descanso remunerado por semana e reduz a jornada máxima em etapas: 42 horas a partir de dezembro de 2026 e 40 horas a partir de dezembro de 2027.
+              Quem está fora do município eleitoral pode justificar pelo e-Título até as 17h. Depois, é possível pedir justificativa em até 60 dias.
             </p>
             <div>
-              <a class="news-read-action" id="hero-news-action" href="noticias/fim-escala-6x1-duas-folgas-40-horas.html" title="Ler notícia completa">
+              <a class="news-read-action" id="hero-news-action" href="noticias/como-justificar-ausencia-eleicoes-2026-e-titulo.html" title="Ler notícia completa">
                 Ler notícia completa <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -411,8 +411,8 @@
     </div>
 
     <!-- SCRIPTS (com versionamento para forçar atualização no navegador) -->
-    <script src="news-data.js?v=4.4.0"></script>
-    <script src="script.js?v=4.4.0"></script>
+    <script src="news-data.js?v=4.5.0"></script>
+    <script src="script.js?v=4.5.0"></script>
     <script>
       // =========================================================
       // LÓGICA DE APRESENTAÇÃO E FILTRAGEM DA ÁREA DE NOTÍCIAS
@@ -493,7 +493,7 @@
         function renderFeed(catSlug) {
           if (!feedGrid) return;
 
-          let filtered = newsItems.filter((n) => !n.isFeaturedHero);
+          let filtered = newsItems.filter((n) => !heroItem || n.id !== heroItem.id);
           if (catSlug && catSlug !== "todas") {
             filtered = newsItems.filter((n) => n.categorySlug === catSlug);
           }
