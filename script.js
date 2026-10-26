@@ -1211,6 +1211,50 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "diferenca-votos-lula-flavio-eleicoes-2026",
+    "slug": "diferenca-votos-lula-flavio-eleicoes-2026",
+    "title": "Quantos votos separaram Lula e Flávio Bolsonaro em 2026?",
+    "summary": "No segundo turno das Eleições 2026, Lula recebeu 64,26 milhões de votos e Flávio Bolsonaro, 59,83 milhões. Veja a diferença confirmada pelo TSE.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-diferenca-votos-eleicoes-2026.jpg",
+    "link": "noticias/diferenca-votos-lula-flavio-eleicoes-2026.html"
+  },
+  {
+    "id": "fungo-gigante-dianjunus-rex-linhagem-65-milhoes-anos",
+    "slug": "fungo-gigante-dianjunus-rex-linhagem-65-milhoes-anos",
+    "title": "Fungo gigante de 50 cm tem linhagem de 65 milhões de anos",
+    "summary": "Uma espécie de fungo encontrada na China pode formar estruturas reprodutivas de até 50 centímetros e 2,2 quilos. A análise genética indica que sua linhagem surgiu há cerca de 65 milhões de anos.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-fungo-gigante-dianjunus-rex.jpg",
+    "link": "noticias/fungo-gigante-dianjunus-rex-linhagem-65-milhoes-anos.html"
+  },
+  {
+    "id": "naufragio-4500-anos-costa-turquia-vasos-antigos",
+    "slug": "naufragio-4500-anos-costa-turquia-vasos-antigos",
+    "title": "Naufrágio de 4.500 anos é investigado na costa da Turquia",
+    "summary": "Vasos encontrados no fundo do mar perto da costa turca podem indicar um naufrágio de cerca de 4.500 anos. A datação ainda é preliminar e o estudo acadêmico completo não foi publicado.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-naufragio-idade-bronze-turquia.jpg",
+    "link": "noticias/naufragio-4500-anos-costa-turquia-vasos-antigos.html"
+  },
+  {
+    "id": "como-particula-parecida-virus-se-monta-sem-molde",
+    "slug": "como-particula-parecida-virus-se-monta-sem-molde",
+    "title": "Como uma partícula parecida com vírus se monta sem molde",
+    "summary": "Uma equipe acompanhou, em nível molecular, como uma partícula experimental semelhante a um vírus se forma a partir de 60 unidades de proteína. O estudo pode ajudar a compreender processos relevantes para pesquisas de vacinas e antivirais.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-montagem-particula-semelhante-virus.jpg",
+    "link": "noticias/como-particula-parecida-virus-se-monta-sem-molde.html"
+  },
+  {
     "id": "como-justificar-ausencia-eleicoes-2026-e-titulo",
     "slug": "como-justificar-ausencia-eleicoes-2026-e-titulo",
     "title": "Não vai votar hoje? Saiba como justificar a ausência",

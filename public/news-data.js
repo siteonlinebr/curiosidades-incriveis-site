@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 36 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (6), Política (9), Ciência (6),
+// 40 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (5), Games (6), Política (10), Ciência (9),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -44,6 +44,70 @@ function calculateRelativeTime(dateInput) {
 
 const officialNews = [
   {
+    "id": "diferenca-votos-lula-flavio-eleicoes-2026",
+    "slug": "diferenca-votos-lula-flavio-eleicoes-2026",
+    "title": "Quantos votos separaram Lula e Flávio Bolsonaro em 2026?",
+    "summary": "No segundo turno das Eleições 2026, Lula recebeu 64,26 milhões de votos e Flávio Bolsonaro, 59,83 milhões. Veja a diferença confirmada pelo TSE.",
+    "category": "Política",
+    "categorySlug": "politica",
+    "publishedAt": "2026-10-26T11:50:00Z",
+    "sourceDate": "26/10/2026",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-diferenca-votos-eleicoes-2026.jpg",
+    "imageCredit": "Foto ilustrativa: Vinicius Depizzol / Wikimedia Commons (CC BY-SA 4.0)",
+    "isFeaturedHero": true,
+    "isLatest": true,
+    "link": "noticias/diferenca-votos-lula-flavio-eleicoes-2026.html"
+  },
+  {
+    "id": "fungo-gigante-dianjunus-rex-linhagem-65-milhoes-anos",
+    "slug": "fungo-gigante-dianjunus-rex-linhagem-65-milhoes-anos",
+    "title": "Fungo gigante de 50 cm tem linhagem de 65 milhões de anos",
+    "summary": "Uma espécie de fungo encontrada na China pode formar estruturas reprodutivas de até 50 centímetros e 2,2 quilos. A análise genética indica que sua linhagem surgiu há cerca de 65 milhões de anos.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "publishedAt": "2026-10-26T11:40:00Z",
+    "sourceDate": "26/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-fungo-gigante-dianjunus-rex.jpg",
+    "imageCredit": "Foto: Song et al., Frontiers in Fungal Biology (2026), Fig. 4, CC BY 4.0",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/fungo-gigante-dianjunus-rex-linhagem-65-milhoes-anos.html"
+  },
+  {
+    "id": "naufragio-4500-anos-costa-turquia-vasos-antigos",
+    "slug": "naufragio-4500-anos-costa-turquia-vasos-antigos",
+    "title": "Naufrágio de 4.500 anos é investigado na costa da Turquia",
+    "summary": "Vasos encontrados no fundo do mar perto da costa turca podem indicar um naufrágio de cerca de 4.500 anos. A datação ainda é preliminar e o estudo acadêmico completo não foi publicado.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "publishedAt": "2026-10-26T11:30:00Z",
+    "sourceDate": "26/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-naufragio-idade-bronze-turquia.jpg",
+    "imageCredit": "Foto ilustrativa: Vasos da Idade do Bronze na costa turca (Museu de Bodrum) / Zunkir (CC BY-SA 4.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/naufragio-4500-anos-costa-turquia-vasos-antigos.html"
+  },
+  {
+    "id": "como-particula-parecida-virus-se-monta-sem-molde",
+    "slug": "como-particula-parecida-virus-se-monta-sem-molde",
+    "title": "Como uma partícula parecida com vírus se monta sem molde",
+    "summary": "Uma equipe acompanhou, em nível molecular, como uma partícula experimental semelhante a um vírus se forma a partir de 60 unidades de proteína. O estudo pode ajudar a compreender processos relevantes para pesquisas de vacinas e antivirais.",
+    "category": "Ciência",
+    "categorySlug": "ciencia",
+    "publishedAt": "2026-10-26T11:20:00Z",
+    "sourceDate": "26/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-montagem-particula-semelhante-virus.jpg",
+    "imageCredit": "Visualização 3D de partícula semelhante a vírus (VLP) não infecciosa: NIAID / Wikimedia Commons (CC BY 2.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/como-particula-parecida-virus-se-monta-sem-molde.html"
+  },
+  {
     "id": "como-justificar-ausencia-eleicoes-2026-e-titulo",
     "slug": "como-justificar-ausencia-eleicoes-2026-e-titulo",
     "title": "Não vai votar hoje? Saiba como justificar a ausência",
@@ -55,7 +119,7 @@ const officialNews = [
     "readingTime": "1 min de leitura",
     "image": "images/noticia-justificar-ausencia-eleicoes-2026.jpg",
     "imageCredit": "Foto: Vinicius Depizzol / Wikimedia Commons (CC BY-SA 4.0)",
-    "isFeaturedHero": true,
+    "isFeaturedHero": false,
     "isLatest": true,
     "link": "noticias/como-justificar-ausencia-eleicoes-2026-e-titulo.html"
   },
