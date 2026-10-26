@@ -77,10 +77,10 @@ const articles = [
   {
     "id": "terra-parar-de-girar-5-segundos",
     "title": "O Que Aconteceria se a Terra Parasse de Girar por Apenas 5 Segundos?",
-    "category": "Ciência",
-    "categorySlug": "ciencia",
+    "category": "Mundo",
+    "categorySlug": "mundo",
     "readingTime": "5 min de leitura",
-    "description": "Descubra o que a física e a inércia planetária revelam se a rotação da Terra travasse por 5 segundos: ventos supersônicos de 1.670 km/h, megatsunamis e o destino da civilização.",
+    "description": "Descubra o que a física, a geofísica e a inércia planetária revelam se a rotação da Terra travasse por 5 segundos: ventos supersônicos de 1.670 km/h, megatsunamis e o destino da civilização.",
     "image": "images/artigo-terra-parar.jpg",
     "link": "artigos/terra-parar-de-girar-5-segundos.html",
     "featured": true,
@@ -764,12 +764,22 @@ const createPopularCard = (article, index) => `
 // Inicialização de Grids na Home
 const featuredGrid = document.querySelector('#featured-grid');
 
+// IDs dos 6 artigos para "Em Alta" (seleção diversificada mesclando clássicos marcantes com grandes temas)
+const featuredArticleIds = [
+  "polvo-tres-coracoes",                                     // Animais (3 corações e sangue azul)
+  "som-mais-alto-krakatoa",                                  // Ciência (Explosão colossal do Krakatoa)
+  "computador-quantico-como-funciona-qubits-criptografia",   // Tecnologia (Computação Quântica e Qubits)
+  "adaga-tutancamon-meteorito",                              // História (Adaga de ferro forjada do espaço)
+  "ilha-das-cobras-queimada-grande-perigosa-brasil",         // Mundo (A ilha proibida no litoral brasileiro)
+  "terra-parar-de-girar-5-segundos"                          // Mundo / Ciência (A Terra parando por 5 segundos)
+];
+
 function renderHomeFeatured(category = 'all') {
   if (!featuredGrid) return;
   let items;
   if (category === 'all') {
-    // 8 artigos selecionados na visualização Todas
-    items = articles.slice(0, 8);
+    // 6 artigos selecionados com cara nova e grande impacto
+    items = featuredArticleIds.map((id) => articles.find((a) => a.id === id)).filter(Boolean);
   } else {
     // Limita aos 5 artigos da categoria no index mantendo a home leve e objetiva
     items = articles.filter((a) => a.categorySlug === category).slice(0, 5);
@@ -1680,10 +1690,12 @@ function executeLiveSearch(query) {
 
   const allItems = getUnifiedSearchCatalog();
 
-  // Busca em título, categoria, descrição/resumo e tipo (ex: 'noticia' ou 'artigo')
-  const matches = allItems.filter((item) =>
-    `${item.title} ${item.category} ${item.description} ${item.typeLabel}`.toLowerCase().includes(term)
-  );
+  // Busca inteligente em título, categoria, descrição/resumo, tipo e slugs
+  const tokens = term.split(/\s+/).filter(Boolean);
+  const matches = allItems.filter((item) => {
+    const haystack = `${item.title} ${item.category} ${item.description} ${item.typeLabel} ${item.id || ''} ${item.slug || ''}`.toLowerCase();
+    return tokens.every((token) => haystack.includes(token));
+  });
 
   const isInNoticiasDir = window.location.pathname.includes('/noticias/');
 

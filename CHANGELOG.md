@@ -4,7 +4,16 @@ Todas as alterações notáveis deste projeto são registradas neste documento h
 
 ---
 
-## [v4.5.0] - 2026-10-25 (Versão Atual)
+## [v4.5.1] - 2026-10-25 (Versão Atual)
+### 📊 Auditoria e Correção Crítica de Telemetria — Google Analytics (GA4):
+- **Identificação e Resolução do Descompasso entre Google Search Console e Analytics:**
+  - Diagnóstico da causa-raiz: a tag oficial do Google Analytics (`gtag.js` com ID `G-QEP986Z15Q`) estava ausente na seção de Notícias (`noticias.html`), na página de erro (`404.html`) e em todas as 36 reportagens em `noticias/*.html`.
+  - Consequência: Cliques orgânicos computados pelo Google Search Console (como os 64 cliques na reportagem da Janones) carregavam as matérias sem disparar o script de coleta do GA4, deixando o painel de usuários ativos em tempo real desprovido desses dados.
+  - Injeção e sincronização universal da tag `gtag.js` em 100% das páginas HTML do portal (`noticias.html`, `404.html`, todas as 36 reportagens e espelhos em `public/`).
+
+---
+
+## [v4.5.0] - 2026-10-25
 ### 🗳️ Guia de Serviço Eleitoral — Justificativa de Ausência (Total: 36 Notícias):
 - **Adição da 36ª Reportagem Verificada na Categoria Política (Novo Destaque Hero):**
   - 🗳️ **Justificativa de Ausência Eleitoral:** *Não vai votar hoje? Saiba como justificar a ausência* (`noticias/como-justificar-ausencia-eleicoes-2026-e-titulo.html`).
