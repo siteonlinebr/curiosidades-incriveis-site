@@ -1,8 +1,8 @@
 // =========================================================
 // CURIOSIDADES INCRÍVEIS — DADOS OFICIAIS DA ÁREA DE NOTÍCIAS
 // =========================================================
-// 40 Notícias Reais devidamente checadas e validadas jornalisticamente.
-// Distribuição: Tecnologia (5), Games (6), Política (10), Ciência (9),
+// 44 Notícias Reais devidamente checadas e validadas jornalisticamente.
+// Distribuição: Tecnologia (9), Games (6), Política (10), Ciência (9),
 // Animais (5), Mundo (2), Entretenimento (3).
 // =========================================================
 
@@ -44,6 +44,70 @@ function calculateRelativeTime(dateInput) {
 
 const officialNews = [
   {
+    "id": "openai-compra-chips-ia-google-relato",
+    "slug": "openai-compra-chips-ia-google-relato",
+    "title": "OpenAI planeja comprar chips de IA do Google, diz reportagem",
+    "summary": "Relato publicado pelo The Information e repercutido pela Reuters aponta possível compra de chips do Google pela OpenAI, mas as empresas não confirmaram o acordo.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "publishedAt": "2026-10-28T10:50:00Z",
+    "sourceDate": "28/10/2026",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-openai-chips-google-ia.jpg",
+    "imageCredit": "Foto: Zinskauf / Wikimedia Commons (CC BY-SA 4.0)",
+    "isFeaturedHero": true,
+    "isLatest": true,
+    "link": "noticias/openai-compra-chips-ia-google-relato.html"
+  },
+  {
+    "id": "macbook-pro-m6-bateria-desempenho-novidades",
+    "slug": "macbook-pro-m6-bateria-desempenho-novidades",
+    "title": "MacBook Pro M6 promete até 24 horas de bateria: o que muda?",
+    "summary": "O novo MacBook Pro de 14 polegadas traz chip M6, conectividade Wi-Fi 7 e ganhos de desempenho anunciados pela Apple. Veja o que muda e quando chega às lojas.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "publishedAt": "2026-10-28T10:40:00Z",
+    "sourceDate": "28/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-macbook-pro-m6-bateria.jpg",
+    "imageCredit": "Foto ilustrativa: AzureSaturn / Wikimedia Commons (CC0 1.0; modelo M5 ilustrativo)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/macbook-pro-m6-bateria-desempenho-novidades.html"
+  },
+  {
+    "id": "google-genie-4-mundos-interativos-ia",
+    "slug": "google-genie-4-mundos-interativos-ia",
+    "title": "Google Genie 4 cria mundos interativos a partir de comandos",
+    "summary": "O modelo experimental da Google DeepMind gera simulações interativas com movimento e áudio em tempo real, mas o acesso inicial ainda é restrito.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "publishedAt": "2026-10-28T10:30:00Z",
+    "sourceDate": "28/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-google-genie-4-mundos-interativos.jpg",
+    "imageCredit": "Imagem ilustrativa: Joshua Ezzell / Wikimedia Commons (CC BY 2.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/google-genie-4-mundos-interativos-ia.html"
+  },
+  {
+    "id": "siri-ai-portugues-recursos-dispositivos",
+    "slug": "siri-ai-portugues-recursos-dispositivos",
+    "title": "Siri com IA chega ao português: o que muda nos aparelhos Apple?",
+    "summary": "A nova Siri AI passou a oferecer suporte a português na versão beta. Veja os recursos anunciados e os requisitos para usar a novidade.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "publishedAt": "2026-10-28T10:20:00Z",
+    "sourceDate": "28/10/2026",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-siri-ai-portugues-apple.jpg",
+    "imageCredit": "Foto ilustrativa: Kyu3 / Wikimedia Commons (CC BY-SA 4.0)",
+    "isFeaturedHero": false,
+    "isLatest": true,
+    "link": "noticias/siri-ai-portugues-recursos-dispositivos.html"
+  },
+  {
     "id": "diferenca-votos-lula-flavio-eleicoes-2026",
     "slug": "diferenca-votos-lula-flavio-eleicoes-2026",
     "title": "Quantos votos separaram Lula e Flávio Bolsonaro em 2026?",
@@ -55,7 +119,7 @@ const officialNews = [
     "readingTime": "2 min de leitura",
     "image": "images/noticia-diferenca-votos-eleicoes-2026.jpg",
     "imageCredit": "Foto ilustrativa: Vinicius Depizzol / Wikimedia Commons (CC BY-SA 4.0)",
-    "isFeaturedHero": true,
+    "isFeaturedHero": false,
     "isLatest": true,
     "link": "noticias/diferenca-votos-lula-flavio-eleicoes-2026.html"
   },

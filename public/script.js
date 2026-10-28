@@ -1211,6 +1211,50 @@ if (navExploreTrigger && navExploreMenu) {
 // =========================================================
 const CI_OFFICIAL_NEWS_CATALOG = [
   {
+    "id": "openai-compra-chips-ia-google-relato",
+    "slug": "openai-compra-chips-ia-google-relato",
+    "title": "OpenAI planeja comprar chips de IA do Google, diz reportagem",
+    "summary": "Relato publicado pelo The Information e repercutido pela Reuters aponta possível compra de chips do Google pela OpenAI, mas as empresas não confirmaram o acordo.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "2 min de leitura",
+    "image": "images/noticia-openai-chips-google-ia.jpg",
+    "link": "noticias/openai-compra-chips-ia-google-relato.html"
+  },
+  {
+    "id": "macbook-pro-m6-bateria-desempenho-novidades",
+    "slug": "macbook-pro-m6-bateria-desempenho-novidades",
+    "title": "MacBook Pro M6 promete até 24 horas de bateria: o que muda?",
+    "summary": "O novo MacBook Pro de 14 polegadas traz chip M6, conectividade Wi-Fi 7 e ganhos de desempenho anunciados pela Apple. Veja o que muda e quando chega às lojas.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-macbook-pro-m6-bateria.jpg",
+    "link": "noticias/macbook-pro-m6-bateria-desempenho-novidades.html"
+  },
+  {
+    "id": "google-genie-4-mundos-interativos-ia",
+    "slug": "google-genie-4-mundos-interativos-ia",
+    "title": "Google Genie 4 cria mundos interativos a partir de comandos",
+    "summary": "O modelo experimental da Google DeepMind gera simulações interativas com movimento e áudio em tempo real, mas o acesso inicial ainda é restrito.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-google-genie-4-mundos-interativos.jpg",
+    "link": "noticias/google-genie-4-mundos-interativos-ia.html"
+  },
+  {
+    "id": "siri-ai-portugues-recursos-dispositivos",
+    "slug": "siri-ai-portugues-recursos-dispositivos",
+    "title": "Siri com IA chega ao português: o que muda nos aparelhos Apple?",
+    "summary": "A nova Siri AI passou a oferecer suporte a português na versão beta. Veja os recursos anunciados e os requisitos para usar a novidade.",
+    "category": "Tecnologia",
+    "categorySlug": "tecnologia",
+    "readingTime": "3 min de leitura",
+    "image": "images/noticia-siri-ai-portugues-apple.jpg",
+    "link": "noticias/siri-ai-portugues-recursos-dispositivos.html"
+  },
+  {
     "id": "diferenca-votos-lula-flavio-eleicoes-2026",
     "slug": "diferenca-votos-lula-flavio-eleicoes-2026",
     "title": "Quantos votos separaram Lula e Flávio Bolsonaro em 2026?",
